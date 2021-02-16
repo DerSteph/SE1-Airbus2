@@ -17,12 +17,15 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class Body extends Subscriber {
+
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> slatPortList;
+    // Add a new list for each service...
 
     public Body() {
         weatherRadarPortList = new ArrayList<>();
         slatPortList = new ArrayList<>();
+        // Add a new list for each service...
         build();
     }
 
@@ -34,6 +37,8 @@ public class Body extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
             slatPortList .add(SlatFactory.build());
         }
+
+        // Add a new iteration for each service...
     }
 
     // --- WeatherRadar -----------------------------------------------------------------------------------------------

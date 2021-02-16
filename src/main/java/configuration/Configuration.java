@@ -20,4 +20,6 @@ public enum Configuration {
     // slat
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
+
+    // Add new configurations below...
 }

@@ -14,9 +14,11 @@ import java.util.ArrayList;
 public class Wing extends Subscriber {
 
     private ArrayList<Object> slatPortList;
+    // Add a new list for each service...
 
     public Wing() {
         slatPortList = new ArrayList<>();
+        // Add a new list for each service...
         build();
     }
 
@@ -24,6 +26,8 @@ public class Wing extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
             slatPortList .add(SlatFactory.build());
         }
+
+        // Add a new iteration for each service...
     }
 
     // --- Slat -------------------------------------------------------------------------------------------------------
