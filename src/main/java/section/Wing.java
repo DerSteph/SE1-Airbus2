@@ -10,10 +10,15 @@ import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
+import event.spoiler.SpoilerDown;
+import event.spoiler.SpoilerFullUp;
+import event.spoiler.SpoilerNeutral;
+import event.spoiler.SpoilerUp;
 import event.weather_radar.WeatherRadarOn;
 import factory.LeftAileronFactory;
 import factory.RightAileronFactory;
 import factory.SlatFactory;
+import factory.SpoilerFactory;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -25,11 +30,13 @@ public class Wing extends Subscriber {
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> leftAileronPortList;
     private ArrayList<Object> rightAileronPortList;
+    private ArrayList<Object> spoilerPortList;
 
     public Wing() {
         slatPortList = new ArrayList<>();
         leftAileronPortList = new ArrayList<>();
         rightAileronPortList = new ArrayList<>();
+        spoilerPortList = new ArrayList<>();
         build();
     }
 
@@ -44,6 +51,10 @@ public class Wing extends Subscriber {
 
         for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
             rightAileronPortList.add(RightAileronFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
+            spoilerPortList.add(SpoilerFactory.build());
         }
     }
 
@@ -108,10 +119,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("up");
+                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("up", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i));
+                int degree = (int) onMethod.invoke(slatPortList.get(i), slatUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
@@ -134,10 +145,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("down");
+                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("down", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i));
+                int degree = (int) onMethod.invoke(slatPortList.get(i), slatDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
@@ -242,10 +253,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("up");
+                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i));
+                int degree = (int) onMethod.invoke(leftAileronPortList.get(i), leftAileronUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
@@ -268,10 +279,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("down");
+                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i));
+                int degree = (int) onMethod.invoke(leftAileronPortList.get(i), leftAileronDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
@@ -376,10 +387,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("up");
+                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i));
+                int degree = (int) onMethod.invoke(rightAileronPortList.get(i), rightAileronUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
@@ -402,10 +413,10 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("down");
+                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i));
+                int degree = (int) onMethod.invoke(rightAileronPortList.get(i), rightAileronDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
@@ -423,4 +434,111 @@ public class Wing extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
+    // --- Spoiler ----------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(SpoilerNeutral spoilerNeutral) {
+        LogEngine.instance.write("+ Body.receive(" + spoilerNeutral.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + spoilerNeutral.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
+                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("neutral");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                int degree = (int) onMethod.invoke(spoilerPortList.get(i));
+                LogEngine.instance.write("degree = " + degree);
+
+                PrimaryFlightDisplay.instance.degreeSpoiler = degree;
+                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (degreeSpoiler): " + PrimaryFlightDisplay.instance.degreeSpoiler);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeSpoiler: " + PrimaryFlightDisplay.instance.degreeSpoiler);
+    }
+
+    @Subscribe
+    public void receive(SpoilerFullUp spoilerFullUp) {
+        LogEngine.instance.write("+ Body.receive(" + spoilerFullUp.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + spoilerFullUp.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
+                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("fullUp");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                int degree = (int) onMethod.invoke(spoilerPortList.get(i));
+                LogEngine.instance.write("degree = " + degree);
+
+                PrimaryFlightDisplay.instance.degreeSpoiler = degree;
+                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (degreeSpoiler): " + PrimaryFlightDisplay.instance.degreeSpoiler);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeSpoiler: " + PrimaryFlightDisplay.instance.degreeSpoiler);
+    }
+
+    @Subscribe
+    public void receive(SpoilerUp spoilerUp) {
+        LogEngine.instance.write("+ Body.receive(" + spoilerUp.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + spoilerUp.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
+                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("up", int.class);
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                int degree = (int) onMethod.invoke(spoilerPortList.get(i), spoilerUp.getDegree());
+                LogEngine.instance.write("degree = " + degree);
+
+                PrimaryFlightDisplay.instance.degreeSpoiler = degree;
+                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (degreeSpoiler): " + PrimaryFlightDisplay.instance.degreeSpoiler);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeSpoiler: " + PrimaryFlightDisplay.instance.degreeSpoiler);
+    }
+
+    @Subscribe
+    public void receive(SpoilerDown spoilerDown) {
+        LogEngine.instance.write("+ Body.receive(" + spoilerDown.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + spoilerDown.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
+                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("down", int.class);
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                int degree = (int) onMethod.invoke(spoilerPortList.get(i), spoilerDown.getDegree());
+                LogEngine.instance.write("degree = " + degree);
+
+                PrimaryFlightDisplay.instance.degreeSpoiler = degree;
+                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (degreeSpoiler): " + PrimaryFlightDisplay.instance.degreeSpoiler);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeSpoiler: " + PrimaryFlightDisplay.instance.degreeSpoiler);
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
 }

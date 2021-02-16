@@ -14,4 +14,8 @@ public class SlatUp extends Subscriber {
     public String toString() {
         return "Event: Slat - Up";
     }
+
+    public int getDegree() {
+        return degree;
+    }
 }

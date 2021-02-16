@@ -14,4 +14,8 @@ public class RouteManagementSetCostIndex extends Subscriber {
     public String toString() {
         return "Event: RouteManagement - SetCostIndex";
     }
+
+    public int getValue() {
+        return value;
+    }
 }

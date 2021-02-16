@@ -10,4 +10,7 @@ public enum PrimaryFlightDisplay {
     public boolean isRouteManagementOn;
     public int indexRouteManagement;
     public int numberOfCheckPointsRouteManagement;
+    public int degreeSpoiler;
+    public boolean isAntiCollisionLightOn;
+    public boolean isCargoCompartmentLightOn;
 }

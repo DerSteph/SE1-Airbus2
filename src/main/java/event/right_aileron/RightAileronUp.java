@@ -14,4 +14,8 @@ public class RightAileronUp extends Subscriber {
     public String toString() {
         return "Event: RightAileron - Up";
     }
+
+    public int getDegree() {
+        return degree;
+    }
 }

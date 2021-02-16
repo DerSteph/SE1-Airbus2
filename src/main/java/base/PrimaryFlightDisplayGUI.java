@@ -258,6 +258,14 @@ public class PrimaryFlightDisplayGUI extends Application {
         Label routeManagementLabel = new Label("RouteManagement : ");
         gridPane.add(routeManagementLabel, 0, 0);
 
+        // spoiler
+        // ...
+
+        // anti_collision_light
+        // ...
+
+        // cargo_compartment_light
+
         // --- insert section: end
 
         Label frequencyLabel = new Label("Frequency : ");

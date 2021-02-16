@@ -13,4 +13,8 @@ public class SpoilerUp {
         return "Event: Spoiler - Up";
     }
 
+    public int getDegree() {
+        return degree;
+    }
+
 }

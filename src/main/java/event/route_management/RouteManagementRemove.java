@@ -14,4 +14,8 @@ public class RouteManagementRemove extends Subscriber {
     public String toString() {
         return "Event: RouteManagement - Remove";
     }
+
+    public CheckPoint getCheckPoint() {
+        return checkPoint;
+    }
 }

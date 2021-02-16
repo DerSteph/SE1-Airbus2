@@ -14,4 +14,8 @@ public class RudderLeft extends Subscriber {
     public String toString() {
         return "Event: Rudder - Left";
     }
+
+    public int getDegree() {
+        return degree;
+    }
 }

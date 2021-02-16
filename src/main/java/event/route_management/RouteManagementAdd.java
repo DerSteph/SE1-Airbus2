@@ -14,4 +14,8 @@ public class RouteManagementAdd extends Subscriber {
     public String toString() {
         return "Event: RouteManagement - Add";
     }
+
+    public CheckPoint getCheckPoint() {
+        return checkPoint;
+    }
 }

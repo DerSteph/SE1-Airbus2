@@ -4,20 +4,20 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
-import event.right_aileron.*;
+import event.anti_collision_light.AntiCollisionLightOff;
+import event.anti_collision_light.AntiCollisionLightOn;
+import event.cargo_compartment_light.CargoCompartmentLightDim;
+import event.cargo_compartment_light.CargoCompartmentLightOff;
+import event.cargo_compartment_light.CargoCompartmentLightOn;
 import event.route_management.*;
 import event.rudder.*;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
-import factory.RouteManagementFactory;
-import factory.RudderFactory;
-import factory.SlatFactory;
-import factory.WeatherRadarFactory;
+import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
-import java.io.ObjectInputFilter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -25,11 +25,15 @@ public class Body extends Subscriber {
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> rudderPortList;
     private ArrayList<Object> routeManagementPortList;
+    private ArrayList<Object> antiCollisionLightPortList;
+    private ArrayList<Object> cargoCompartmentLightPortList;
 
     public Body() {
         weatherRadarPortList = new ArrayList<>();
         rudderPortList = new ArrayList<>();
         routeManagementPortList = new ArrayList<>();
+        antiCollisionLightPortList = new ArrayList<>();
+        cargoCompartmentLightPortList = new ArrayList<>();
         build();
     }
 
@@ -44,6 +48,14 @@ public class Body extends Subscriber {
 
         for (int i = 0; i < Configuration.instance.numberOfRouteManagement; i++) {
             routeManagementPortList.add(RouteManagementFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfAntiCollisionLight; i++) {
+            antiCollisionLightPortList.add(AntiCollisionLightFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfCompartmentLight; i++) {
+            cargoCompartmentLightPortList.add(CargoComponentLightFactory.build());
         }
     }
 
@@ -104,6 +116,123 @@ public class Body extends Subscriber {
     @Subscribe
     public void receive(WeatherRadarScan weatherRadarScan) {
         FlightRecorder.instance.insert("Body", "receive(" + weatherRadarScan.toString() + ")");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- AntiCollisionLight -----------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(AntiCollisionLightOn antiCollisionLightOn) {
+        LogEngine.instance.write("+ Body.receive(" + antiCollisionLightOn.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + antiCollisionLightOn.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfAntiCollisionLight; i++) {
+                Method onMethod = antiCollisionLightPortList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(antiCollisionLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
+                FlightRecorder.instance.insert("Body", "AntiCollisionLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isAntiCollisionLightOn): " + PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isAntiCollisionLightOn: " + PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
+    }
+
+    @Subscribe
+    public void receive(AntiCollisionLightOff antiCollisionLightOff) {
+        LogEngine.instance.write("+ Body.receive(" + antiCollisionLightOff.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + antiCollisionLightOff.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfAntiCollisionLight; i++) {
+                Method onMethod = antiCollisionLightPortList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(antiCollisionLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
+                FlightRecorder.instance.insert("Body", "AntiCollisionLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isAntiCollisionLightOn): " + PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isAntiCollisionLightOn: " + PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- CargoCompartmentLight --------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(CargoCompartmentLightOn cargoCompartmentLightOn) {
+        LogEngine.instance.write("+ Body.receive(" + cargoCompartmentLightOn.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + cargoCompartmentLightOn.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfCompartmentLight; i++) {
+                Method onMethod = cargoCompartmentLightPortList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(cargoCompartmentLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isCargoCompartmentLightOn = isOn;
+                FlightRecorder.instance.insert("Body", "CargoCompartmentLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isCargoCompartmentLightOn): " + PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isCargoCompartmentLightOn: " + PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+    }
+
+    @Subscribe
+    public void receive(CargoCompartmentLightOff cargoCompartmentLightOff) {
+        LogEngine.instance.write("+ Body.receive(" + cargoCompartmentLightOff.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + cargoCompartmentLightOff.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfCompartmentLight; i++) {
+                Method onMethod = cargoCompartmentLightPortList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(cargoCompartmentLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isCargoCompartmentLightOn = isOn;
+                FlightRecorder.instance.insert("Body", "CargoCompartmentLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isCargoCompartmentLightOn): " + PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isCargoCompartmentLightOn: " + PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+    }
+
+    @Subscribe
+    public void receive(CargoCompartmentLightDim cargoCompartmentLightDim) {
+        FlightRecorder.instance.insert("Body", "receive(" + cargoCompartmentLightDim.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -195,10 +324,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRudder; i++) {
-                Method onMethod = rudderPortList.get(i).getClass().getDeclaredMethod("left");
+                Method onMethod = rudderPortList.get(i).getClass().getDeclaredMethod("left", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(rudderPortList.get(i));
+                int degree = (int) onMethod.invoke(rudderPortList.get(i), rudderLeft.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRudder = degree;
@@ -221,10 +350,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRudder; i++) {
-                Method onMethod = rudderPortList.get(i).getClass().getDeclaredMethod("right");
+                Method onMethod = rudderPortList.get(i).getClass().getDeclaredMethod("right", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int degree = (int) onMethod.invoke(rudderPortList.get(i));
+                int degree = (int) onMethod.invoke(rudderPortList.get(i), rudderRight.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRudder = degree;
@@ -303,10 +432,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRouteManagement; i++) {
-                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("add");
+                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("add", CheckPoint.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int number = (int) onMethod.invoke(routeManagementPortList.get(i));
+                int number = (int) onMethod.invoke(routeManagementPortList.get(i), routeManagementAdd.getCheckPoint());
                 LogEngine.instance.write("size = " + number);
 
                 PrimaryFlightDisplay.instance.numberOfCheckPointsRouteManagement = number;
@@ -329,10 +458,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRouteManagement; i++) {
-                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("remove");
+                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("remove", CheckPoint.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int number = (int) onMethod.invoke(routeManagementPortList.get(i));
+                int number = (int) onMethod.invoke(routeManagementPortList.get(i), routeManagementRemove.getCheckPoint());
                 LogEngine.instance.write("size = " + number);
 
                 PrimaryFlightDisplay.instance.numberOfCheckPointsRouteManagement = number;
@@ -355,10 +484,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRouteManagement; i++) {
-                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("setCostIndex");
+                Method onMethod = routeManagementPortList.get(i).getClass().getDeclaredMethod("setCostIndex", int.class);
                 LogEngine.instance.write("onMethod = " + onMethod);
 
-                int costIndex = (int) onMethod.invoke(routeManagementPortList.get(i));
+                int costIndex = (int) onMethod.invoke(routeManagementPortList.get(i), routeManagementSetCostIndex.getValue());
                 LogEngine.instance.write("costIndex = " + costIndex);
 
                 PrimaryFlightDisplay.instance.indexRouteManagement = costIndex;
