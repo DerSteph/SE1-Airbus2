@@ -7,5 +7,5 @@ public class CheckPoint {
     private String latitude;
 
     private String longitude;
-    
+
 }

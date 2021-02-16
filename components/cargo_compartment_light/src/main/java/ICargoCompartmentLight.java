@@ -4,7 +4,7 @@ public interface ICargoCompartmentLight {
 
     boolean on();
 
-    //dim();
+    void dim();
 
     boolean off();
 

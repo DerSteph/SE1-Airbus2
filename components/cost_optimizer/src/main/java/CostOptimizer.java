@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class CostOptimizer {
 
     private static CostOptimizer instance = new CostOptimizer();
@@ -10,7 +12,7 @@ public class CostOptimizer {
     private String id = "<student_id_01> / <student_id_02>";
 
     private boolean isOn;
-    //private
+    private ArrayList<CheckPoint> checkPointList;
     private int costIndex;
 
     // Private constructor
@@ -29,7 +31,8 @@ public class CostOptimizer {
     }
 
     private boolean innerOn(){
-
+        isOn = true;
+        return isOn;
     }
 
     private int innerAdd(CheckPoint checkPoint){
@@ -45,7 +48,8 @@ public class CostOptimizer {
     }
 
     private boolean innerOff(){
-
+        isOn = false;
+        return isOn;
     }
 
     // Inner class port

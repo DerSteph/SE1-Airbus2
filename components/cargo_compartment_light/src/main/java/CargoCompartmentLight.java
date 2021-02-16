@@ -50,6 +50,9 @@ public class CargoCompartmentLight {
         }
 
         @Override
+        public void dim() { }
+
+        @Override
         public boolean off() {
             return innerOff();
         }

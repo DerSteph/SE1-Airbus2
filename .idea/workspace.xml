@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/CargoCompartmentLight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/ICargoCompartmentLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/CargoCompartmentLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/CargoCompartmentLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/ICargoCompartmentLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/ICargoCompartmentLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cost_optimizer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CostOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CostOptimizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
