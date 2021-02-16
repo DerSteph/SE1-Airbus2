@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CostOptimizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/ICostOptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/src/main/java/AntiCollisionLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/src/main/java/IAntiCollisionLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
