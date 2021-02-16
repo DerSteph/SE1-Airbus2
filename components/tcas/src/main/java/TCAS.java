@@ -60,6 +60,30 @@ public class TCAS {
     }
 
     public class Port implements ITCAS {
-
+        public String version()
+        {
+            return innerVersion();
+        }
+        public boolean on() {
+            return innerOn();
+        }
+        public boolean connect(String frequency) {
+            return innerConnect(frequency);
+        }
+        public boolean scan(String environment) {
+            return innerScan(environment);
+        }
+        public boolean alarm() {
+            return innerAlarm();
+        }
+        public int determineAltitude(String environment) {
+            return innerDetermineAltitude(environment);
+        }
+        public int setAltitude(int value) {
+            return innerSetAltitude(value);
+        }
+        public boolean off() {
+            return innerOff();
+        }
     }
 }
