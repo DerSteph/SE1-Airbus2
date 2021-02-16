@@ -20,4 +20,20 @@ public enum Configuration {
     // slat
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
+
+    // left_aileron
+    public String pathToLeftAileronJavaArchive = commonPathToJavaArchive + "left_aileron" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "left_aileron.jar";
+    public int numberOfLeftAileron = 3;
+
+    // right_aileron
+    public String pathToRightAileronJavaArchive = commonPathToJavaArchive + "right_aileron" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "right_aileron.jar";
+    public int numberOfRightAileron = 3;
+
+    // rudder
+    public String pathToRudderJavaArchive = commonPathToJavaArchive + "rudder" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "rudder.jar";
+    public int numberOfRudder = 2;
+
+    // route_management
+    public String pathToRouteManagementJavaArchive =  commonPathToJavaArchive + "route_management" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "route_management.jar";
+    public int numberOfRouteManagement = 2;
 }

@@ -33,6 +33,18 @@ public class PrimaryFlightDisplayGUI extends Application {
     // slat
     private PrimaryFlightDisplayEntry slatEntry;
 
+    // left_aileron
+    private PrimaryFlightDisplayEntry leftAileronEntry;
+
+    // right_aileron
+    private PrimaryFlightDisplayEntry rightAileronEntry;
+
+    // rudder
+    private PrimaryFlightDisplayEntry rudderEntry;
+
+    // route_management
+    private PrimaryFlightDisplayEntry routeManagementEntry;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -227,10 +239,24 @@ public class PrimaryFlightDisplayGUI extends Application {
 
         // slat
         Label slatLabel = new Label("Slat : ");
-        gridPane.add(slatLabel, 9, 0);
+        gridPane.add(slatLabel, 0, 0);
         // ...
 
+        // left_aileron
+        Label leftAileronLabel = new Label("LeftAileron : ");
+        gridPane.add(leftAileronLabel, 0, 0);
 
+        // right_aileron
+        Label rightAileronLabel = new Label("RightAileron : ");
+        gridPane.add(rightAileronLabel, 0, 0);
+
+        // rudder
+        Label rudderLabel = new Label("Rudder : ");
+        gridPane.add(rudderLabel, 0, 0);
+
+        // route_management
+        Label routeManagementLabel = new Label("RouteManagement : ");
+        gridPane.add(routeManagementLabel, 0, 0);
 
         // --- insert section: end
 

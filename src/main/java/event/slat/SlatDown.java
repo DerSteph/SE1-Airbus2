@@ -1,6 +1,8 @@
 package event.slat;
 
-public class SlatDown {
+import event.Subscriber;
+
+public class SlatDown extends Subscriber {
 
     int degree;
 

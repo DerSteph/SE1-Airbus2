@@ -1,6 +1,8 @@
 package event.weather_radar;
 
-public class WeatherRadarScan {
+import event.Subscriber;
+
+public class WeatherRadarScan extends Subscriber {
     String environment;
 
     public WeatherRadarScan(String environment) {

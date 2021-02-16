@@ -1,6 +1,8 @@
 package event.slat;
 
-public class SlatNeutral {
+import event.Subscriber;
+
+public class SlatNeutral extends Subscriber {
 
     @Override
     public String toString() {

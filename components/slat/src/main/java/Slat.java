@@ -23,11 +23,12 @@ public class Slat {
 
     // Methods
     private int innerNeutral() {
-        throw new RuntimeException("Not implemented yet.");
+        degree = 0;
+        return degree;
     }
 
     private int innerFullDown() {
-        degree = 0;
+        degree = -60;
         return degree;
     }
 

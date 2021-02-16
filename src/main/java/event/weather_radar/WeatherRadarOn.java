@@ -1,6 +1,8 @@
 package event.weather_radar;
 
-public class WeatherRadarOn {
+import event.Subscriber;
+
+public class WeatherRadarOn extends Subscriber {
     public String toString() {
         return "Event: WeatherRadar - On";
     }
