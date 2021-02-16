@@ -36,4 +36,20 @@ public enum Configuration {
     // route_management
     public String pathToRouteManagementJavaArchive =  commonPathToJavaArchive + "route_management" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "route_management.jar";
     public int numberOfRouteManagement = 2;
+
+    // spoiler
+    public String pathToSpoilerJavaArchive = commonPathToJavaArchive + "spoiler" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "spoiler.jar";
+    public int numberOfSpoiler = 8;
+
+    // cost_optimizer
+    public String pathToCostOptimizerJavaArchive = commonPathToJavaArchive + "cost_optimizer" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "cost_optimizer.jar";
+    public int numberOfCostOptimizer = 2;
+
+    // anti_collision_light
+    public String pathToAntiCollisionLightJavaArchive = commonPathToJavaArchive + "anti_collision_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "anti_collision_light.jar";
+    public int numberOfAntiCollisionLight = 2;
+
+    // cargo_compartment_light
+    public String pathToCargoCompartmentLightJavaArchive = commonPathToJavaArchive + "cargo_compartment_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "cargo_compartment_light.jar";
+    public int numberOfCompartmentLight = 4;
 }
