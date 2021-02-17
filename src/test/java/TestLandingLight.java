@@ -1,6 +1,4 @@
-import factory.AntiCollisionLightFactory;
 import factory.LandingLightFactory;
-import factory.WeatherRadarFactory;
 import logging.LogEngine;
 import org.junit.jupiter.api.*;
 import recorder.FlightRecorder;

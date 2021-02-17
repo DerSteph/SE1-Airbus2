@@ -1,12 +1,9 @@
-import factory.AntiCollisionLightFactory;
 import factory.RightAileronFactory;
-import factory.WeatherRadarFactory;
 import logging.LogEngine;
 import org.junit.jupiter.api.*;
 import recorder.FlightRecorder;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
