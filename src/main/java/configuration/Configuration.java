@@ -41,4 +41,8 @@ public enum Configuration {
     public String pathToVHFJavaArchive = commonPathToJavaArchive + "vhf" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "vhf.jar";
     public int numberOfVHF = 2;
 
+    //sat_com
+    public String pathToSatComJavaArchive = commonPathToJavaArchive + "sat_com" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "sat_com.jar";
+    public int numberOfSatCom = 2;
+
 }

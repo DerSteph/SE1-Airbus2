@@ -12,4 +12,5 @@ public enum PrimaryFlightDisplay {
     public int amountOfNitrogen;
     public boolean isVHFOn;
     public String selectedChannelVHF;
+    public boolean isSatComConnected;
 }

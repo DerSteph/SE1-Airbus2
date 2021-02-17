@@ -45,8 +45,11 @@ public class PrimaryFlightDisplayGUI extends Application {
     //nitrogen_bottle
     private PrimaryFlightDisplayEntry nitrogenBottleEntry;
 
-    //nitrogen_bottle
+    //vhf
     private PrimaryFlightDisplayEntry vhfEntry;
+
+    //sat_com
+    private PrimaryFlightDisplayEntry satComEntry;
 
     public static void main(String... args) {
         LogEngine.instance.init();
@@ -265,9 +268,14 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(nitrogenBottleLabel, 13, 0);
         // ...
 
-        // nitrogen_bottle
+        // vhf
         Label vhfLabel = new Label("VHF : ");
         gridPane.add(vhfLabel, 14, 0);
+        // ...
+
+        // sat_com
+        Label satComLabel = new Label("VHF : ");
+        gridPane.add(satComLabel, 15, 0);
         // ...
 
 

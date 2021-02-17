@@ -12,6 +12,7 @@ import event.portable_watertank.PortableWaterTankLock;
 import event.portable_watertank.PortableWaterTankRefill;
 import event.portable_watertank.PortableWaterTankTakeOut;
 import event.portable_watertank.PortableWaterTankUnlock;
+import event.sat_com.*;
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
@@ -40,6 +41,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> oxygenBottlePortList;
     private ArrayList<Object> nitrogenBottlePortList;
     private ArrayList<Object> vHFPortList;
+    private ArrayList<Object> satComPortList;
 
 
     public Body() {
@@ -50,6 +52,7 @@ public class Body extends Subscriber {
         oxygenBottlePortList = new ArrayList<>();
         nitrogenBottlePortList = new ArrayList<>();
         vHFPortList = new ArrayList<>();
+        satComPortList = new ArrayList<>();
         build();
     }
 
@@ -75,6 +78,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfVHF; i++) {
             vHFPortList .add(VHFFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfSatCom; i++) {
+            vHFPortList .add(SatComFactory.build());
         }
     }
 
@@ -246,6 +252,35 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(VHFOn vhfOn) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- SatCom -------------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(SatComConnect connect) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(SatComOff off) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(SatComOn on) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(SatComReceive receive) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(SatComSend send) {
         throw new RuntimeException("Not implemented yet.");
     }
 
