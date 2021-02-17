@@ -52,4 +52,17 @@ public enum Configuration {
     // cargo_compartment_light
     public String pathToCargoCompartmentLightJavaArchive = commonPathToJavaArchive + "cargo_compartment_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "cargo_compartment_light.jar";
     public int numberOfCompartmentLight = 4;
+
+    // landing_light
+    public String pathToLandingLightJavaArchive = commonPathToJavaArchive + "landing_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "landing_light.jar";
+    public int numberOfLandingLightBody = 2;
+    public int numberOfLandingLightWing = 2;
+
+    // left_navigation_light
+    public String pathToLeftNavigationLightJavaArchive = commonPathToJavaArchive + "left_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "left_navigation_light.jar";
+    public int numberOfLeftNavigationLight = 1;
+
+    // logo_light
+    public String pathToLogoLightJavaArchive = commonPathToJavaArchive + "logo_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "logo_light.jar";
+    public int numberOfLogoLight = 2;
 }
