@@ -12,7 +12,6 @@ import event.cargo_compartment_light.CargoCompartmentLightOn;
 import event.cost_optimizer.*;
 import event.landing_light.LandingLightBodyOff;
 import event.landing_light.LandingLightBodyOn;
-import event.left_navigation_light.LeftNavigationLightOn;
 import event.logo_light.LogoLightOff;
 import event.logo_light.LogoLightOn;
 import event.route_management.*;
@@ -729,10 +728,10 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfCostOptimizer; i++) {
-                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("add", CheckPoint.class);
+                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("remove", int.class);
                 LogEngine.instance.write("onMethod = " + method);
 
-                int size = (int) method.invoke(costOptimizerPortList.get(i), costOptimizerRemoveCheckPoint.getCheckPoint());
+                int size = (int) method.invoke(costOptimizerPortList.get(i), costOptimizerRemoveCheckPoint.getCheckPointIndex());
                 LogEngine.instance.write("size = " + size);
 
                 PrimaryFlightDisplay.instance.numberOfCheckPointsCostOptimizer = size;
@@ -755,7 +754,7 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfCostOptimizer; i++) {
-                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("add", CheckPoint.class);
+                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("optimize", CheckPoint.class);
                 LogEngine.instance.write("onMethod = " + method);
 
                 int size = (int) method.invoke(costOptimizerPortList.get(i), costOptimizerOptimize.getCheckPointList());
@@ -781,7 +780,7 @@ public class Body extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfCostOptimizer; i++) {
-                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("add", CheckPoint.class);
+                Method method = costOptimizerPortList.get(i).getClass().getDeclaredMethod("validate", int.class);
                 LogEngine.instance.write("onMethod = " + method);
 
                 int index = (int) method.invoke(costOptimizerPortList.get(i), costOptimizerValidate.getCostIndex());

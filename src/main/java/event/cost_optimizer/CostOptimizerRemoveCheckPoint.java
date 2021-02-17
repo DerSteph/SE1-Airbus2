@@ -1,13 +1,11 @@
 package event.cost_optimizer;
 
-import event.route_management.CheckPoint;
-
 public class CostOptimizerRemoveCheckPoint {
 
-    private CheckPoint checkPoint;
+    private int checkPointIndex;
 
-    public CostOptimizerRemoveCheckPoint(CheckPoint checkPoint) {
-        this.checkPoint = checkPoint;
+    public CostOptimizerRemoveCheckPoint(int checkPointIndex) {
+        this.checkPointIndex = checkPointIndex;
     }
 
     @Override
@@ -15,7 +13,7 @@ public class CostOptimizerRemoveCheckPoint {
         return "Event: CostOptimizer - RemoveCheckPoint";
     }
 
-    public CheckPoint getCheckPoint() {
-        return checkPoint;
+    public int getCheckPointIndex() {
+        return checkPointIndex;
     }
 }
