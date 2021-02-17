@@ -33,6 +33,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     // slat
     private PrimaryFlightDisplayEntry slatEntry;
 
+    //wastewater_tank
+    private PrimaryFlightDisplayEntry wasteWaterTankEntry;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -230,6 +233,10 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(slatLabel, 9, 0);
         // ...
 
+        // wastewater_tank
+        Label wasteWaterTankLabel = new Label("WasteWaterTank : ");
+        gridPane.add(slatLabel, 10, 0);
+        // ...
 
 
         // --- insert section: end

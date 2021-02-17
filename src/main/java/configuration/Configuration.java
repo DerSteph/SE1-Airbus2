@@ -20,4 +20,9 @@ public enum Configuration {
     // slat
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
+
+    //wastewater_tank
+    public String pathToWasteWaterTankJavaArchive = commonPathToJavaArchive + "wastewater_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "wastewater_tank.jar";
+    public int numberOfWasteWaterTank = 4;
+
 }

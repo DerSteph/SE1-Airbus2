@@ -4,4 +4,6 @@ public enum PrimaryFlightDisplay {
     instance;
     public boolean isWeatherRadarOn;
     public int degreeSlat;
+    public boolean isWasteWaterTankLocked;
+    public int capacityWasteWater;
 }
