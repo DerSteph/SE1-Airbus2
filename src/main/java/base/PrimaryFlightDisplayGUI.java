@@ -36,6 +36,10 @@ public class PrimaryFlightDisplayGUI extends Application {
     // battery
     private PrimaryFlightDisplayEntry batteryPercentage;
 
+    // deicing_system
+    private PrimaryFlightDisplayEntry isDeIcingSystemActivated;
+    private PrimaryFlightDisplayEntry amountDeIcingSystem;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();

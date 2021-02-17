@@ -6,10 +6,15 @@ import configuration.Configuration;
 import event.Subscriber;
 import event.battery.BatteryCharge;
 import event.battery.BatteryDischarge;
+import event.deicing_system.DeIcingSystemActivate;
+import event.deicing_system.DeIcingSystemDeIce;
+import event.deicing_system.DeIcingSystemDeactivate;
+import event.deicing_system.DeIcingSystemRefill;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
 import factory.BatteryFactory;
+import factory.DeIcingSystemFactory;
 import factory.SlatFactory;
 import factory.WeatherRadarFactory;
 import logging.LogEngine;
@@ -24,12 +29,14 @@ public class Body extends Subscriber {
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> batteryPortList;
+    private ArrayList<Object> deIcingSystemPortList;
     // Add a new list for each service...
 
     public Body() {
         weatherRadarPortList = new ArrayList<>();
         slatPortList = new ArrayList<>();
         batteryPortList = new ArrayList<>();
+        deIcingSystemPortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -46,6 +53,11 @@ public class Body extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfBattery; i++)
         {
             batteryPortList.add(BatteryFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++)
+        {
+            deIcingSystemPortList.add(DeIcingSystemFactory.build());
         }
 
         // Add a new iteration for each service...
@@ -117,8 +129,31 @@ public class Body extends Subscriber {
         FlightRecorder.instance.insert("Body", "receive("+ batteryCharge.toString() + ")");
     }
 
+    @Subscribe
     public void receive(BatteryDischarge batteryDischarge){
         FlightRecorder.instance.insert("Body", "receive("+ batteryDischarge.toString() + ")");
+    }
+
+    // --- DeIcingSystem -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(DeIcingSystemActivate deIcingSystemActivate){
+        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemActivate.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(DeIcingSystemDeactivate deIcingSystemDeactivate){
+        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemDeactivate.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(DeIcingSystemDeIce deIcingSystemDeIce){
+        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemDeIce.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(DeIcingSystemRefill deIcingSystemRefill){
+        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemRefill.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------

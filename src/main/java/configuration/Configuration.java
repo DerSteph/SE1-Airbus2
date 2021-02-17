@@ -25,5 +25,10 @@ public enum Configuration {
     public String pathToBatteryJavaArchive = commonPathToJavaArchive + "battery" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "battery.jar";
     public int numberOfBattery = 24;
 
+    //deicing_system
+    public String pathToDeIcingSystemJavaArchive = commonPathToJavaArchive + "deicing_system" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "deicing_system.jar";
+    public int numberOfDeIcingSystemBody = 2;
+    public int numberOfDeIcingSystemWing = 2;
+
     // Add new configurations below...
 }
