@@ -10,13 +10,14 @@ import event.deicing_system.DeIcingSystemActivate;
 import event.deicing_system.DeIcingSystemDeIce;
 import event.deicing_system.DeIcingSystemDeactivate;
 import event.deicing_system.DeIcingSystemRefill;
+import event.pitot_tube.PitotTubeClean;
+import event.pitot_tube.PitotTubeMeasureStaticPressure;
+import event.pitot_tube.PitotTubeMeasureTotalPressure;
+import event.pitot_tube.PitotTubeMeasureVelocity;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
-import factory.BatteryFactory;
-import factory.DeIcingSystemFactory;
-import factory.SlatFactory;
-import factory.WeatherRadarFactory;
+import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -30,6 +31,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> batteryPortList;
     private ArrayList<Object> deIcingSystemPortList;
+    private ArrayList<Object> pitotTubePortList;
     // Add a new list for each service...
 
     public Body() {
@@ -37,6 +39,7 @@ public class Body extends Subscriber {
         slatPortList = new ArrayList<>();
         batteryPortList = new ArrayList<>();
         deIcingSystemPortList = new ArrayList<>();
+        pitotTubePortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -58,6 +61,11 @@ public class Body extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++)
         {
             deIcingSystemPortList.add(DeIcingSystemFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfPitotTube; i++)
+        {
+            pitotTubePortList.add(PitotTubeFactory.build());
         }
 
         // Add a new iteration for each service...
@@ -154,6 +162,28 @@ public class Body extends Subscriber {
     @Subscribe
     public void receive(DeIcingSystemRefill deIcingSystemRefill){
         FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemRefill.toString() + ")");
+    }
+
+    // --- PitotTube -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(PitotTubeClean pitotTubeClean){
+        FlightRecorder.instance.insert("Body", "receive("+ pitotTubeClean.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(PitotTubeMeasureStaticPressure pitotTubeMeasureStaticPressure){
+        FlightRecorder.instance.insert("Body", "receive("+ pitotTubeMeasureStaticPressure.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(PitotTubeMeasureTotalPressure pitotTubeMeasureTotalPressure){
+        FlightRecorder.instance.insert("Body", "receive("+ pitotTubeMeasureTotalPressure.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(PitotTubeMeasureVelocity pitotTubeMeasureVelocity){
+        FlightRecorder.instance.insert("Body", "receive("+ pitotTubeMeasureVelocity.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------

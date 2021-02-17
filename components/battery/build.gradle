@@ -13,7 +13,7 @@ task build_jar(type: Jar) {
     project.archivesBaseName = 'battery'
 
     manifest {
-        attributes["Main-Class"] = "battery"
+        attributes["Main-Class"] = "Battery"
     }
 
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it )} }

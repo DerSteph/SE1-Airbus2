@@ -5,23 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de15cc2b-8f34-4675-b647-07c3ef9627a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/deicing_system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DeIcingSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IDeIcingSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/deicing_system/DeIcingSystemActivate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/deicing_system/DeIcingSystemDeIce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/deicing_system/DeIcingSystemDeactivate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/deicing_system/DeIcingSystemRefill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/main/java/factory/DeIcingSystemFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/modules/pitot_tube.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/classes/java/main/IPitotTube.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/classes/java/main/PitotTube$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/classes/java/main/PitotTube.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/libs/pitot_tube.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/src/main/java/IPitotTube.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pitot_tube/src/main/java/PitotTube.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/pitot_tube/PitotTubeClean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/pitot_tube/PitotTubeMeasureStaticPressure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/pitot_tube/PitotTubeMeasureTotalPressure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/pitot_tube/PitotTubeMeasureVelocity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/factory/PitotTubeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battery/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../battery/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplayGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplayGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/configuration/Configuration.java" afterDir="false" />
@@ -37,6 +74,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="deicing_system" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="deicing_system" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="deicing_system" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,6 +129,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="deicing_system [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">

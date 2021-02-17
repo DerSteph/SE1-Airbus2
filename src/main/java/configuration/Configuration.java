@@ -30,5 +30,9 @@ public enum Configuration {
     public int numberOfDeIcingSystemBody = 2;
     public int numberOfDeIcingSystemWing = 2;
 
+    //pitot_tube
+    public String pathToPitotTubeJavaArchive = commonPathToJavaArchive + "pitot_tube" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "pitot_tube.jar";
+    public int numberOfPitotTube = 2;
+
     // Add new configurations below...
 }

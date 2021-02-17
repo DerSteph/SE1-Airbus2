@@ -68,22 +68,22 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(DeIcingSystemActivate deIcingSystemActivate){
-        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemActivate.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemActivate.toString() + ")");
     }
 
     @Subscribe
     public void receive(DeIcingSystemDeactivate deIcingSystemDeactivate){
-        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemDeactivate.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemDeactivate.toString() + ")");
     }
 
     @Subscribe
     public void receive(DeIcingSystemDeIce deIcingSystemDeIce){
-        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemDeIce.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemDeIce.toString() + ")");
     }
 
     @Subscribe
     public void receive(DeIcingSystemRefill deIcingSystemRefill){
-        FlightRecorder.instance.insert("Body", "receive("+ deIcingSystemRefill.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemRefill.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------

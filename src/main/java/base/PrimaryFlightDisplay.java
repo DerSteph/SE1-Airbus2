@@ -7,5 +7,7 @@ public enum PrimaryFlightDisplay {
     public int percentageBattery;
     public boolean isDeIcingSystemActivated;
     public int amountDeIcingSystem;
+    public boolean isPitotTubeCleaned;
+    public int velocity;
     // Add new fields below...
 }

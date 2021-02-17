@@ -13,7 +13,7 @@ task build_jar(type: Jar) {
     project.archivesBaseName = 'deicing_system'
 
     manifest {
-        attributes["Main-Class"] = "deicing_system"
+        attributes["Main-Class"] = "DeIcingSystem"
     }
 
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it )} }

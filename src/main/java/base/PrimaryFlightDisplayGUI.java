@@ -40,6 +40,10 @@ public class PrimaryFlightDisplayGUI extends Application {
     private PrimaryFlightDisplayEntry isDeIcingSystemActivated;
     private PrimaryFlightDisplayEntry amountDeIcingSystem;
 
+    // pitot_tube
+    private PrimaryFlightDisplayEntry isPitotTubeCleaned;
+    private PrimaryFlightDisplayEntry velocity;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
