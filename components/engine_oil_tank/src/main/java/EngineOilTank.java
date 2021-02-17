@@ -21,7 +21,7 @@ public class EngineOilTank
 
     private String innerVersion()
     {
-        return "PitotTube // " + manufacture + " - " + type + " - " + id;
+        return "EngineOilTank // " + manufacture + " - " + type + " - " + id;
     }
 
     private int innerIncreaseLevel(int value)

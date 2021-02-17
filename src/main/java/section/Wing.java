@@ -9,12 +9,15 @@ import event.deicing_system.DeIcingSystemDeactivate;
 import event.deicing_system.DeIcingSystemRefill;
 import event.engine_oil_tank.EngineOilTankDecreaseLevel;
 import event.engine_oil_tank.EngineOilTankIncreaseLevel;
+import event.fuel_tank.FuelTankRefill;
+import event.fuel_tank.FuelTankTakeOut;
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
 import factory.DeIcingSystemFactory;
 import factory.EngineOilTankFactory;
+import factory.FuelTankFactory;
 import factory.SlatFactory;
 import recorder.FlightRecorder;
 
@@ -25,12 +28,14 @@ public class Wing extends Subscriber {
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> deIcingSystemPortList;
     private ArrayList<Object> engineOilTankPortList;
+    private ArrayList<Object> fuelTankPortList;
     // Add a new list for each service...
 
     public Wing() {
         slatPortList = new ArrayList<>();
         deIcingSystemPortList = new ArrayList<>();
         engineOilTankPortList = new ArrayList<>();
+        fuelTankPortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -48,6 +53,11 @@ public class Wing extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfEngineOilTank; i++)
         {
             engineOilTankPortList.add(EngineOilTankFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfFuelTank; i++)
+        {
+            fuelTankPortList.add(FuelTankFactory.build());
         }
         // Add a new iteration for each service...
     }
@@ -106,6 +116,18 @@ public class Wing extends Subscriber {
     @Subscribe
     public void receive(EngineOilTankDecreaseLevel engineOilTankDecreaseLevel){
         FlightRecorder.instance.insert("Wing", "receive("+ engineOilTankDecreaseLevel.toString() + ")");
+    }
+
+    // --- FuelTank -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(FuelTankTakeOut fuelTankTakeOut){
+        FlightRecorder.instance.insert("Wing", "receive("+ fuelTankTakeOut.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(FuelTankRefill fuelTankRefill){
+        FlightRecorder.instance.insert("Wing", "receive("+ fuelTankRefill.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------

@@ -51,6 +51,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     // engine_oil_tank
     private PrimaryFlightDisplayEntry levelEngineOilTank;
 
+    // fuel_tank
+    private PrimaryFlightDisplayEntry amountOfFuel;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();

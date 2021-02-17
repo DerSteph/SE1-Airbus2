@@ -42,5 +42,9 @@ public enum Configuration {
     public String pathToEngineOilTankJavaArchive = commonPathToJavaArchive + "engine_oil_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "engine_oil_tank.jar";
     public int numberOfEngineOilTank = 4;
 
+    // fuel_tank
+    public String pathToFuelTankJavaArchive = commonPathToJavaArchive + "fuel_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "fuel_tank.jar";
+    public int numberOfFuelTank = 3;
+
     // Add new configurations below...
 }
