@@ -57,7 +57,7 @@ public class TestAntiCollisionLight {
     @Test
     @Order(4)
     public void off() {
-        componentPort = WeatherRadarFactory.build();
+        componentPort = AntiCollisionLightFactory.build();
         try {
             Method offMethod = componentPort.getClass().getDeclaredMethod("off");
             boolean isOn = (boolean) offMethod.invoke(componentPort);
