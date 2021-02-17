@@ -109,7 +109,7 @@ public class TestRightAileron {
     }
 
     @Test
-    @Order(6)
+    @Order(7)
     public void down() {
         componentPort = RightAileronFactory.build();
         try {
