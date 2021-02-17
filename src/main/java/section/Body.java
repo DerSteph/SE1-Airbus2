@@ -16,6 +16,7 @@ import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
+import event.vhf.*;
 import event.wastewater_tank.WasteWaterTankAdd;
 import event.wastewater_tank.WasteWaterTankLock;
 import event.wastewater_tank.WasteWaterTankPumpOut;
@@ -38,6 +39,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> portableWaterTankPortList;
     private ArrayList<Object> oxygenBottlePortList;
     private ArrayList<Object> nitrogenBottlePortList;
+    private ArrayList<Object> vHFPortList;
 
 
     public Body() {
@@ -47,6 +49,7 @@ public class Body extends Subscriber {
         portableWaterTankPortList = new ArrayList<>();
         oxygenBottlePortList = new ArrayList<>();
         nitrogenBottlePortList = new ArrayList<>();
+        vHFPortList = new ArrayList<>();
         build();
     }
 
@@ -69,6 +72,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
             nitrogenBottlePortList .add(NitrogenBottleFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfVHF; i++) {
+            vHFPortList .add(VHFFactory.build());
         }
     }
 
@@ -197,7 +203,7 @@ public class Body extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
-    // --- OxygenBottle -------------------------------------------------------------------------------------------------------
+    // --- NitrogenBottle -------------------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(NitrogenBottleTakeOut takeOut) {
@@ -206,6 +212,40 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(NitrogenBottleRefill refill) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- VHF -------------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(VHFBackwardChannel backwardChannel) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(VHFForwardChannel forwardChannel) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(VHFSearch search) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(VHFSelectChannel selectChannel) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(VHFOff vhfOff) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(VHFOn vhfOn) {
         throw new RuntimeException("Not implemented yet.");
     }
 

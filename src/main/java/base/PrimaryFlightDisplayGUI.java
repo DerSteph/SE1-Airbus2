@@ -45,6 +45,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     //nitrogen_bottle
     private PrimaryFlightDisplayEntry nitrogenBottleEntry;
 
+    //nitrogen_bottle
+    private PrimaryFlightDisplayEntry vhfEntry;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -260,6 +263,11 @@ public class PrimaryFlightDisplayGUI extends Application {
         // nitrogen_bottle
         Label nitrogenBottleLabel = new Label("NitrogenBottle : ");
         gridPane.add(nitrogenBottleLabel, 13, 0);
+        // ...
+
+        // nitrogen_bottle
+        Label vhfLabel = new Label("VHF : ");
+        gridPane.add(vhfLabel, 14, 0);
         // ...
 
 

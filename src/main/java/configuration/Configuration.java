@@ -37,4 +37,8 @@ public enum Configuration {
     public String pathToNitrogenBottleJavaArchive = commonPathToJavaArchive + "nitrogen_bottle" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "nitrogen_bottle.jar";
     public int numberOfNitrogenBottle = 6;
 
+    //vhf
+    public String pathToVHFJavaArchive = commonPathToJavaArchive + "vhf" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "vhf.jar";
+    public int numberOfVHF = 2;
+
 }
