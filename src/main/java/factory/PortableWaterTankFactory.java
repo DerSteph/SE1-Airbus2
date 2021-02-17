@@ -6,7 +6,7 @@ import java.net.URLClassLoader;
 
 import configuration.Configuration;
 
-public class WasteWaterTankFactory extends Factory {
+public class PortableWaterTankFactory extends Factory {
 
 //    public static Object build() {
 //        Object slatPort = null;
@@ -30,6 +30,6 @@ public class WasteWaterTankFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToWasteWaterTankJavaArchive, "WasteWaterTank");
+        return Factory.build(Configuration.instance.pathToPortableWaterTankJavaArchive, "PortableWaterTank");
     }
 }

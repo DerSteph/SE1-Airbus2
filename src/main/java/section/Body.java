@@ -4,6 +4,10 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
+import event.portable_watertank.PortableWaterTankLock;
+import event.portable_watertank.PortableWaterTankRefill;
+import event.portable_watertank.PortableWaterTankTakeOut;
+import event.portable_watertank.PortableWaterTankUnlock;
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
@@ -15,6 +19,7 @@ import event.wastewater_tank.WasteWaterTankUnlock;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
+import factory.PortableWaterTankFactory;
 import factory.SlatFactory;
 import factory.WasteWaterTankFactory;
 import factory.WeatherRadarFactory;
@@ -29,12 +34,14 @@ public class Body extends Subscriber {
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> wasteWaterTankPortList;
+    private ArrayList<Object> portableWaterTankPortList;
 
 
     public Body() {
         weatherRadarPortList = new ArrayList<>();
         slatPortList = new ArrayList<>();
         wasteWaterTankPortList = new ArrayList<>();
+        portableWaterTankPortList = new ArrayList<>();
         build();
     }
 
@@ -48,6 +55,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfWasteWaterTank; i++) {
             wasteWaterTankPortList .add(WasteWaterTankFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfPortableWaterTank; i++) {
+            portableWaterTankPortList .add(PortableWaterTankFactory.build());
         }
     }
 
@@ -112,7 +122,7 @@ public class Body extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
-// --- WasteWaterTank -------------------------------------------------------------------------------------------------------
+    // --- WasteWaterTank -------------------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(WasteWaterTankLock lock) {
@@ -131,6 +141,31 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(WasteWaterTankPumpOut pumpOut) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+
+    // --- PortableWaterTank -------------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(PortableWaterTankLock lock) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(PortableWaterTankUnlock unlock) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(PortableWaterTankTakeOut takeOut) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(PortableWaterTankRefill refill) {
         throw new RuntimeException("Not implemented yet.");
     }
 

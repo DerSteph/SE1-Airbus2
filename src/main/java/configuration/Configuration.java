@@ -25,4 +25,8 @@ public enum Configuration {
     public String pathToWasteWaterTankJavaArchive = commonPathToJavaArchive + "wastewater_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "wastewater_tank.jar";
     public int numberOfWasteWaterTank = 4;
 
+    //portable_watertank
+    public String pathToPortableWaterTankJavaArchive = commonPathToJavaArchive + "wastewater_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "wastewater_tank.jar";
+    public int numberOfPortableWaterTank = 8;
+
 }

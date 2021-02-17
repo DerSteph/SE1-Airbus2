@@ -6,4 +6,6 @@ public enum PrimaryFlightDisplay {
     public int degreeSlat;
     public boolean isWasteWaterTankLocked;
     public int capacityWasteWater;
+    public boolean isPortableWaterTankLocked;
+    public int amountPortableWater;
 }
