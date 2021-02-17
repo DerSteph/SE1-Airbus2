@@ -4,6 +4,8 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
+import event.nitrogen_bottle.NitrogenBottleRefill;
+import event.nitrogen_bottle.NitrogenBottleTakeOut;
 import event.oxygen_bottle.OxygenBottleRefill;
 import event.oxygen_bottle.OxygenBottleTakeOut;
 import event.portable_watertank.PortableWaterTankLock;
@@ -35,6 +37,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> wasteWaterTankPortList;
     private ArrayList<Object> portableWaterTankPortList;
     private ArrayList<Object> oxygenBottlePortList;
+    private ArrayList<Object> nitrogenBottlePortList;
 
 
     public Body() {
@@ -43,6 +46,7 @@ public class Body extends Subscriber {
         wasteWaterTankPortList = new ArrayList<>();
         portableWaterTankPortList = new ArrayList<>();
         oxygenBottlePortList = new ArrayList<>();
+        nitrogenBottlePortList = new ArrayList<>();
         build();
     }
 
@@ -62,6 +66,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfOxygenBottle; i++) {
             oxygenBottlePortList .add(OxygenBottleFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
+            nitrogenBottlePortList .add(NitrogenBottleFactory.build());
         }
     }
 
@@ -185,6 +192,20 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(OxygenBottleRefill refill) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- OxygenBottle -------------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(NitrogenBottleTakeOut takeOut) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(NitrogenBottleRefill refill) {
         throw new RuntimeException("Not implemented yet.");
     }
 

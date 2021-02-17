@@ -42,6 +42,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     //oxygen_bottle
     private PrimaryFlightDisplayEntry oxygenBottleEntry;
 
+    //nitrogen_bottle
+    private PrimaryFlightDisplayEntry nitrogenBottleEntry;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -252,6 +255,11 @@ public class PrimaryFlightDisplayGUI extends Application {
         // oxygen_bottle
         Label oxygenBottleLabel = new Label("OxygenBottle : ");
         gridPane.add(oxygenBottleLabel, 12, 0);
+        // ...
+
+        // nitrogen_bottle
+        Label nitrogenBottleLabel = new Label("NitrogenBottle : ");
+        gridPane.add(nitrogenBottleLabel, 13, 0);
         // ...
 
 

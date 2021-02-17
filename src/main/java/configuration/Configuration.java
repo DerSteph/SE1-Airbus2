@@ -26,11 +26,15 @@ public enum Configuration {
     public int numberOfWasteWaterTank = 4;
 
     //portable_watertank
-    public String pathToPortableWaterTankJavaArchive = commonPathToJavaArchive + "wastewater_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "wastewater_tank.jar";
+    public String pathToPortableWaterTankJavaArchive = commonPathToJavaArchive + "wastewater_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "portable_watertank.jar";
     public int numberOfPortableWaterTank = 8;
 
     //oxygen_bottle
     public String pathToOxygenBottleJavaArchive = commonPathToJavaArchive + "oxygen_bottle" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "oxygen_bottle.jar";
     public int numberOfOxygenBottle = 10;
+
+    //nitrogen_bottle
+    public String pathToNitrogenBottleJavaArchive = commonPathToJavaArchive + "nitrogen_bottle" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "nitrogen_bottle.jar";
+    public int numberOfNitrogenBottle = 6;
 
 }
