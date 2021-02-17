@@ -23,12 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerAddCheckPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOptimize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerRemoveCheckPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerValidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/src/main/java/ILandingLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/src/main/java/LandingLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/ILeftNavigationLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/LeftNavigationLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/LightType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/src/main/java/ILogoLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/src/main/java/LogoLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,15 +92,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="511" y="216" key="chooseDestDirectoryDialog" timestamp="1613508163650">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="511" y="216" key="chooseDestDirectoryDialog/0.25.1440.819/1440.25.2560.1415@0.25.1440.819" timestamp="1613508163650" />
-    <state x="0" y="25" key="new project wizard" timestamp="1613498103642">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state x="1722" y="596" key="new project wizard" timestamp="1613565867405">
+      <screen x="1440" y="25" width="2560" height="1353" />
     </state>
     <state x="0" y="25" key="new project wizard/0.25.1440.821@0.25.1440.821" timestamp="1613498103642" />
+    <state x="1722" y="596" key="new project wizard/0.25.1440.875/1440.25.2560.1353@1440.25.2560.1353" timestamp="1613565867405" />
   </component>
 </project>
