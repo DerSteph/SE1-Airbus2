@@ -45,4 +45,29 @@ public enum Configuration {
     public String pathToSatComJavaArchive = commonPathToJavaArchive + "sat_com" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "sat_com.jar";
     public int numberOfSatCom = 2;
 
+    // droop_nose
+    public String pathToDroopNoseArchive = commonPathToJavaArchive + "droop_nose" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "droop_nose.jar";
+    public int numberOfDroopNose = 2;
+
+    // tcas
+    public String pathToTCASArchive = commonPathToJavaArchive + "tcas" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "tcas.jar";
+    public int numberOfTCAS = 2;
+
+    // turbulent_air_flow_sensor
+    public String pathToTurbulentAirFlowSensorArchive = commonPathToJavaArchive + "turbulent_air_flow_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "turbulent_air_flow_sensor.jar";
+    public int numberOfTurbulentAirFlowSensorBody = 2;
+    public int numberOfTurbulentAirFlowSensorWing = 4;
+
+    // camera
+    public String pathToCameraArchive = commonPathToJavaArchive + "camera" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "camera.jar";
+    public int numberOfCameraBody = 2;
+    public int numberOfCameraWing = 1;
+
+    // gps
+    public String pathToGPSArchive = commonPathToJavaArchive + "gps" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "gps.jar";
+    public int numberOfGPS = 2;
+
+    // radar
+    public String pathToRadarArchive = commonPathToJavaArchive + "radar" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "radar.jar";
+    public int numberOfRadar = 2;
 }

@@ -13,4 +13,9 @@ public enum PrimaryFlightDisplay {
     public boolean isVHFOn;
     public String selectedChannelVHF;
     public boolean isSatComConnected;
+    public boolean isTCASOn;
+    public boolean isTCASConnected;
+    public boolean isTCASAlarm;
+    public int altitudeTCAS;
+    public int degreeDroopNose;
 }

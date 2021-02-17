@@ -13,10 +13,9 @@ import event.portable_watertank.PortableWaterTankRefill;
 import event.portable_watertank.PortableWaterTankTakeOut;
 import event.portable_watertank.PortableWaterTankUnlock;
 import event.sat_com.*;
-import event.slat.SlatDown;
-import event.slat.SlatFullDown;
-import event.slat.SlatNeutral;
-import event.slat.SlatUp;
+import event.tcas.*;
+import event.turbulent_airflow_sensor.TurbulentAirFlowSensorBodyMeasure;
+import event.turbulent_airflow_sensor.TurbulentAirFlowSensorWingMeasure;
 import event.vhf.*;
 import event.wastewater_tank.WasteWaterTankAdd;
 import event.wastewater_tank.WasteWaterTankLock;
@@ -29,7 +28,6 @@ import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
-import java.io.ObjectInputFilter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -42,6 +40,11 @@ public class Body extends Subscriber {
     private ArrayList<Object> nitrogenBottlePortList;
     private ArrayList<Object> vHFPortList;
     private ArrayList<Object> satComPortList;
+    private ArrayList<Object> cameraPortList;
+    private ArrayList<Object> gpsPortList;
+    private ArrayList<Object> radarPortList;
+    private ArrayList<Object> tcasPortList;
+    private ArrayList<Object> turbulentAirFlowSensorPortList;
 
 
     public Body() {
@@ -53,6 +56,11 @@ public class Body extends Subscriber {
         nitrogenBottlePortList = new ArrayList<>();
         vHFPortList = new ArrayList<>();
         satComPortList = new ArrayList<>();
+        cameraPortList = new ArrayList<>();
+        gpsPortList = new ArrayList<>();
+        radarPortList = new ArrayList<>();
+        tcasPortList = new ArrayList<>();
+        turbulentAirFlowSensorPortList = new ArrayList<>();
         build();
     }
 
@@ -81,6 +89,21 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfSatCom; i++) {
             vHFPortList .add(SatComFactory.build());
+        }
+        for(int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+            tcasPortList.add(TCASFactory.build());
+        }
+        for(int i = 0; i < Configuration.instance.numberOfTurbulentAirFlowSensorBody; i++) {
+            turbulentAirFlowSensorPortList.add(TurbulentAirFlowSensorFactory.build());
+        }
+        for(int i = 0; i < Configuration.instance.numberOfCameraBody; i++) {
+            cameraPortList.add(CameraFactory.build());
+        }
+        for(int i = 0; i < Configuration.instance.numberOfGPS; i++) {
+            gpsPortList.add(GPSFactory.build());
+        }
+        for(int i = 0; i < Configuration.instance.numberOfRadar; i++) {
+            radarPortList.add(RadarFactory.build());
         }
     }
 
@@ -285,6 +308,173 @@ public class Body extends Subscriber {
     }
 
     // ----------------------------------------------------------------------------------------------------------------
+    // --- TCAS -----------------------------------------------------------------------------------------------
 
+    @Subscribe
+    public void receive(TCASOn tcasOn) {
+        LogEngine.instance.write("+ Body.receive(" + tcasOn.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tcasOn.toString() + ")");
 
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+                Method onMethod = tcasPortList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(tcasPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isTCASOn = isOn;
+                FlightRecorder.instance.insert("Body", "TCAS (on):" + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTCASOn): " + PrimaryFlightDisplay.instance.isTCASOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASOn: " + PrimaryFlightDisplay.instance.isTCASOn);
+    }
+
+    @Subscribe
+    public void receive(TCASConnect tcasConnect) {
+        LogEngine.instance.write("+ Body.receive(" + tcasConnect.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tcasConnect.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+                Method connectMethod = tcasPortList.get(i).getClass().getDeclaredMethod("connect");
+                LogEngine.instance.write("connectMethod = " + connectMethod);
+
+                boolean isConnected = (boolean) connectMethod.invoke(tcasPortList.get(i));
+                LogEngine.instance.write("isConnected = " + isConnected);
+
+                PrimaryFlightDisplay.instance.isTCASConnected = isConnected;
+                FlightRecorder.instance.insert("Body", "DroopNose (fullDown): " + isConnected);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTCASConnected): " + PrimaryFlightDisplay.instance.isTCASConnected);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASConnected: " + PrimaryFlightDisplay.instance.isTCASConnected);
+    }
+
+    @Subscribe
+    public void receive(TCASScan tcasScan) {
+        FlightRecorder.instance.insert("Body", "receive(" + tcasScan.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(TCASAlarm tcasAlarm) {
+        LogEngine.instance.write("+ Body.receive(" + tcasAlarm.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tcasAlarm.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+                Method alarmMethod = tcasPortList.get(i).getClass().getDeclaredMethod("alarm");
+                LogEngine.instance.write("alarmMethod = " + alarmMethod);
+
+                boolean isAlarm = (boolean) alarmMethod.invoke(tcasPortList.get(i));
+                LogEngine.instance.write("isAlarm = " + isAlarm);
+
+                PrimaryFlightDisplay.instance.isTCASAlarm = isAlarm;
+                FlightRecorder.instance.insert("Body", "TCAS (alarm): " + isAlarm);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTCASAlarm): " + PrimaryFlightDisplay.instance.isTCASAlarm);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASAlarm: " + PrimaryFlightDisplay.instance.isTCASAlarm);
+    }
+
+    @Subscribe
+    public void receive(TCASDetermineAltitude tcasDetermineAltitude) {
+        FlightRecorder.instance.insert("Body", "receive(" + tcasDetermineAltitude.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(TCASSetAltitude tcasSetAltitude) {
+        LogEngine.instance.write("+ Body.receive(" + tcasSetAltitude.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tcasSetAltitude.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+                Method setAltitudeMethod = tcasPortList.get(i).getClass().getDeclaredMethod("setAltitude");
+                LogEngine.instance.write("setAltitudeMethod = " + setAltitudeMethod);
+
+                int altitude = (int) setAltitudeMethod.invoke(tcasPortList.get(i));
+                LogEngine.instance.write("altitudeTCAS = " + altitude);
+
+                PrimaryFlightDisplay.instance.altitudeTCAS = altitude;
+                FlightRecorder.instance.insert("Body", "TCAS (altitudeTCAS): " + altitude);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (altitudeTCAS): " + PrimaryFlightDisplay.instance.altitudeTCAS);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "altitudeTCAS: " + PrimaryFlightDisplay.instance.altitudeTCAS);
+    }
+
+    @Subscribe
+    public void receive(TCASOff tcasOff) {
+        LogEngine.instance.write("+ Body.receive(" + tcasOff.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tcasOff.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
+                Method offMethod = tcasPortList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("offMethod = " + offMethod);
+
+                boolean isOff = (boolean) offMethod.invoke(tcasPortList.get(i));
+                LogEngine.instance.write("isOff = " + isOff);
+
+                PrimaryFlightDisplay.instance.isTCASOn = isOff;
+                FlightRecorder.instance.insert("Body", "TCAS (off):" + isOff);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTCASOff): " + PrimaryFlightDisplay.instance.isTCASOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASOff: " + PrimaryFlightDisplay.instance.isTCASOn);
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+    // --- TurbulentAirFlowSensor -----------------------------------------------------------------------------------------------
+    @Subscribe
+    public void receive(TurbulentAirFlowSensorBodyMeasure turbulentAirFlowSensorBodyMeasure) {
+        LogEngine.instance.write("+ Body.receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTurbulentAirFlowSensorBody; i++) {
+                Method alarmMethod = turbulentAirFlowSensorPortList.get(i).getClass().getDeclaredMethod("alarm");
+                LogEngine.instance.write("alarmMethod = " + alarmMethod);
+
+                boolean isAlarm = (boolean) alarmMethod.invoke(turbulentAirFlowSensorPortList.get(i));
+                LogEngine.instance.write("isTurbulentAirFlowAlarm = " + isAlarm);
+
+                PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm = isAlarm;
+                FlightRecorder.instance.insert("Body", "TurbulentAirFlowAlarm (isTurbulentAirFlowAlarm):" + isAlarm);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTurbulentAirFlowAlarm): " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTurbulentAirFlowAlarm: " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
+    }
 }
