@@ -68,7 +68,7 @@ public class Body extends Subscriber {
         }
 
         for (int i = 0; i < Configuration.instance.numberOfCompartmentLight; i++) {
-            cargoCompartmentLightPortList.add(CargoComponentLightFactory.build());
+            cargoCompartmentLightPortList.add(CargoCompartmentLightFactory.build());
         }
 
         for (int i = 0; i < Configuration.instance.numberOfLandingLightBody; i++) {

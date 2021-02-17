@@ -1,4 +1,4 @@
-import factory.AntiCollisionLightFactory;
+import factory.CargoCompartmentLightFactory;
 import logging.LogEngine;
 import org.junit.jupiter.api.*;
 import recorder.FlightRecorder;
@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestAntiCollisionLight {
+public class TestCargoCompartmentLight {
     private Object componentPort;
 
     @BeforeEach
@@ -21,14 +21,14 @@ public class TestAntiCollisionLight {
     @Test
     @Order(1)
     public void factory() {
-        componentPort = AntiCollisionLightFactory.build();
+        componentPort = CargoCompartmentLightFactory.build();
         assertNotNull(componentPort);
     }
 
     @Test
     @Order(2)
     public void methods() {
-        componentPort = AntiCollisionLightFactory.build();
+        componentPort = CargoCompartmentLightFactory.build();
         try {
             Method onMethod = componentPort.getClass().getDeclaredMethod("on");
             assertNotNull(onMethod);
@@ -43,7 +43,7 @@ public class TestAntiCollisionLight {
     @Test
     @Order(3)
     public void on() {
-        componentPort = AntiCollisionLightFactory.build();
+        componentPort = CargoCompartmentLightFactory.build();
         try {
             Method onMethod = componentPort.getClass().getDeclaredMethod("on");
             boolean isOn = (boolean) onMethod.invoke(componentPort);
@@ -56,7 +56,7 @@ public class TestAntiCollisionLight {
     @Test
     @Order(4)
     public void off() {
-        componentPort = AntiCollisionLightFactory.build();
+        componentPort = CargoCompartmentLightFactory.build();
         try {
             Method offMethod = componentPort.getClass().getDeclaredMethod("off");
             boolean isOn = (boolean) offMethod.invoke(componentPort);

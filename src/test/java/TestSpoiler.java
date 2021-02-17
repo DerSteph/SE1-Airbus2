@@ -1,4 +1,4 @@
-import factory.RightAileronFactory;
+import factory.SpoilerFactory;
 import logging.LogEngine;
 import org.junit.jupiter.api.*;
 import recorder.FlightRecorder;
@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestRightAileron {
+public class TestSpoiler {
     private Object componentPort;
 
     @BeforeEach
@@ -21,23 +21,20 @@ public class TestRightAileron {
     @Test
     @Order(1)
     public void factory() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         assertNotNull(componentPort);
     }
 
     @Test
     @Order(2)
     public void methods() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         try {
             Method neutralMethod = componentPort.getClass().getDeclaredMethod("neutral");
             assertNotNull(neutralMethod);
 
             Method fullUpMethod = componentPort.getClass().getDeclaredMethod("fullUp");
             assertNotNull(fullUpMethod);
-
-            Method fullDownMethod = componentPort.getClass().getDeclaredMethod("fullDown");
-            assertNotNull(fullDownMethod);
 
             Method upMethod = componentPort.getClass().getDeclaredMethod("up", int.class);
             assertNotNull(upMethod);
@@ -52,7 +49,7 @@ public class TestRightAileron {
     @Test
     @Order(3)
     public void neutral() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         try {
             Method neutralMethod = componentPort.getClass().getDeclaredMethod("neutral");
             int degree = (int) neutralMethod.invoke(componentPort);
@@ -65,7 +62,7 @@ public class TestRightAileron {
     @Test
     @Order(4)
     public void fullUp() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         try {
             Method fullUpMethod = componentPort.getClass().getDeclaredMethod("fullUp");
             int degree = (int) fullUpMethod.invoke(componentPort);
@@ -77,21 +74,8 @@ public class TestRightAileron {
 
     @Test
     @Order(5)
-    public void fullDown() {
-        componentPort = RightAileronFactory.build();
-        try {
-            Method fullDownMethod = componentPort.getClass().getDeclaredMethod("fullDown");
-            int degree = (int) fullDownMethod.invoke(componentPort);
-            assertEquals(-60, degree);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @Test
-    @Order(6)
     public void up() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         try {
             Method neutralMethod = componentPort.getClass().getDeclaredMethod("neutral");
             int degree = (int) neutralMethod.invoke(componentPort);
@@ -106,9 +90,9 @@ public class TestRightAileron {
     }
 
     @Test
-    @Order(7)
+    @Order(6)
     public void down() {
-        componentPort = RightAileronFactory.build();
+        componentPort = SpoilerFactory.build();
         try {
             Method neutralMethod = componentPort.getClass().getDeclaredMethod("neutral");
             int degree = (int) neutralMethod.invoke(componentPort);
