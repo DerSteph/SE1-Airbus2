@@ -48,6 +48,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     private PrimaryFlightDisplayEntry isRadarAltimeterOn;
     private PrimaryFlightDisplayEntry altitudeRadarAltimeter;
 
+    // engine_oil_tank
+    private PrimaryFlightDisplayEntry levelEngineOilTank;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();

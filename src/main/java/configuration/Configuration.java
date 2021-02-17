@@ -38,5 +38,9 @@ public enum Configuration {
     public String pathToRadarAltimeterJavaArchive = commonPathToJavaArchive + "radar_altimeter" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "radar_altimeter.jar";
     public int numberOfRadarAltimeter = 2;
 
+    // engine_oil_tank
+    public String pathToEngineOilTankJavaArchive = commonPathToJavaArchive + "engine_oil_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "engine_oil_tank.jar";
+    public int numberOfEngineOilTank = 4;
+
     // Add new configurations below...
 }

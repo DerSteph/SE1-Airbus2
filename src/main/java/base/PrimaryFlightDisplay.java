@@ -11,5 +11,6 @@ public enum PrimaryFlightDisplay {
     public int velocity;
     public boolean isRadarAltimeterOn;
     public int altitudeRadarAltimeter;
+    public int levelEngineOilTank;
     // Add new fields below...
 }

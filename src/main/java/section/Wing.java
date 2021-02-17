@@ -7,11 +7,14 @@ import event.deicing_system.DeIcingSystemActivate;
 import event.deicing_system.DeIcingSystemDeIce;
 import event.deicing_system.DeIcingSystemDeactivate;
 import event.deicing_system.DeIcingSystemRefill;
+import event.engine_oil_tank.EngineOilTankDecreaseLevel;
+import event.engine_oil_tank.EngineOilTankIncreaseLevel;
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
 import factory.DeIcingSystemFactory;
+import factory.EngineOilTankFactory;
 import factory.SlatFactory;
 import recorder.FlightRecorder;
 
@@ -21,11 +24,13 @@ public class Wing extends Subscriber {
 
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> deIcingSystemPortList;
+    private ArrayList<Object> engineOilTankPortList;
     // Add a new list for each service...
 
     public Wing() {
         slatPortList = new ArrayList<>();
         deIcingSystemPortList = new ArrayList<>();
+        engineOilTankPortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -38,6 +43,11 @@ public class Wing extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemWing; i++)
         {
             deIcingSystemPortList.add(DeIcingSystemFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfEngineOilTank; i++)
+        {
+            engineOilTankPortList.add(EngineOilTankFactory.build());
         }
         // Add a new iteration for each service...
     }
@@ -84,6 +94,18 @@ public class Wing extends Subscriber {
     @Subscribe
     public void receive(DeIcingSystemRefill deIcingSystemRefill){
         FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemRefill.toString() + ")");
+    }
+
+    // --- EngineOilTank -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(EngineOilTankIncreaseLevel engineOilTankIncreaseLevel){
+        FlightRecorder.instance.insert("Wing", "receive("+ engineOilTankIncreaseLevel.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(EngineOilTankDecreaseLevel engineOilTankDecreaseLevel){
+        FlightRecorder.instance.insert("Wing", "receive("+ engineOilTankDecreaseLevel.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
