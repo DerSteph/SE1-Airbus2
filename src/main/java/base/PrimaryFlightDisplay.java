@@ -13,4 +13,11 @@ public enum PrimaryFlightDisplay {
     public int degreeSpoiler;
     public boolean isAntiCollisionLightOn;
     public boolean isCargoCompartmentLightOn;
+    public boolean isLandingLightBodyOn;
+    public boolean isLandingLightWingOn;
+    public boolean isLeftNavigationLightOn;
+    public boolean isLogoLightOn;
+    public boolean isCostOptimizerOn;
+    public int indexCostOptimizer;
+    public int numberOfCheckPointsCostOptimizer;
 }

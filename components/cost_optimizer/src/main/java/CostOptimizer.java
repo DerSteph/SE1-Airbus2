@@ -34,14 +34,24 @@ public class CostOptimizer {
 
     private int innerAdd(CheckPoint checkPoint) {
         checkPointList.add(checkPoint);
+        return checkPointList.size();
     }
 
     private int innerRemove(int checkPoint) {
         checkPointList.remove(checkPoint);
+        return checkPointList.size();
+    }
+
+    private int innerOptimize(ArrayList<CostOptimizer> checkPointList) {
+        this.checkPointList = checkPointList;
+
+        // Do some optimization here, do some optimization there...
+
+        return this.checkPointlist.size();
     }
 
     private boolean innerValidate(int costIndex) {
-        throw new RuntimeException("Not implemented yet!");
+        return checkPointList.get(costIndex) != null;
     }
 
     private boolean innerOff(){
@@ -70,6 +80,11 @@ public class CostOptimizer {
         @Override
         public int remove(int checkPoint) {
             return innerRemove(checkPoint);
+        }
+
+        @Override
+        public int optimize(ArrayList<CheckPoint> checkPointList) {
+            return innerOptimize();
         }
 
         @Override

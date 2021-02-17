@@ -1,6 +1,6 @@
 public class RightAileron {
 
-    private static LeftAileron instance = new RightAileron();
+    private static RightAileron instance = new RightAileron();
 
     // Port
     public Port port;
@@ -17,7 +17,7 @@ public class RightAileron {
     }
 
     // Static method getInstance
-    public static LeftAileron getInstance() {
+    public static RightAileron getInstance() {
         return instance;
     }
 

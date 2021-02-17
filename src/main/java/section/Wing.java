@@ -4,7 +4,12 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
+import event.landing_light.LandingLightBodyOn;
+import event.landing_light.LandingLightWingOff;
+import event.landing_light.LandingLightWingOn;
 import event.left_aileron.*;
+import event.left_navigation_light.LeftNavigationLightOff;
+import event.left_navigation_light.LeftNavigationLightOn;
 import event.right_aileron.*;
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
@@ -15,10 +20,7 @@ import event.spoiler.SpoilerFullUp;
 import event.spoiler.SpoilerNeutral;
 import event.spoiler.SpoilerUp;
 import event.weather_radar.WeatherRadarOn;
-import factory.LeftAileronFactory;
-import factory.RightAileronFactory;
-import factory.SlatFactory;
-import factory.SpoilerFactory;
+import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -31,12 +33,16 @@ public class Wing extends Subscriber {
     private ArrayList<Object> leftAileronPortList;
     private ArrayList<Object> rightAileronPortList;
     private ArrayList<Object> spoilerPortList;
+    private ArrayList<Object> landingLightPortList;
+    private ArrayList<Object> leftNavigationLightPortList;
 
     public Wing() {
         slatPortList = new ArrayList<>();
         leftAileronPortList = new ArrayList<>();
         rightAileronPortList = new ArrayList<>();
         spoilerPortList = new ArrayList<>();
+        landingLightPortList = new ArrayList<>();
+        leftNavigationLightPortList = new ArrayList<>();
         build();
     }
 
@@ -56,25 +62,33 @@ public class Wing extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
             spoilerPortList.add(SpoilerFactory.build());
         }
+
+        for (int i = 0; i < Configuration.instance.numberOfLandingLightWing; i++) {
+            landingLightPortList.add(LandingLightFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfLeftNavigationLight; i++) {
+            leftNavigationLightPortList.add(LeftNavigationLightFactory.build());
+        }
     }
 
     // --- Slat -------------------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(SlatNeutral slatNeutral) {
-        LogEngine.instance.write("+ Body.receive(" + slatNeutral.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + slatNeutral.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + slatNeutral.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + slatNeutral.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("neutral");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = slatPortList.get(i).getClass().getDeclaredMethod("neutral");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i));
+                int degree = (int) method.invoke(slatPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
-                FlightRecorder.instance.insert("Body", "Slat (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Slat (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -88,19 +102,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SlatFullDown slatFullDown) {
-        LogEngine.instance.write("+ Body.receive(" + slatFullDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + slatFullDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + slatFullDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + slatFullDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("fullDown");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = slatPortList.get(i).getClass().getDeclaredMethod("fullDown");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i));
+                int degree = (int) method.invoke(slatPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
-                FlightRecorder.instance.insert("Body", "Slat (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Slat (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -114,19 +128,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SlatUp slatUp) {
-        LogEngine.instance.write("+ Body.receive(" + slatUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + slatUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + slatUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + slatUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("up", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = slatPortList.get(i).getClass().getDeclaredMethod("up", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i), slatUp.getDegree());
+                int degree = (int) method.invoke(slatPortList.get(i), slatUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
-                FlightRecorder.instance.insert("Body", "Slat (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Slat (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -140,19 +154,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SlatDown slatDown) {
-        LogEngine.instance.write("+ Body.receive(" + slatDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + slatDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + slatDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + slatDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
-                Method onMethod = slatPortList.get(i).getClass().getDeclaredMethod("down", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = slatPortList.get(i).getClass().getDeclaredMethod("down", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(slatPortList.get(i), slatDown.getDegree());
+                int degree = (int) method.invoke(slatPortList.get(i), slatDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSlat = degree;
-                FlightRecorder.instance.insert("Body", "Slat (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Slat (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -170,19 +184,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(LeftAileronNeutral leftAileronNeutral) {
-        LogEngine.instance.write("+ Body.receive(" + leftAileronNeutral.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + leftAileronNeutral.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + leftAileronNeutral.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftAileronNeutral.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("neutral");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = leftAileronPortList.get(i).getClass().getDeclaredMethod("neutral");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i));
+                int degree = (int) method.invoke(leftAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
-                FlightRecorder.instance.insert("Body", "LeftAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "LeftAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -196,19 +210,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(LeftAileronFullUp leftAileronFullUp) {
-        LogEngine.instance.write("+ Body.receive(" + leftAileronFullUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + leftAileronFullUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + leftAileronFullUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftAileronFullUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("fullUp");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = leftAileronPortList.get(i).getClass().getDeclaredMethod("fullUp");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i));
+                int degree = (int) method.invoke(leftAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
-                FlightRecorder.instance.insert("Body", "LeftAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "LeftAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -222,19 +236,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(LeftAileronFullDown leftAileronFullDown) {
-        LogEngine.instance.write("+ Body.receive(" + leftAileronFullDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + leftAileronFullDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + leftAileronFullDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftAileronFullDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("fullDown");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = leftAileronPortList.get(i).getClass().getDeclaredMethod("fullDown");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i));
+                int degree = (int) method.invoke(leftAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
-                FlightRecorder.instance.insert("Body", "LeftAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "LeftAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -248,19 +262,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(LeftAileronUp leftAileronUp) {
-        LogEngine.instance.write("+ Body.receive(" + leftAileronUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + leftAileronUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + leftAileronUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftAileronUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = leftAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i), leftAileronUp.getDegree());
+                int degree = (int) method.invoke(leftAileronPortList.get(i), leftAileronUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
-                FlightRecorder.instance.insert("Body", "LeftAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "LeftAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -274,19 +288,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(LeftAileronDown leftAileronDown) {
-        LogEngine.instance.write("+ Body.receive(" + leftAileronDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + leftAileronDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + leftAileronDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftAileronDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
-                Method onMethod = leftAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = leftAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(leftAileronPortList.get(i), leftAileronDown.getDegree());
+                int degree = (int) method.invoke(leftAileronPortList.get(i), leftAileronDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeLeftAileron = degree;
-                FlightRecorder.instance.insert("Body", "LeftAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "LeftAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -304,19 +318,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(RightAileronNeutral rightAileronNeutral) {
-        LogEngine.instance.write("+ Body.receive(" + rightAileronNeutral.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + rightAileronNeutral.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + rightAileronNeutral.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + rightAileronNeutral.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("neutral");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = rightAileronPortList.get(i).getClass().getDeclaredMethod("neutral");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i));
+                int degree = (int) method.invoke(rightAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
-                FlightRecorder.instance.insert("Body", "RightAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "RightAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -330,19 +344,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(RightAileronFullUp rightAileronFullUp) {
-        LogEngine.instance.write("+ Body.receive(" + rightAileronFullUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + rightAileronFullUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + rightAileronFullUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + rightAileronFullUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("fullUp");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = rightAileronPortList.get(i).getClass().getDeclaredMethod("fullUp");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i));
+                int degree = (int) method.invoke(rightAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
-                FlightRecorder.instance.insert("Body", "RightAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "RightAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -356,19 +370,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(RightAileronFullDown rightAileronFullDown) {
-        LogEngine.instance.write("+ Body.receive(" + rightAileronFullDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + rightAileronFullDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + rightAileronFullDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + rightAileronFullDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("fullDown");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = rightAileronPortList.get(i).getClass().getDeclaredMethod("fullDown");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i));
+                int degree = (int) method.invoke(rightAileronPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
-                FlightRecorder.instance.insert("Body", "RightAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "RightAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -382,19 +396,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(RightAileronUp rightAileronUp) {
-        LogEngine.instance.write("+ Body.receive(" + rightAileronUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + rightAileronUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + rightAileronUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + rightAileronUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = rightAileronPortList.get(i).getClass().getDeclaredMethod("up", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i), rightAileronUp.getDegree());
+                int degree = (int) method.invoke(rightAileronPortList.get(i), rightAileronUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
-                FlightRecorder.instance.insert("Body", "RightAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "RightAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -408,19 +422,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(RightAileronDown rightAileronDown) {
-        LogEngine.instance.write("+ Body.receive(" + rightAileronDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + rightAileronDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + rightAileronDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + rightAileronDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfRightAileron; i++) {
-                Method onMethod = rightAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = rightAileronPortList.get(i).getClass().getDeclaredMethod("down", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(rightAileronPortList.get(i), rightAileronDown.getDegree());
+                int degree = (int) method.invoke(rightAileronPortList.get(i), rightAileronDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeRightAileron = degree;
-                FlightRecorder.instance.insert("Body", "RightAileron (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "RightAileron (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -438,19 +452,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SpoilerNeutral spoilerNeutral) {
-        LogEngine.instance.write("+ Body.receive(" + spoilerNeutral.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + spoilerNeutral.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + spoilerNeutral.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + spoilerNeutral.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
-                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("neutral");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = spoilerPortList.get(i).getClass().getDeclaredMethod("neutral");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(spoilerPortList.get(i));
+                int degree = (int) method.invoke(spoilerPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSpoiler = degree;
-                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Spoiler (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -464,19 +478,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SpoilerFullUp spoilerFullUp) {
-        LogEngine.instance.write("+ Body.receive(" + spoilerFullUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + spoilerFullUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + spoilerFullUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + spoilerFullUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
-                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("fullUp");
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = spoilerPortList.get(i).getClass().getDeclaredMethod("fullUp");
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(spoilerPortList.get(i));
+                int degree = (int) method.invoke(spoilerPortList.get(i));
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSpoiler = degree;
-                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Spoiler (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -490,19 +504,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SpoilerUp spoilerUp) {
-        LogEngine.instance.write("+ Body.receive(" + spoilerUp.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + spoilerUp.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + spoilerUp.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + spoilerUp.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
-                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("up", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = spoilerPortList.get(i).getClass().getDeclaredMethod("up", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(spoilerPortList.get(i), spoilerUp.getDegree());
+                int degree = (int) method.invoke(spoilerPortList.get(i), spoilerUp.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSpoiler = degree;
-                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Spoiler (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -516,19 +530,19 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(SpoilerDown spoilerDown) {
-        LogEngine.instance.write("+ Body.receive(" + spoilerDown.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + spoilerDown.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + spoilerDown.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + spoilerDown.toString() + ")");
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfSpoiler; i++) {
-                Method onMethod = spoilerPortList.get(i).getClass().getDeclaredMethod("down", int.class);
-                LogEngine.instance.write("onMethod = " + onMethod);
+                Method method = spoilerPortList.get(i).getClass().getDeclaredMethod("down", int.class);
+                LogEngine.instance.write("onMethod = " + method);
 
-                int degree = (int) onMethod.invoke(spoilerPortList.get(i), spoilerDown.getDegree());
+                int degree = (int) method.invoke(spoilerPortList.get(i), spoilerDown.getDegree());
                 LogEngine.instance.write("degree = " + degree);
 
                 PrimaryFlightDisplay.instance.degreeSpoiler = degree;
-                FlightRecorder.instance.insert("Body", "Spoiler (degree): " + degree);
+                FlightRecorder.instance.insert("Wing", "Spoiler (degree): " + degree);
 
                 LogEngine.instance.write("+");
             }
@@ -538,6 +552,118 @@ public class Wing extends Subscriber {
 
         LogEngine.instance.write("PrimaryFlightDisplay (degreeSpoiler): " + PrimaryFlightDisplay.instance.degreeSpoiler);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeSpoiler: " + PrimaryFlightDisplay.instance.degreeSpoiler);
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- LandingLight -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(LandingLightWingOn landingLightWingOn) {
+        LogEngine.instance.write("+ Wing.receive(" + landingLightWingOn.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + landingLightWingOn.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfLandingLightWing; i++) {
+                Method method = landingLightPortList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + method);
+
+                boolean isOn = (boolean) method.invoke(landingLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isLandingLightWingOn = isOn;
+                FlightRecorder.instance.insert("Wing", "LandingLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isLandingLightWingOn): " + PrimaryFlightDisplay.instance.isLandingLightWingOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isLandingLightWingOn: " + PrimaryFlightDisplay.instance.isLandingLightWingOn);
+    }
+
+    @Subscribe
+    public void receive(LandingLightWingOff landingLightWingOff) {
+        LogEngine.instance.write("+ Wing.receive(" + landingLightWingOff.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + landingLightWingOff.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfLandingLightWing; i++) {
+                Method method = landingLightPortList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("onMethod = " + method);
+
+                boolean isOn = (boolean) method.invoke(landingLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isLandingLightWingOn = isOn;
+                FlightRecorder.instance.insert("Wing", "LandingLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isLandingLightWingOn): " + PrimaryFlightDisplay.instance.isLandingLightWingOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isLandingLightWingOn: " + PrimaryFlightDisplay.instance.isLandingLightWingOn);
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- LeftNavigationLight ----------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(LeftNavigationLightOn leftNavigationLightOn) {
+        LogEngine.instance.write("+ Wing.receive(" + leftNavigationLightOn.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftNavigationLightOn.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfLeftNavigationLight; i++) {
+                Method method = leftNavigationLightPortList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + method);
+
+                boolean isOn = (boolean) method.invoke(leftNavigationLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isLeftNavigationLightOn = isOn;
+                FlightRecorder.instance.insert("Wing", "LandingLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isLeftNavigationLightOn): " + PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isLeftNavigationLightOn: " + PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
+    }
+
+    @Subscribe
+    public void receive(LeftNavigationLightOff leftNavigationLightOff) {
+        LogEngine.instance.write("+ Wing.receive(" + leftNavigationLightOff.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + leftNavigationLightOff.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfLeftNavigationLight; i++) {
+                Method method = leftNavigationLightPortList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("onMethod = " + method);
+
+                boolean isOn = (boolean) method.invoke(leftNavigationLightPortList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isLeftNavigationLightOn = isOn;
+                FlightRecorder.instance.insert("Wing", "LandingLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isLeftNavigationLightOn): " + PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isLeftNavigationLightOn: " + PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
     }
 
     // ----------------------------------------------------------------------------------------------------------------

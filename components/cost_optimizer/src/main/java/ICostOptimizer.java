@@ -8,7 +8,7 @@ public interface ICostOptimizer {
 
     int remove(int checkPoint);
 
-    //ArrayList??
+    int optimize(ArrayList<CheckPoint> checkPointList);
 
     boolean validate(int costIndex);
 

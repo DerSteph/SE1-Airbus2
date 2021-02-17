@@ -1,0 +1,6 @@
+TestRightAileron.java
+ TestRightAileron
+TestWeatherRadar.java
+ TestWeatherRadar
+TestAntiCollisionLight.java
+ TestAntiCollisionLight
