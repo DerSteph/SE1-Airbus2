@@ -33,6 +33,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     // slat
     private PrimaryFlightDisplayEntry slatEntry;
 
+    // battery
+    private PrimaryFlightDisplayEntry batteryPercentage;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();

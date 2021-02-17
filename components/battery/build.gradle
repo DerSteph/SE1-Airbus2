@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+group 'dhbw'
+version null
+
+repositories {
+    mavenCentral()
+}
+
+task build_jar(type: Jar) {
+    project.archivesBaseName = 'battery'
+
+    manifest {
+        attributes["Main-Class"] = "battery"
+    }
+
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it )} }
+    with jar
+}
+

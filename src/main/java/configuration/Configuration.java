@@ -21,5 +21,9 @@ public enum Configuration {
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
 
+    // battery
+    public String pathToBatteryJavaArchive = commonPathToJavaArchive + "battery" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "battery.jar";
+    public int numberOfBattery = 24;
+
     // Add new configurations below...
 }

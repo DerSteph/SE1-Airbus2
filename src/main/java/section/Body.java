@@ -4,9 +4,12 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
+import event.battery.BatteryCharge;
+import event.battery.BatteryDischarge;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
+import factory.BatteryFactory;
 import factory.SlatFactory;
 import factory.WeatherRadarFactory;
 import logging.LogEngine;
@@ -20,11 +23,13 @@ public class Body extends Subscriber {
 
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> slatPortList;
+    private ArrayList<Object> batteryPortList;
     // Add a new list for each service...
 
     public Body() {
         weatherRadarPortList = new ArrayList<>();
         slatPortList = new ArrayList<>();
+        batteryPortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -36,6 +41,11 @@ public class Body extends Subscriber {
 
         for (int i = 0; i < Configuration.instance.numberOfSlat; i++) {
             slatPortList .add(SlatFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfBattery; i++)
+        {
+            batteryPortList.add(BatteryFactory.build());
         }
 
         // Add a new iteration for each service...
@@ -98,6 +108,17 @@ public class Body extends Subscriber {
     @Subscribe
     public void receive(WeatherRadarScan weatherRadarScan) {
         FlightRecorder.instance.insert("Body", "receive(" + weatherRadarScan.toString() + ")");
+    }
+
+    // --- Battery -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(BatteryCharge batteryCharge){
+        FlightRecorder.instance.insert("Body", "receive("+ batteryCharge.toString() + ")");
+    }
+
+    public void receive(BatteryDischarge batteryDischarge){
+        FlightRecorder.instance.insert("Body", "receive("+ batteryDischarge.toString() + ")");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
