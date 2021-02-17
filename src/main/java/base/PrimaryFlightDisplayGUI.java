@@ -44,6 +44,10 @@ public class PrimaryFlightDisplayGUI extends Application {
     private PrimaryFlightDisplayEntry isPitotTubeCleaned;
     private PrimaryFlightDisplayEntry velocity;
 
+    // radar_altimeter
+    private PrimaryFlightDisplayEntry isRadarAltimeterOn;
+    private PrimaryFlightDisplayEntry altitudeRadarAltimeter;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();

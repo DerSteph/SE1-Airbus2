@@ -9,5 +9,7 @@ public enum PrimaryFlightDisplay {
     public int amountDeIcingSystem;
     public boolean isPitotTubeCleaned;
     public int velocity;
+    public boolean isRadarAltimeterOn;
+    public int altitudeRadarAltimeter;
     // Add new fields below...
 }

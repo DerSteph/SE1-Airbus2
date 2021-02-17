@@ -25,14 +25,18 @@ public enum Configuration {
     public String pathToBatteryJavaArchive = commonPathToJavaArchive + "battery" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "battery.jar";
     public int numberOfBattery = 24;
 
-    //deicing_system
+    // deicing_system
     public String pathToDeIcingSystemJavaArchive = commonPathToJavaArchive + "deicing_system" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "deicing_system.jar";
     public int numberOfDeIcingSystemBody = 2;
     public int numberOfDeIcingSystemWing = 2;
 
-    //pitot_tube
+    // pitot_tube
     public String pathToPitotTubeJavaArchive = commonPathToJavaArchive + "pitot_tube" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "pitot_tube.jar";
     public int numberOfPitotTube = 2;
+
+    // radar_altimeter
+    public String pathToRadarAltimeterJavaArchive = commonPathToJavaArchive + "radar_altimeter" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "radar_altimeter.jar";
+    public int numberOfRadarAltimeter = 2;
 
     // Add new configurations below...
 }

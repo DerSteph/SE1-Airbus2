@@ -14,6 +14,7 @@ import event.pitot_tube.PitotTubeClean;
 import event.pitot_tube.PitotTubeMeasureStaticPressure;
 import event.pitot_tube.PitotTubeMeasureTotalPressure;
 import event.pitot_tube.PitotTubeMeasureVelocity;
+import event.radar_altimeter.*;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
@@ -32,6 +33,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> batteryPortList;
     private ArrayList<Object> deIcingSystemPortList;
     private ArrayList<Object> pitotTubePortList;
+    private ArrayList<Object> radarAltimeterPortList;
     // Add a new list for each service...
 
     public Body() {
@@ -40,6 +42,7 @@ public class Body extends Subscriber {
         batteryPortList = new ArrayList<>();
         deIcingSystemPortList = new ArrayList<>();
         pitotTubePortList = new ArrayList<>();
+        radarAltimeterPortList = new ArrayList<>();
         // Add a new list for each service...
         build();
     }
@@ -66,6 +69,11 @@ public class Body extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfPitotTube; i++)
         {
             pitotTubePortList.add(PitotTubeFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfRadarAltimeter; i++)
+        {
+            radarAltimeterPortList.add(RadarAltimeterFactory.build());
         }
 
         // Add a new iteration for each service...
@@ -186,5 +194,31 @@ public class Body extends Subscriber {
         FlightRecorder.instance.insert("Body", "receive("+ pitotTubeMeasureVelocity.toString() + ")");
     }
 
+    // --- RadarAltimeter -----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(RadarAltimeterOn radarAltimeterOn){
+        FlightRecorder.instance.insert("Body", "receive("+ radarAltimeterOn.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(RadarAltimeterOff radarAltimeterOff){
+        FlightRecorder.instance.insert("Body", "receive("+ radarAltimeterOff.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(RadarAltimeterSend radarAltimeterSend){
+        FlightRecorder.instance.insert("Body", "receive("+ radarAltimeterSend.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(RadarAltimeterReceive radarAltimeterReceive){
+        FlightRecorder.instance.insert("Body", "receive("+ radarAltimeterReceive.toString() + ")");
+    }
+
+    @Subscribe
+    public void receive(RadarAltimeterMeasureAltitude radarAltimeterMeasureAltitude){
+        FlightRecorder.instance.insert("Body", "receive("+ radarAltimeterMeasureAltitude.toString() + ")");
+    }
     // ----------------------------------------------------------------------------------------------------------------
 }
