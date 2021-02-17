@@ -23,8 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightBodyOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightBodyOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightWingOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightWingOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_navigation_light/LeftNavigationLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_navigation_light/LeftNavigationLightOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/logo_light/LogoLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/logo_light/LogoLightOn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,10 +94,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="511" y="216" key="chooseDestDirectoryDialog" timestamp="1613508163650">
-      <screen x="0" y="25" width="1440" height="819" />
+    <state x="511" y="229" key="chooseDestDirectoryDialog" timestamp="1613568361794">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="511" y="216" key="chooseDestDirectoryDialog/0.25.1440.819/1440.25.2560.1415@0.25.1440.819" timestamp="1613508163650" />
+    <state x="511" y="229" key="chooseDestDirectoryDialog/0.25.1440.875/1440.25.2560.1353@0.25.1440.875" timestamp="1613568361794" />
     <state x="1722" y="596" key="new project wizard" timestamp="1613565867405">
       <screen x="1440" y="25" width="2560" height="1353" />
     </state>
