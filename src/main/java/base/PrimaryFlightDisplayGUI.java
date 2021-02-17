@@ -39,6 +39,9 @@ public class PrimaryFlightDisplayGUI extends Application {
     //portable_watertank
     private PrimaryFlightDisplayEntry portableWaterTankEntry;
 
+    //oxygen_bottle
+    private PrimaryFlightDisplayEntry oxygenBottleEntry;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -241,9 +244,14 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(wasteWaterTankLabel, 10, 0);
         // ...
 
-        // wastewater_tank
+        // portable_watertank
         Label portableWaterTankLabel = new Label("PortableWaterTank : ");
         gridPane.add(portableWaterTankLabel, 11, 0);
+        // ...
+
+        // oxygen_bottle
+        Label oxygenBottleLabel = new Label("OxygenBottle : ");
+        gridPane.add(oxygenBottleLabel, 12, 0);
         // ...
 
 

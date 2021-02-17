@@ -4,6 +4,8 @@ import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
+import event.oxygen_bottle.OxygenBottleRefill;
+import event.oxygen_bottle.OxygenBottleTakeOut;
 import event.portable_watertank.PortableWaterTankLock;
 import event.portable_watertank.PortableWaterTankRefill;
 import event.portable_watertank.PortableWaterTankTakeOut;
@@ -19,10 +21,7 @@ import event.wastewater_tank.WasteWaterTankUnlock;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
-import factory.PortableWaterTankFactory;
-import factory.SlatFactory;
-import factory.WasteWaterTankFactory;
-import factory.WeatherRadarFactory;
+import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -35,6 +34,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> slatPortList;
     private ArrayList<Object> wasteWaterTankPortList;
     private ArrayList<Object> portableWaterTankPortList;
+    private ArrayList<Object> oxygenBottlePortList;
 
 
     public Body() {
@@ -42,6 +42,7 @@ public class Body extends Subscriber {
         slatPortList = new ArrayList<>();
         wasteWaterTankPortList = new ArrayList<>();
         portableWaterTankPortList = new ArrayList<>();
+        oxygenBottlePortList = new ArrayList<>();
         build();
     }
 
@@ -58,6 +59,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfPortableWaterTank; i++) {
             portableWaterTankPortList .add(PortableWaterTankFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfOxygenBottle; i++) {
+            oxygenBottlePortList .add(OxygenBottleFactory.build());
         }
     }
 
@@ -166,6 +170,21 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(PortableWaterTankRefill refill) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+
+    // --- OxygenBottle -------------------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(OxygenBottleTakeOut takeOut) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    @Subscribe
+    public void receive(OxygenBottleRefill refill) {
         throw new RuntimeException("Not implemented yet.");
     }
 

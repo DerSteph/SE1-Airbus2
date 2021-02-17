@@ -8,4 +8,5 @@ public enum PrimaryFlightDisplay {
     public int capacityWasteWater;
     public boolean isPortableWaterTankLocked;
     public int amountPortableWater;
+    public int oxygenBottleAmount;
 }
