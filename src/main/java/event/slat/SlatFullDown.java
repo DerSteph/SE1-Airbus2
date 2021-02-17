@@ -1,8 +1,6 @@
 package event.slat;
 
-import event.Subscriber;
-
-public class SlatFullDown extends Subscriber {
+public class SlatFullDown {
 
     @Override
     public String toString() {

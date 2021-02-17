@@ -1,8 +1,6 @@
 package event.route_management;
 
-import event.Subscriber;
-
-public class RouteManagementSetCostIndex extends Subscriber {
+public class RouteManagementSetCostIndex {
 
     private int value;
 

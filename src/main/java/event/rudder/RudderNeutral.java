@@ -1,8 +1,6 @@
 package event.rudder;
 
-import event.Subscriber;
-
-public class RudderNeutral extends Subscriber {
+public class RudderNeutral {
 
     @Override
     public String toString() {

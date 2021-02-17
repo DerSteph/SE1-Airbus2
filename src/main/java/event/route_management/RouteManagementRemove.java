@@ -1,8 +1,6 @@
 package event.route_management;
 
-import event.Subscriber;
-
-public class RouteManagementRemove extends Subscriber {
+public class RouteManagementRemove {
 
     private CheckPoint checkPoint;
 

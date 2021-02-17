@@ -1,8 +1,6 @@
 package event.rudder;
 
-import event.Subscriber;
-
-public class RudderLeft extends Subscriber {
+public class RudderLeft {
 
     int degree;
 

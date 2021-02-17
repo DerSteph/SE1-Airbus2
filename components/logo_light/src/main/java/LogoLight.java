@@ -22,10 +22,6 @@ public class LogoLight {
     }
 
     // Methods
-    private int innerNeutral() {
-        throw new RuntimeException("Not implemented yet.");
-    }
-
     private boolean innerOn() {
         isOn = true;
         return isOn;

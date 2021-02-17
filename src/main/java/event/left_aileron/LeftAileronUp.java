@@ -1,8 +1,6 @@
 package event.left_aileron;
 
-import event.Subscriber;
-
-public class LeftAileronUp extends Subscriber {
+public class LeftAileronUp {
 
     int degree;
 

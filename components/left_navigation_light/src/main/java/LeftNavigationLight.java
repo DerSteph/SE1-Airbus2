@@ -10,6 +10,8 @@ public class LeftNavigationLight {
     private String id = "<student_id_01> / <student_id_02>";
 
     private boolean isOn;
+    private LightType lightType;
+    private Position position;
 
     // Private constructor
     private LeftNavigationLight() {
@@ -22,16 +24,14 @@ public class LeftNavigationLight {
     }
 
     // Methods
-    private int innerNeutral() {
-        throw new RuntimeException("Not implemented yet.");
-    }
-
     public LightType innerSetLight(String type) {
-        return ;
+        this.lightType = LightType.valueOf(type);
+        return this.lightType;
     }
 
     public Position innerSetPosition(String position) {
-        return ;
+        this.position = Position.valueOf(position);
+        return this.position;
     }
 
     private boolean innerOn() {

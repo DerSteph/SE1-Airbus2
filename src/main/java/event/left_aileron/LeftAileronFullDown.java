@@ -1,8 +1,6 @@
 package event.left_aileron;
 
-import event.Subscriber;
-
-public class LeftAileronFullDown extends Subscriber {
+public class LeftAileronFullDown {
 
     @Override
     public String toString() {

@@ -1,8 +1,6 @@
 package event.route_management;
 
-import event.Subscriber;
-
-public class RouteManagementAdd extends Subscriber {
+public class RouteManagementAdd {
 
     private CheckPoint checkPoint;
 

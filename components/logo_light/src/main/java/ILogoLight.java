@@ -1,6 +1,6 @@
 public interface ILogoLight {
 
-    void version(); //warum nicht String?
+    String version();
 
     boolean on();
 
