@@ -20,20 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a67e2495-c256-4f78-9d76-3d45e4616dd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/test/java/TestLandingLight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/test/test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/test/java/TestCargoCompartmentLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/LandingLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/factory/LandingLightFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/LeftNavigationLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/factory/LeftNavigationLightFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/LogoLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/factory/LogoLightFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/TestAntiCollisionLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/java/TestAntiCollisionLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/CargoComponentLightFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/factory/CargoCompartmentLightFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/section/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/section/Body.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
