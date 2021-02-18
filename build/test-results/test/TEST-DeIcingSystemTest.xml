@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DeIcingSystemTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-02-18T21:56:09" hostname="DESKTOP-NIO2R51" time="3.127">
+  <properties/>
+  <testcase name="deactivate()" classname="DeIcingSystemTest" time="0.524"/>
+  <testcase name="activate()" classname="DeIcingSystemTest" time="0.527"/>
+  <testcase name="factory()" classname="DeIcingSystemTest" time="0.514"/>
+  <testcase name="refill()" classname="DeIcingSystemTest" time="0.503"/>
+  <testcase name="deIce()" classname="DeIcingSystemTest" time="0.527"/>
+  <testcase name="methods()" classname="DeIcingSystemTest" time="0.529"/>
+  <system-out><![CDATA[
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb 18, 2021 10:56:09 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:10 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:10 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:11 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:11 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:12 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AirflowSensorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-18T21:56:04" hostname="DESKTOP-NIO2R51" time="2.839">
+  <properties/>
+  <testcase name="factory()" classname="AirflowSensorTest" time="0.779"/>
+  <testcase name="alarm()" classname="AirflowSensorTest" time="0.596"/>
+  <testcase name="measure()" classname="AirflowSensorTest" time="0.545"/>
+  <testcase name="methods()" classname="AirflowSensorTest" time="0.916"/>
+  <system-out><![CDATA[
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb 18, 2021 10:56:04 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:05 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:05 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb 18, 2021 10:56:06 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

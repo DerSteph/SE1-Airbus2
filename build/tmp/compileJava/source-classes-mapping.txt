@@ -18,8 +18,8 @@ factory/SlatFactory.java
  factory.SlatFactory
 event/weather_radar/WeatherRadarScan.java
  event.weather_radar.WeatherRadarScan
-section/Wing.java
- section.Wing
+event/radar_altimeter/RadarAltimeterSend.java
+ event.radar_altimeter.RadarAltimeterSend
 event/temperature_sensor/TemperatureSensorWingMeasure.java
  event.temperature_sensor.TemperatureSensorWingMeasure
 factory/WeatherRadarFactory.java
@@ -44,8 +44,8 @@ factory/BatteryFactory.java
  factory.BatteryFactory
 factory/DeIcingSystemFactory.java
  factory.DeIcingSystemFactory
-base/Airplane.java
- base.Airplane
+factory/RadarAltimeterFactory.java
+ factory.RadarAltimeterFactory
 base/PrimaryFlightDisplayGUI.java
  base.PrimaryFlightDisplayGUI
  base.PrimaryFlightDisplayGUI$1
@@ -127,7 +127,7 @@ factory/PitotTubeFactory.java
  factory.PitotTubeFactory
 factory/TemperatureSensorFactory.java
  factory.TemperatureSensorFactory
-event/radar_altimeter/RadarAltimeterSend.java
- event.radar_altimeter.RadarAltimeterSend
-factory/RadarAltimeterFactory.java
- factory.RadarAltimeterFactory
+base/Airplane.java
+ base.Airplane
+section/Wing.java
+ section.Wing

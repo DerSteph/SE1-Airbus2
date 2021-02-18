@@ -193,7 +193,7 @@ public class Wing extends Subscriber {
 
         try {
             for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++) {
-                Method deIce = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("deIce");
+                Method deIce = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("deIce", int.class);
                 LogEngine.instance.write("deIceMethod = " + deIce);
 
                 int amount = (int) deIce.invoke(deIcingSystemPortList.get(i), deIcingSystemDeIce.amount);
