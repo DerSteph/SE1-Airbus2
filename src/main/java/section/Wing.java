@@ -290,7 +290,28 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(TemperatureSensorWingMeasure temperatureSensorWingMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Wing.receive(" + temperatureSensorWingMeasure.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + temperatureSensorWingMeasure.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTemperatureSensorWing; i++) {
+                Method measureMethod = temperatureSensorPortList.get(i).getClass().getDeclaredMethod("measure");
+                LogEngine.instance.write("measureMethod = " + measureMethod);
+
+                int measure = (int) measureMethod.invoke(temperatureSensorPortList.get(i));
+                LogEngine.instance.write("measure = " + measure);
+
+                PrimaryFlightDisplay.instance.temperatureWing = measure;
+                FlightRecorder.instance.insert("Wing", "TemperatureSensor (Measure): " + measure);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (TemperatureSensor): " + PrimaryFlightDisplay.instance.temperatureWing);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "TemperatureSensor: " + PrimaryFlightDisplay.instance.temperatureWing);
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -299,7 +320,28 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(AirFlowSensorWingMeasure airFlowSensorWingMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Wing.receive(" + airFlowSensorWingMeasure.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + airFlowSensorWingMeasure.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfAirFlowSensorWing; i++) {
+                Method measureMethod = airFlowSensorPortList.get(i).getClass().getDeclaredMethod("measure", String.class);
+                LogEngine.instance.write("measureMethod = " + measureMethod);
+
+                int measure = (int) measureMethod.invoke(airFlowSensorPortList.get(i), "");
+                LogEngine.instance.write("measure = " + measure);
+
+                PrimaryFlightDisplay.instance.airPressure = measure;
+                FlightRecorder.instance.insert("Wing", "AirFLowSensor (Measure): " + measure);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (AirFLowSensor): " + PrimaryFlightDisplay.instance.airPressure);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "AirFLowSensor: " + PrimaryFlightDisplay.instance.airPressure);
     }
 
     // ----------------------------------------------------------------------------------------------------------------
