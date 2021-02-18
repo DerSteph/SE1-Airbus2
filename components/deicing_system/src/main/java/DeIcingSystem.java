@@ -4,10 +4,10 @@ public class DeIcingSystem
     private static final DeIcingSystem instance = new DeIcingSystem();
     // port
     public Port port;
-    private final String manufacture = "x/x";
-    private final String type = "team 10";
-    private final String id = "7903471 / 2120099";
+    private final String manufacturer = "7903471";
+
     private int amount = 1000;
+    private boolean isActivated;
 
     private DeIcingSystem()
     {
@@ -20,12 +20,13 @@ public class DeIcingSystem
     }
 
     private String innerVersion() {
-        return "DeIcingSystem // " + manufacture + " - " + type + " - " + id;
+        return "DeIcingSystem // " + manufacturer;
     }
 
     private boolean innerActivate()
     {
-        return true;
+         isActivated = true;
+         return isActivated;
     }
 
     private int innerDeIce(int amount)
@@ -42,7 +43,8 @@ public class DeIcingSystem
 
     private boolean innerDeactivate()
     {
-        return false;
+        isActivated = false;
+        return isActivated;
     }
 
     public class Port implements IDeIcingSystem

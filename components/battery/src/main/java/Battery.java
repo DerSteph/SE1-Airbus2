@@ -4,9 +4,7 @@ public class Battery
     private static final Battery instance = new Battery();
     // port
     public Port port;
-    private final String manufacture = "x/x";
-    private final String type = "team 10";
-    private final String id = "7903471 / 2120099";
+    private final String manufacturer = "7903471";
     private int percentage;
 
     private Battery()
@@ -20,7 +18,7 @@ public class Battery
     }
 
     private String innerVersion() {
-        return "Battery // " + manufacture + " - " + type + " - " + id;
+        return "Battery // " + manufacturer;
     }
 
     private int innerCharge()

@@ -46,8 +46,17 @@ factory/DeIcingSystemFactory.java
  factory.DeIcingSystemFactory
 base/Airplane.java
  base.Airplane
-factory/RadarAltimeterFactory.java
- factory.RadarAltimeterFactory
+base/PrimaryFlightDisplayGUI.java
+ base.PrimaryFlightDisplayGUI
+ base.PrimaryFlightDisplayGUI$1
+ base.PrimaryFlightDisplayGUI$2
+ base.PrimaryFlightDisplayGUI$3
+ base.PrimaryFlightDisplayGUI$4
+ base.PrimaryFlightDisplayGUI$5
+ base.PrimaryFlightDisplayGUI$6
+ base.PrimaryFlightDisplayGUI$7
+ base.PrimaryFlightDisplayGUI$8
+ base.PrimaryFlightDisplayGUI$9
 base/Cockpit.java
  base.Cockpit
 event/weather_radar/WeatherRadarOn.java
@@ -120,14 +129,5 @@ factory/TemperatureSensorFactory.java
  factory.TemperatureSensorFactory
 event/radar_altimeter/RadarAltimeterSend.java
  event.radar_altimeter.RadarAltimeterSend
-base/PrimaryFlightDisplayGUI.java
- base.PrimaryFlightDisplayGUI
- base.PrimaryFlightDisplayGUI$1
- base.PrimaryFlightDisplayGUI$2
- base.PrimaryFlightDisplayGUI$3
- base.PrimaryFlightDisplayGUI$4
- base.PrimaryFlightDisplayGUI$5
- base.PrimaryFlightDisplayGUI$6
- base.PrimaryFlightDisplayGUI$7
- base.PrimaryFlightDisplayGUI$8
- base.PrimaryFlightDisplayGUI$9
+factory/RadarAltimeterFactory.java
+ factory.RadarAltimeterFactory

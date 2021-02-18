@@ -2,7 +2,7 @@ package event.deicing_system;
 
 public class DeIcingSystemDeIce
 {
-    int amount;
+    public int amount;
 
     public DeIcingSystemDeIce(int amount) {
         this.amount = amount;

@@ -1,25 +1,43 @@
 package section;
 
+import base.PrimaryFlightDisplay;
 import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
 
-import event.air_flow_sensor.*;
-import event.deicing_system.*;
-import event.engine_oil_tank.*;
-import event.fuel_tank.*;
+
 import event.shock_sensor.*;
 import event.stalling_sensor.*;
 import event.temperature_sensor.*;
+
+import event.air_flow_sensor.AirFlowSensorWingMeasure;
+import event.deicing_system.DeIcingSystemActivate;
+import event.deicing_system.DeIcingSystemDeIce;
+import event.deicing_system.DeIcingSystemDeactivate;
+import event.deicing_system.DeIcingSystemRefill;
+import event.engine_oil_tank.EngineOilTankDecreaseLevel;
+import event.engine_oil_tank.EngineOilTankIncreaseLevel;
+import event.fuel_tank.FuelTankRefill;
+import event.fuel_tank.FuelTankTakeOut;
+
 
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
 
+import factory.DeIcingSystemFactory;
+import factory.EngineOilTankFactory;
+import factory.FuelTankFactory;
+import factory.SlatFactory;
+import logging.LogEngine;
+import recorder.FlightRecorder;
+
+
 import factory.*;
 import recorder.FlightRecorder;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class Wing extends Subscriber {
@@ -118,46 +136,129 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(DeIcingSystemActivate deIcingSystemActivate){
-        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemActivate.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + deIcingSystemActivate.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + deIcingSystemActivate.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++) {
+                Method activateMethod = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("activate");
+                LogEngine.instance.write("activateMethod = " + activateMethod);
+
+                boolean active = (boolean) activateMethod.invoke(deIcingSystemPortList.get(i));
+                LogEngine.instance.write("active = " + active);
+
+                PrimaryFlightDisplay.instance.isDeIcingSystemActivated = active;
+                FlightRecorder.instance.insert("Wing", "DeIcingSystem (active): " + active);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (DeIcingSystemActivate): " + PrimaryFlightDisplay.instance.isDeIcingSystemActivated);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "DeIcingSystemActivate: " + PrimaryFlightDisplay.instance.isDeIcingSystemActivated);
     }
 
     @Subscribe
     public void receive(DeIcingSystemDeactivate deIcingSystemDeactivate){
-        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemDeactivate.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + deIcingSystemDeactivate.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + deIcingSystemDeactivate.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++) {
+                Method deactivateMethod = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("deactivate");
+                LogEngine.instance.write("deactivateMethod = " + deactivateMethod);
+
+                boolean active = (boolean) deactivateMethod.invoke(deIcingSystemPortList.get(i));
+                LogEngine.instance.write("active = " + active);
+
+                PrimaryFlightDisplay.instance.isDeIcingSystemActivated = active;
+                FlightRecorder.instance.insert("Wing", "DeIcingSystem (active): " + active);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (DeIcingSystemDeactivate): " + PrimaryFlightDisplay.instance.isDeIcingSystemActivated);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "DeIcingSystemDeactivate: " + PrimaryFlightDisplay.instance.isDeIcingSystemActivated);
     }
 
     @Subscribe
     public void receive(DeIcingSystemDeIce deIcingSystemDeIce){
-        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemDeIce.toString() + ")");
+        LogEngine.instance.write("+ Wing.receive(" + deIcingSystemDeIce.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + deIcingSystemDeIce.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++) {
+                Method deIce = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("deIce");
+                LogEngine.instance.write("deIceMethod = " + deIce);
+
+                int amount = (int) deIce.invoke(deIcingSystemPortList.get(i), deIcingSystemDeIce.amount);
+                LogEngine.instance.write("amount = " + amount);
+
+                PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
+                FlightRecorder.instance.insert("Wing", "DeIcingSystem (amount): " + amount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (DeIcingSystemDeIce): " + PrimaryFlightDisplay.instance.amountDeIcingSystem);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "DeIcingSystemDeIce: " + PrimaryFlightDisplay.instance.amountDeIcingSystem);
     }
 
     @Subscribe
     public void receive(DeIcingSystemRefill deIcingSystemRefill){
-        FlightRecorder.instance.insert("Wing", "receive("+ deIcingSystemRefill.toString() + ")");
-    }
+        LogEngine.instance.write("+ Wing.receive(" + deIcingSystemRefill.toString() + ")");
+        FlightRecorder.instance.insert("Wing", "receive(" + deIcingSystemRefill.toString() + ")");
 
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemBody; i++) {
+                Method refill = deIcingSystemPortList.get(i).getClass().getDeclaredMethod("refill");
+                LogEngine.instance.write("refillMethod = " + refill);
+
+                int amount = (int) refill.invoke(deIcingSystemPortList.get(i));
+                LogEngine.instance.write("amount = " + amount);
+
+                PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
+                FlightRecorder.instance.insert("Wing", "DeIcingSystem (amount): " + amount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (DeIcingSystemRefill): " + PrimaryFlightDisplay.instance.amountDeIcingSystem);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "DeIcingSystemRefill: " + PrimaryFlightDisplay.instance.amountDeIcingSystem);
+    }
     // --- EngineOilTank -----------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(EngineOilTankIncreaseLevel engineOilTankIncreaseLevel){
-        FlightRecorder.instance.insert("Wing", "receive("+ engineOilTankIncreaseLevel.toString() + ")");
+        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(EngineOilTankDecreaseLevel engineOilTankDecreaseLevel){
-        FlightRecorder.instance.insert("Wing", "receive("+ engineOilTankDecreaseLevel.toString() + ")");
+        throw new RuntimeException("Not implemented yet.");
     }
 
     // --- FuelTank -----------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(FuelTankTakeOut fuelTankTakeOut){
-        FlightRecorder.instance.insert("Wing", "receive("+ fuelTankTakeOut.toString() + ")");
+        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(FuelTankRefill fuelTankRefill){
-        FlightRecorder.instance.insert("Wing", "receive("+ fuelTankRefill.toString() + ")");
+        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
