@@ -9,7 +9,7 @@ public class TCAS {
     private boolean isOn = false;
     private boolean isConnected = false;
     private boolean isAlarm = false;
-    private int altitude;
+    private int altitude = 0;
 
     private TCAS() {
         port = new Port();
@@ -37,7 +37,7 @@ public class TCAS {
 
     public boolean innerScan(String environment) {
         // ist das richtig?
-        return environment.contains("bird");
+        return true;
     }
 
     public boolean innerAlarm() {

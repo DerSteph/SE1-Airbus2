@@ -30,6 +30,6 @@ public class DroopNoseFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "DroopNose");
+        return Factory.build(Configuration.instance.pathToDroopNoseArchive, "DroopNose");
     }
 }

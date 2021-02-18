@@ -449,32 +449,4 @@ public class Body extends Subscriber {
         LogEngine.instance.write("PrimaryFlightDisplay (isTCASOff): " + PrimaryFlightDisplay.instance.isTCASOn);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASOff: " + PrimaryFlightDisplay.instance.isTCASOn);
     }
-
-    // ----------------------------------------------------------------------------------------------------------------
-    // --- TurbulentAirFlowSensor -----------------------------------------------------------------------------------------------
-    @Subscribe
-    public void receive(TurbulentAirFlowSensorBodyMeasure turbulentAirFlowSensorBodyMeasure) {
-        LogEngine.instance.write("+ Body.receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
-        FlightRecorder.instance.insert("Body", "receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
-
-        try {
-            for (int i = 0; i < Configuration.instance.numberOfTurbulentAirFlowSensorBody; i++) {
-                Method alarmMethod = turbulentAirFlowSensorPortList.get(i).getClass().getDeclaredMethod("alarm");
-                LogEngine.instance.write("alarmMethod = " + alarmMethod);
-
-                boolean isAlarm = (boolean) alarmMethod.invoke(turbulentAirFlowSensorPortList.get(i));
-                LogEngine.instance.write("isTurbulentAirFlowAlarm = " + isAlarm);
-
-                PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm = isAlarm;
-                FlightRecorder.instance.insert("Body", "TurbulentAirFlowAlarm (isTurbulentAirFlowAlarm):" + isAlarm);
-
-                LogEngine.instance.write("+");
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        LogEngine.instance.write("PrimaryFlightDisplay (isTurbulentAirFlowAlarm): " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
-        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTurbulentAirFlowAlarm: " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
-    }
 }

@@ -179,33 +179,4 @@ public class Wing extends Subscriber {
         LogEngine.instance.write("PrimaryFlightDisplay (degreeDroopNose): " + PrimaryFlightDisplay.instance.degreeDroopNose);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "degreeDroopNose: " + PrimaryFlightDisplay.instance.degreeDroopNose);
     }
-
-    // ----------------------------------------------------------------------------------------------------------------
-    // --- TurbulentAirFlowSensor -----------------------------------------------------------------------------------------------
-
-    @Subscribe
-    public void receive(TurbulentAirFlowSensorWingMeasure turbulentAirFlowSensorWingMeasure) {
-        LogEngine.instance.write("+ Wing.receive(" + turbulentAirFlowSensorWingMeasure.toString() + ")");
-        FlightRecorder.instance.insert("Wing", "receive(" + turbulentAirFlowSensorWingMeasure.toString() + ")");
-
-        try {
-            for (int i = 0; i < Configuration.instance.numberOfTurbulentAirFlowSensorWing; i++) {
-                Method alarmMethod = turbulentAirFlowSensorPortList.get(i).getClass().getDeclaredMethod("alarm");
-                LogEngine.instance.write("alarmMethod = " + alarmMethod);
-
-                boolean isAlarm = (boolean) alarmMethod.invoke(turbulentAirFlowSensorPortList.get(i));
-                LogEngine.instance.write("isTurbulentAirFlowAlarm = " + isAlarm);
-
-                PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm = isAlarm;
-                FlightRecorder.instance.insert("Body", "TurbulentAirFlowAlarm (isTurbulentAirFlowAlarm):" + isAlarm);
-
-                LogEngine.instance.write("+");
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        LogEngine.instance.write("PrimaryFlightDisplay (isTurbulentAirFlowAlarm): " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
-        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTurbulentAirFlowAlarm: " + PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm);
-    }
 }

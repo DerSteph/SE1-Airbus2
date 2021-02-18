@@ -30,6 +30,6 @@ public class TCASFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "TCAS");
+        return Factory.build(Configuration.instance.pathToTCASArchive, "TCAS");
     }
 }

@@ -36,12 +36,12 @@ public class DroopNose {
     }
 
     public int innerDown(int degree) {
-        this.degree = degree;
+        this.degree = this.degree-degree;
         return this.degree;
     }
 
     public int innerUp(int degree) {
-        this.degree = degree;
+        this.degree = this.degree+degree;
         return this.degree;
     }
 
