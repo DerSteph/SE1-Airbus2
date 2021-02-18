@@ -21,5 +21,20 @@ public enum Configuration {
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
 
+    //shock_sensor
+    public String pathToShockSensorJavaArchive = commonPathToJavaArchive + "shock_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "shock_sensor.jar";
+    public int numberOfShockSensorBody = 2;
+    public int numberOfShockSensorWing = 2;
+
+    //stalling_sensor
+    public String pathToStallingSensorJavaArchive = commonPathToJavaArchive + "stalling_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "stalling_sensor.jar";
+    public int numberOfStallingSensorBody = 2;
+    public int numberOfStallingSensorWing = 4;
+
+    //temperature_sensor
+    public String pathToTemperatureSensorJavaArchive = commonPathToJavaArchive + "temperature_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "temperature_sensor.jar";
+    public int numberOfTemperatureSensorBody = 2;
+    public int numberOfTemperatureSensorWing = 4;
+
     // Add new configurations below...
 }
