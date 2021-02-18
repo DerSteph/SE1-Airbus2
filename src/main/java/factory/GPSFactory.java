@@ -30,6 +30,6 @@ public class GPSFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "GPS");
+        return Factory.build(Configuration.instance.pathToGPSArchive, "GPS");
     }
 }

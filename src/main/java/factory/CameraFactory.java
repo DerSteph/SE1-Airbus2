@@ -30,6 +30,6 @@ public class CameraFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "Camera");
+        return Factory.build(Configuration.instance.pathToCameraArchive, "Camera");
     }
 }

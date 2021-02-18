@@ -30,6 +30,6 @@ public class TurbulentAirFlowSensorFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "TurbulentAirFlowSensor");
+        return Factory.build(Configuration.instance.pathToTurbulentAirFlowSensorArchive, "TurbulentAirFlowSensor");
     }
 }

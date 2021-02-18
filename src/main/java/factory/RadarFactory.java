@@ -30,6 +30,6 @@ public class RadarFactory extends Factory {
 //    }
 
     public static Object build() {
-        return Factory.build(Configuration.instance.pathToSlatJavaArchive, "Radar");
+        return Factory.build(Configuration.instance.pathToRadarArchive, "Radar");
     }
 }
