@@ -63,7 +63,7 @@ public enum Configuration {
     public int numberOfFuelTank = 3;
 
     // air_flow_sensor
-    public String pathToAirFlowSensorJavaArchive = commonPathToJavaArchive + "air_flow_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "air_flow_sensor.jar";
+    public String pathToAirFlowSensorJavaArchive = commonPathToJavaArchive + "airflow_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "air_flow_sensor.jar";
     public int numberOfAirFlowSensorBody = 2;
     public int numberOfAirFlowSensorWing = 2;
 

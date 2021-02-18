@@ -4,32 +4,21 @@ import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
 
-
-
-import event.air_flow_sensor.AirFlowSensorWingMeasure;
-import event.deicing_system.DeIcingSystemActivate;
-import event.deicing_system.DeIcingSystemDeIce;
-import event.deicing_system.DeIcingSystemDeactivate;
-import event.deicing_system.DeIcingSystemRefill;
-import event.engine_oil_tank.EngineOilTankDecreaseLevel;
-import event.engine_oil_tank.EngineOilTankIncreaseLevel;
-import event.fuel_tank.FuelTankRefill;
-import event.fuel_tank.FuelTankTakeOut;
+import event.air_flow_sensor.*;
+import event.deicing_system.*;
+import event.engine_oil_tank.*;
+import event.fuel_tank.*;
+import event.shock_sensor.*;
+import event.stalling_sensor.*;
+import event.temperature_sensor.*;
 
 import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
-import factory.DeIcingSystemFactory;
-import factory.EngineOilTankFactory;
-import factory.FuelTankFactory;
-import factory.SlatFactory;
-import recorder.FlightRecorder;
 
 import factory.*;
-import event.shock_sensor.*;
-import event.stalling_sensor.*;
-import event.temperature_sensor.*;
+import recorder.FlightRecorder;
 
 import java.util.ArrayList;
 

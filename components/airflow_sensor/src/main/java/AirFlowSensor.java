@@ -4,9 +4,8 @@ public class AirFlowSensor
     private static AirFlowSensor instance = new AirFlowSensor();
     // port
     public Port port;
-    private String manufacturer = "Max Mustermann / Jemand Anderes";
-    private String type = "team 10";
-    private String id = "2120099 / 7903471";
+    private String manufacturer = "2120099";
+
 
     private int airPressure;
     private boolean isAlarm;
@@ -26,7 +25,7 @@ public class AirFlowSensor
     // inner methods
     public String innerVersion()
     {
-        return "AirFlowSensor // " + manufacturer + " - " + type + " - " + id;
+        return "AirFlowSensor // " + manufacturer;
     }
 
     public int innerMeasure(String airFlow) {

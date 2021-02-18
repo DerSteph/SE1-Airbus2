@@ -5,18 +5,14 @@ import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
 
-import event.air_flow_sensor.AirFlowSensorBodyMeasure;
-import event.battery.BatteryCharge;
-import event.battery.BatteryDischarge;
-import event.deicing_system.DeIcingSystemActivate;
-import event.deicing_system.DeIcingSystemDeIce;
-import event.deicing_system.DeIcingSystemDeactivate;
-import event.deicing_system.DeIcingSystemRefill;
-import event.pitot_tube.PitotTubeClean;
-import event.pitot_tube.PitotTubeMeasureStaticPressure;
-import event.pitot_tube.PitotTubeMeasureTotalPressure;
-import event.pitot_tube.PitotTubeMeasureVelocity;
+import event.air_flow_sensor.*;
+import event.battery.*;
+import event.deicing_system.*;
+import event.pitot_tube.*;
 import event.radar_altimeter.*;
+import event.shock_sensor.*;
+import event.stalling_sensor.*;
+import event.temperature_sensor.*;
 
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
@@ -24,11 +20,6 @@ import event.weather_radar.WeatherRadarScan;
 import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
-
-import factory.*;
-import event.shock_sensor.*;
-import event.stalling_sensor.*;
-import event.temperature_sensor.*;
 
 import java.io.ObjectInputFilter;
 import java.lang.reflect.Method;

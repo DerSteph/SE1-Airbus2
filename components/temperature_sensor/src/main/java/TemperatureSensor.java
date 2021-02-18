@@ -4,9 +4,7 @@ public class TemperatureSensor
     private static TemperatureSensor instance = new TemperatureSensor();
     // port
     public Port port;
-    private String manufacturer = "Max Mustermann / Jemand Anderes";
-    private String type = "team 10";
-    private String id = "2120099 / 7903471";
+    private String manufacturer = "2120099";
 
     private int temperature = 0;
     private boolean isAlarm;
@@ -26,7 +24,7 @@ public class TemperatureSensor
     // inner methods
     public String innerVersion()
     {
-        return "TemperatureSensor // " + manufacturer + " - " + type + " - " + id;
+        return "TemperatureSensor // " + manufacturer;
     }
 
     public int innerMeasure() {

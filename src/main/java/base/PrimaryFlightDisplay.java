@@ -14,7 +14,7 @@ public enum PrimaryFlightDisplay {
 
     public int temperatureBody;
     public boolean isTemperatureSensorBodyAlarm;
-    public int TemperatureWing;
+    public int temperatureWing;
     public boolean isTemperatureSensorWingAlarm;
 
     public int airPressure;
