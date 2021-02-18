@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestDroopNose" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-02-18T15:18:38" hostname="DESKTOP-DLH5840" time="1.316">
+  <properties/>
+  <testcase name="factory()" classname="TestDroopNose" time="0.405"/>
+  <testcase name="methods()" classname="TestDroopNose" time="0.21"/>
+  <testcase name="neutral()" classname="TestDroopNose" time="0.183"/>
+  <testcase name="fullDown()" classname="TestDroopNose" time="0.165"/>
+  <testcase name="down()" classname="TestDroopNose" time="0.166"/>
+  <testcase name="up()" classname="TestDroopNose" time="0.182"/>
+  <system-out><![CDATA[
+
+DroopNose$Port.down()
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 4:18:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 4:18:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 4:18:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 4:18:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 4:18:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 4:18:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>
