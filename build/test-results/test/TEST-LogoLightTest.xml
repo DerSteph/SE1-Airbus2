@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LogoLightTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:39" hostname="devman" time="0.581">
+  <properties/>
+  <testcase name="factory()" classname="LogoLightTest" time="0.142"/>
+  <testcase name="methods()" classname="LogoLightTest" time="0.144"/>
+  <testcase name="on()" classname="LogoLightTest" time="0.146"/>
+  <testcase name="off()" classname="LogoLightTest" time="0.144"/>
+  <system-out><![CDATA[
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

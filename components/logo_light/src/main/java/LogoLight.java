@@ -5,9 +5,7 @@ public class LogoLight {
     // Port
     public Port port;
 
-    private String manufacturer = "<student_name_01> / <student_name_02>";
-    private String type = "team <id>";
-    private String id = "<student_id_01> / <student_id_02>";
+    private String manufacturer = "5703004 / 1716504";
 
     private boolean isOn;
 
@@ -37,7 +35,7 @@ public class LogoLight {
 
         @Override
         public String version() {
-            return "LogoLight // " + manufacturer + " - " + type + " - " + id;
+            return "LogoLight // " + manufacturer;
         }
 
         @Override

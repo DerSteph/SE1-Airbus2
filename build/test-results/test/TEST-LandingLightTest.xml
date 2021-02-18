@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LandingLightTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:35" hostname="devman" time="0.478">
+  <properties/>
+  <testcase name="factory()" classname="LandingLightTest" time="0.118"/>
+  <testcase name="methods()" classname="LandingLightTest" time="0.124"/>
+  <testcase name="on()" classname="LandingLightTest" time="0.116"/>
+  <testcase name="off()" classname="LandingLightTest" time="0.119"/>
+  <system-out><![CDATA[
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:35 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:35 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:35 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:36 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

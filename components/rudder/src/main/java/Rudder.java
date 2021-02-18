@@ -1,13 +1,11 @@
 public class Rudder {
 
-    private static RightAileron instance = new Rudder();
+    private static Rudder instance = new Rudder();
 
     // Port
     public Port port;
 
-    private String manufacturer = "<student_name_01> / <student_name_02>";
-    private String type = "team <id>";
-    private String id = "<student_id_01> / <student_id_02>";
+    private String manufacturer = "5703004 / 1716504";
 
     private int degree;
 
@@ -52,7 +50,7 @@ public class Rudder {
 
         @Override
         public String version() {
-            return "Rudder // " + manufacturer + " - " + type + " - " + id;
+            return "Rudder // " + manufacturer;
         }
 
         @Override

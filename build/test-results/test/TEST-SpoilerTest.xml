@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SpoilerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:28" hostname="devman" time="0.882">
+  <properties/>
+  <testcase name="factory()" classname="SpoilerTest" time="0.161"/>
+  <testcase name="methods()" classname="SpoilerTest" time="0.136"/>
+  <testcase name="neutral()" classname="SpoilerTest" time="0.165"/>
+  <testcase name="fullUp()" classname="SpoilerTest" time="0.152"/>
+  <testcase name="up()" classname="SpoilerTest" time="0.128"/>
+  <testcase name="down()" classname="SpoilerTest" time="0.135"/>
+  <system-out><![CDATA[
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:28 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:28 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:28 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:29 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:29 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:29 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

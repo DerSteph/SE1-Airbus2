@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WeatherRadarTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:36" hostname="devman" time="2.03">
+  <properties/>
+  <testcase name="factory()" classname="WeatherRadarTest" time="0.141"/>
+  <testcase name="methods()" classname="WeatherRadarTest" time="0.142"/>
+  <testcase name="on()" classname="WeatherRadarTest" time="0.14"/>
+  <testcase name="scanCloud()" classname="WeatherRadarTest" time="0.144"/>
+  <testcase name="scanBird()" classname="WeatherRadarTest" time="0.133"/>
+  <testcase name="off()" classname="WeatherRadarTest" time="0.132"/>
+  <testcase name="startup()" classname="WeatherRadarTest" time="0.132"/>
+  <testcase name="taxi()" classname="WeatherRadarTest" time="0.142"/>
+  <testcase name="takeoff()" classname="WeatherRadarTest" time="0.136"/>
+  <testcase name="climbing()" classname="WeatherRadarTest" time="0.118"/>
+  <testcase name="rightTurn()" classname="WeatherRadarTest" time="0.124"/>
+  <testcase name="leftTurn()" classname="WeatherRadarTest" time="0.144"/>
+  <testcase name="descent()" classname="WeatherRadarTest" time="0.144"/>
+  <testcase name="landing()" classname="WeatherRadarTest" time="0.129"/>
+  <testcase name="shutdown()" classname="WeatherRadarTest" time="0.114"/>
+  <system-out><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:36 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:36 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:37 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

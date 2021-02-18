@@ -7,9 +7,7 @@ public class CostOptimizer {
     // Port
     public Port port;
 
-    private String manufacturer = "<student_name_01> / <student_name_02>";
-    private String type = "team <id>";
-    private String id = "<student_id_01> / <student_id_02>";
+    private String manufacturer = "5703004 / 1716504";
 
     private boolean isOn;
     private ArrayList<CheckPoint> checkPointList;
@@ -42,12 +40,12 @@ public class CostOptimizer {
         return checkPointList.size();
     }
 
-    private int innerOptimize(ArrayList<CostOptimizer> checkPointList) {
+    private int innerOptimize(ArrayList<CheckPoint> checkPointList) {
         this.checkPointList = checkPointList;
 
         // Do some optimization here, do some optimization there...
 
-        return this.checkPointlist.size();
+        return this.checkPointList.size();
     }
 
     private boolean innerValidate(int costIndex) {
@@ -64,7 +62,7 @@ public class CostOptimizer {
 
         @Override
         public String version() {
-            return "CostOptimizer // " + manufacturer + " - " + type + " - " + id;
+            return "CostOptimizer // " + manufacturer;
         }
 
         @Override
@@ -84,7 +82,7 @@ public class CostOptimizer {
 
         @Override
         public int optimize(ArrayList<CheckPoint> checkPointList) {
-            return innerOptimize();
+            return innerOptimize(checkPointList);
         }
 
         @Override
