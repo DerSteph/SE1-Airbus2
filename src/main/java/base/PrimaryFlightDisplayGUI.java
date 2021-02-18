@@ -31,19 +31,20 @@ public class PrimaryFlightDisplayGUI extends Application {
     private RadioButton weatherRadarOnButton;
 
     // slat
-    private PrimaryFlightDisplayEntry slatEntry;
+    private PrimaryFlightDisplayEntry slatDegreeEntry;
+    private Spinner<Integer> slatSpinner;
 
     // left_aileron
-    private PrimaryFlightDisplayEntry leftAileronEntry;
+    private PrimaryFlightDisplayEntry leftAileronDegreeEntry;
+    private Spinner<Integer> leftAileronSpinner;
 
     // right_aileron
-    private PrimaryFlightDisplayEntry rightAileronEntry;
+    private PrimaryFlightDisplayEntry rightAileronDegreeEntry;
+    private Spinner<Integer> rightAileronSpinner;
 
     // rudder
-    private PrimaryFlightDisplayEntry rudderEntry;
-
-    // route_management
-    private PrimaryFlightDisplayEntry routeManagementEntry;
+    private PrimaryFlightDisplayEntry rudderDegreeEntry;
+    private Spinner<Integer> rudderSpinner;
 
     public static void main(String... args) {
         LogEngine.instance.init();
@@ -239,43 +240,55 @@ public class PrimaryFlightDisplayGUI extends Application {
 
         // slat
         Label slatLabel = new Label("Slat : ");
-        gridPane.add(slatLabel, 0, 0);
+        gridPane.add(slatLabel, 0, 2);
+
+        slatSpinner = new Spinner<>();
+        slatSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> slatSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        slatSpinner.setValueFactory(slatSpinnerValueFactory);
+        gridPane.add(slatSpinner, 1, 2);
         // ...
 
         // left_aileron
         Label leftAileronLabel = new Label("LeftAileron : ");
-        gridPane.add(leftAileronLabel, 0, 0);
+        gridPane.add(leftAileronLabel, 2, 2);
+
+        leftAileronSpinner = new Spinner<>();
+        leftAileronSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> leftAileronSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        leftAileronSpinner.setValueFactory(leftAileronSpinnerValueFactory);
+        gridPane.add(leftAileronSpinner, 3, 2);
 
         // right_aileron
         Label rightAileronLabel = new Label("RightAileron : ");
-        gridPane.add(rightAileronLabel, 0, 0);
+        gridPane.add(rightAileronLabel, 4, 2);
+
+        rightAileronSpinner = new Spinner<>();
+        rightAileronSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> rightAileronSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        rightAileronSpinner.setValueFactory(rightAileronSpinnerValueFactory);
+        gridPane.add(rightAileronSpinner, 5, 2);
 
         // rudder
         Label rudderLabel = new Label("Rudder : ");
-        gridPane.add(rudderLabel, 0, 0);
+        gridPane.add(rudderLabel, 6, 2);
 
-        // route_management
-        Label routeManagementLabel = new Label("RouteManagement : ");
-        gridPane.add(routeManagementLabel, 0, 0);
-
-        // spoiler
-        // ...
-
-        // anti_collision_light
-        // ...
-
-        // cargo_compartment_light
+        rudderSpinner = new Spinner<>();
+        rudderSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> rudderSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        rudderSpinner.setValueFactory(rudderSpinnerValueFactory);
+        gridPane.add(rudderSpinner, 7, 2);
 
         // --- insert section: end
 
-        Label frequencyLabel = new Label("Frequency : ");
-        gridPane.add(frequencyLabel, 0, 2);
+//        Label frequencyLabel = new Label("Frequency : ");
+//        gridPane.add(frequencyLabel, 0, 2);
 
-        Spinner<Integer> vcfSpinner = new Spinner<>();
-        vcfSpinner.setMaxWidth(60);
-        SpinnerValueFactory<Integer> vcfSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(200, 300, 250);
-        vcfSpinner.setValueFactory(vcfSpinnerValueFactory);
-        gridPane.add(vcfSpinner, 1, 2);
+//        Spinner<Integer> vcfSpinner = new Spinner<>();
+//        vcfSpinner.setMaxWidth(60);
+//        SpinnerValueFactory<Integer> vcfSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(200, 300, 250);
+//        vcfSpinner.setValueFactory(vcfSpinnerValueFactory);
+//        gridPane.add(vcfSpinner, 1, 2);
 
         return gridPane;
     }
@@ -314,6 +327,22 @@ public class PrimaryFlightDisplayGUI extends Application {
         // weather_radar
         weatherRadarIsOnEntry = new PrimaryFlightDisplayEntry("WeatherRadar (isOn)", Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         dataList.add(weatherRadarIsOnEntry);
+
+        // slat
+        slatDegreeEntry = new PrimaryFlightDisplayEntry("Slat (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeSlat));
+        dataList.add(slatDegreeEntry);
+
+        // left_aileron
+        leftAileronDegreeEntry = new PrimaryFlightDisplayEntry("LeftAileron (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeLeftAileron));
+        dataList.add(leftAileronDegreeEntry);
+
+        // right_aileron
+        rightAileronDegreeEntry = new PrimaryFlightDisplayEntry("RightAileron (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeRightAileron));
+        dataList.add(rightAileronDegreeEntry);
+
+        // rudder
+        rudderDegreeEntry = new PrimaryFlightDisplayEntry("Rudder (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeRudder));
+        dataList.add(rudderDegreeEntry);
     }
 
     private ObservableList getInitialTableData() {
@@ -326,6 +355,18 @@ public class PrimaryFlightDisplayGUI extends Application {
         // weather_radar
         weatherRadarIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         setWeatherRadarToggleGroup(PrimaryFlightDisplay.instance.isWeatherRadarOn);
+
+        // slat
+        slatDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeSlat));
+
+        // left_aileron
+        leftAileronDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeLeftAileron));
+
+        // right_aileron
+        rightAileronDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeRightAileron));
+
+        // rudder
+        rudderDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeRudder));
 
         tableView.refresh();
     }

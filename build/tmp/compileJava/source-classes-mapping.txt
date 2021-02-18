@@ -142,6 +142,16 @@ event/cost_optimizer/CostOptimizerRemoveCheckPoint.java
  event.cost_optimizer.CostOptimizerRemoveCheckPoint
 base/Airplane.java
  base.Airplane
+factory/SpoilerFactory.java
+ factory.SpoilerFactory
+event/cost_optimizer/CostOptimizerOptimize.java
+ event.cost_optimizer.CostOptimizerOptimize
+event/cost_optimizer/CostOptimizerAddCheckPoint.java
+ event.cost_optimizer.CostOptimizerAddCheckPoint
+factory/LeftNavigationLightFactory.java
+ factory.LeftNavigationLightFactory
+section/Wing.java
+ section.Wing
 base/PrimaryFlightDisplayGUI.java
  base.PrimaryFlightDisplayGUI
  base.PrimaryFlightDisplayGUI$1
@@ -153,13 +163,3 @@ base/PrimaryFlightDisplayGUI.java
  base.PrimaryFlightDisplayGUI$7
  base.PrimaryFlightDisplayGUI$8
  base.PrimaryFlightDisplayGUI$9
-event/cost_optimizer/CostOptimizerOptimize.java
- event.cost_optimizer.CostOptimizerOptimize
-event/cost_optimizer/CostOptimizerAddCheckPoint.java
- event.cost_optimizer.CostOptimizerAddCheckPoint
-factory/LeftNavigationLightFactory.java
- factory.LeftNavigationLightFactory
-section/Wing.java
- section.Wing
-factory/SpoilerFactory.java
- factory.SpoilerFactory
