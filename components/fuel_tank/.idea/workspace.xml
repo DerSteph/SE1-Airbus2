@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe65f833-14d0-48e7-a37b-21cbdc79e2a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/fuel_tank.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FuelTank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IFuelTank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/fuel_tank/FuelTankRefill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/event/fuel_tank/FuelTankTakeOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/factory/FuelTankFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../engine_oil_tank/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../engine_oil_tank/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../engine_oil_tank/src/main/java/EngineOilTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/../engine_oil_tank/src/main/java/EngineOilTank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplayGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/base/PrimaryFlightDisplayGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/configuration/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/section/Wing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/section/Wing.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ocBE1ZLcPkGfjFr1WhMN13nXqE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="fuel_tank [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.fuel_tank [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe65f833-14d0-48e7-a37b-21cbdc79e2a2" name="Default Changelist" comment="" />
+      <created>1613575884131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613575884131</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -21,6 +21,7 @@ public enum Configuration {
     public String pathToSlatJavaArchive = commonPathToJavaArchive + "slat" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "slat.jar";
     public int numberOfSlat = 6;
 
+
     //shock_sensor
     public String pathToShockSensorJavaArchive = commonPathToJavaArchive + "shock_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "shock_sensor.jar";
     public int numberOfShockSensorBody = 2;
@@ -35,6 +36,32 @@ public enum Configuration {
     public String pathToTemperatureSensorJavaArchive = commonPathToJavaArchive + "temperature_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "temperature_sensor.jar";
     public int numberOfTemperatureSensorBody = 2;
     public int numberOfTemperatureSensorWing = 4;
+
+    // battery
+    public String pathToBatteryJavaArchive = commonPathToJavaArchive + "battery" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "battery.jar";
+    public int numberOfBattery = 24;
+
+    // deicing_system
+    public String pathToDeIcingSystemJavaArchive = commonPathToJavaArchive + "deicing_system" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "deicing_system.jar";
+    public int numberOfDeIcingSystemBody = 2;
+    public int numberOfDeIcingSystemWing = 2;
+
+    // pitot_tube
+    public String pathToPitotTubeJavaArchive = commonPathToJavaArchive + "pitot_tube" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "pitot_tube.jar";
+    public int numberOfPitotTube = 2;
+
+    // radar_altimeter
+    public String pathToRadarAltimeterJavaArchive = commonPathToJavaArchive + "radar_altimeter" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "radar_altimeter.jar";
+    public int numberOfRadarAltimeter = 2;
+
+    // engine_oil_tank
+    public String pathToEngineOilTankJavaArchive = commonPathToJavaArchive + "engine_oil_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "engine_oil_tank.jar";
+    public int numberOfEngineOilTank = 4;
+
+    // fuel_tank
+    public String pathToFuelTankJavaArchive = commonPathToJavaArchive + "fuel_tank" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "fuel_tank.jar";
+    public int numberOfFuelTank = 3;
+
 
     // Add new configurations below...
 }

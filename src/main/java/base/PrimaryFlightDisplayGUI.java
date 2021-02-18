@@ -33,6 +33,27 @@ public class PrimaryFlightDisplayGUI extends Application {
     // slat
     private PrimaryFlightDisplayEntry slatEntry;
 
+    // battery
+    private PrimaryFlightDisplayEntry batteryPercentage;
+
+    // deicing_system
+    private PrimaryFlightDisplayEntry isDeIcingSystemActivated;
+    private PrimaryFlightDisplayEntry amountDeIcingSystem;
+
+    // pitot_tube
+    private PrimaryFlightDisplayEntry isPitotTubeCleaned;
+    private PrimaryFlightDisplayEntry velocity;
+
+    // radar_altimeter
+    private PrimaryFlightDisplayEntry isRadarAltimeterOn;
+    private PrimaryFlightDisplayEntry altitudeRadarAltimeter;
+
+    // engine_oil_tank
+    private PrimaryFlightDisplayEntry levelEngineOilTank;
+
+    // fuel_tank
+    private PrimaryFlightDisplayEntry amountOfFuel;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
