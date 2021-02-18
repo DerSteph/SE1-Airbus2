@@ -2,9 +2,9 @@ package event.shock_sensor;
 
 public class ShockSensorBodyCalibrate
 {
-    String level;
+    double level;
 
-    public ShockSensorBodyCalibrate(String level) {
+    public ShockSensorBodyCalibrate(double level) {
         this.level = level;
     }
 

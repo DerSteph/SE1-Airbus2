@@ -5,6 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import configuration.Configuration;
 import event.Subscriber;
 
+import event.air_flow_sensor.AirFlowSensorBodyMeasure;
 import event.battery.BatteryCharge;
 import event.battery.BatteryDischarge;
 import event.deicing_system.DeIcingSystemActivate;
@@ -40,6 +41,8 @@ public class Body extends Subscriber {
 
     private ArrayList<Object> shockSensorPortList;
     private ArrayList<Object> stallingSensorPortList;
+    private ArrayList<Object> temperatureSensorPortList;
+    private ArrayList<Object> airFlowSensorPortList;
 
     private ArrayList<Object> batteryPortList;
     private ArrayList<Object> deIcingSystemPortList;
@@ -54,6 +57,8 @@ public class Body extends Subscriber {
 
         shockSensorPortList = new ArrayList<>();
         stallingSensorPortList = new ArrayList<>();
+        temperatureSensorPortList = new ArrayList<>();
+        airFlowSensorPortList = new ArrayList<>();
 
         batteryPortList = new ArrayList<>();
         deIcingSystemPortList = new ArrayList<>();
@@ -73,7 +78,6 @@ public class Body extends Subscriber {
             slatPortList .add(SlatFactory.build());
         }
 
-
         for (int i = 0; i < Configuration.instance.numberOfShockSensorBody; i++) {
             shockSensorPortList.add(ShockSensorFactory.build());
         }
@@ -82,6 +86,13 @@ public class Body extends Subscriber {
             stallingSensorPortList.add(StallingSensorFactory.build());
         }
 
+        for (int i = 0; i < Configuration.instance.numberOfTemperatureSensorBody; i++) {
+            temperatureSensorPortList.add(TemperatureSensorFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfAirFlowSensorBody; i++) {
+            airFlowSensorPortList.add(AirFlowSensorFactory.build());
+        }
 
         for (int i = 0; i < Configuration.instance.numberOfBattery; i++)
         {
@@ -277,6 +288,15 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(TemperatureSensorBodyMeasure temperatureSensorBodyMeasure) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- AirFlowSensor ----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(AirFlowSensorBodyMeasure airFlowSensorBodyMeasure) {
         throw new RuntimeException("Not implemented yet.");
     }
 

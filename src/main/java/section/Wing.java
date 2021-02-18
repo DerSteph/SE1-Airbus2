@@ -6,6 +6,7 @@ import event.Subscriber;
 
 
 
+import event.air_flow_sensor.AirFlowSensorWingMeasure;
 import event.deicing_system.DeIcingSystemActivate;
 import event.deicing_system.DeIcingSystemDeIce;
 import event.deicing_system.DeIcingSystemDeactivate;
@@ -39,6 +40,7 @@ public class Wing extends Subscriber {
     private ArrayList<Object> shockSensorPortList;
     private ArrayList<Object> stallingSensorPortList;
     private ArrayList<Object> temperatureSensorPortList;
+    private ArrayList<Object> airFlowSensorPortList;
 
     private ArrayList<Object> deIcingSystemPortList;
     private ArrayList<Object> engineOilTankPortList;
@@ -52,6 +54,7 @@ public class Wing extends Subscriber {
         shockSensorPortList = new ArrayList<>();
         stallingSensorPortList = new ArrayList<>();
         temperatureSensorPortList = new ArrayList<>();
+        airFlowSensorPortList = new ArrayList<>();
 
         deIcingSystemPortList = new ArrayList<>();
         engineOilTankPortList = new ArrayList<>();
@@ -66,7 +69,6 @@ public class Wing extends Subscriber {
             slatPortList .add(SlatFactory.build());
         }
 
-
         for (int i = 0; i < Configuration.instance.numberOfShockSensorWing; i++) {
             shockSensorPortList.add(ShockSensorFactory.build());
         }
@@ -77,6 +79,10 @@ public class Wing extends Subscriber {
 
         for (int i = 0; i < Configuration.instance.numberOfTemperatureSensorWing; i++) {
             temperatureSensorPortList.add(TemperatureSensorFactory.build());
+        }
+
+        for (int i = 0; i < Configuration.instance.numberOfAirFlowSensorWing; i++) {
+            airFlowSensorPortList.add(AirFlowSensorFactory.build());
         }
 
         for (int i = 0; i < Configuration.instance.numberOfDeIcingSystemWing; i++)
@@ -194,6 +200,15 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(TemperatureSensorWingMeasure temperatureSensorWingMeasure) {
+        throw new RuntimeException("Not implemented yet.");
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // --- AirFlowSensor ----------------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(AirFlowSensorWingMeasure airFlowSensorWingMeasure) {
         throw new RuntimeException("Not implemented yet.");
     }
 

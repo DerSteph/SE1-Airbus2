@@ -17,6 +17,10 @@ public enum PrimaryFlightDisplay {
     public int TemperatureWing;
     public boolean isTemperatureSensorWingAlarm;
 
+    public int airPressure;
+    public boolean isAirFlowSensorBodyAlarm;
+    public boolean isAirFlowSensorWingAlarm;
+
     public int percentageBattery;
     public boolean isDeIcingSystemActivated;
     public int amountDeIcingSystem;
