@@ -32,7 +32,7 @@ public class Gear{
     public boolean innerDown() {
         isDown=true;
         System.out.println("Gear down");
-        return true;
+        return isDown;
     }
 
     private GearType innerSetGearType(String type) {
@@ -62,7 +62,7 @@ public class Gear{
     public boolean innerUp() {
         isDown=false;
         System.out.println("Gear up");
-        return true;
+        return isDown;
     }
 
     public int innerReleaseBrake(){

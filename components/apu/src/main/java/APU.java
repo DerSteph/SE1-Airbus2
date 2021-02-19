@@ -27,7 +27,7 @@ public class APU{
     public boolean innerStart() {
         isStarted=true;
         System.out.println("APU started");
-        return true;
+        return isStarted;
     }
 
     public int innerIncreaseRPM(int value) {
@@ -51,7 +51,7 @@ public class APU{
     public boolean innerShutdown() {
         isStarted=false;
         System.out.println("APU shutdown");
-        return true;
+        return isStarted;
     }
 
     public class Port implements IAPU {

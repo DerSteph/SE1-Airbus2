@@ -28,7 +28,7 @@ public class Engine{
     public boolean innerStart() {
         isStarted=true;
         System.out.println("Engine started");
-        return true;
+        return isStarted;
     }
 
     public int innerIncreaseRPM(int value) {
@@ -52,7 +52,7 @@ public class Engine{
     public boolean innerShutdown() {
         isStarted=false;
         System.out.println("Engine shutdown");
-        return true;
+        return isStarted;
     }
 
     public void innerExtinguishFire(){
