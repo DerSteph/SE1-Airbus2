@@ -12,4 +12,8 @@ public class HydraulicPumpBodyCompressAmount {
     public String toString() {
         return "Event: HydraulicPumpBody - CompressAmount";
     }
+
+    public int getValue() {
+        return value;
+    }
 }

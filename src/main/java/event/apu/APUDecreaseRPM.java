@@ -8,4 +8,8 @@ public class APUDecreaseRPM {
     public String toString() {
         return "Event: APU - Decrease RPM";
     }
+
+    public int getValue() {
+        return value;
+    }
 }

@@ -12,4 +12,8 @@ public class HydraulicPumpWingRefillOilAmount {
     public String toString() {
         return "Event: HydraulicPumpWing - RefillOilAmount";
     }
+
+    public int getValue() {
+        return value;
+    }
 }
