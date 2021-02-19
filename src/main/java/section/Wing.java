@@ -71,6 +71,12 @@ public class Wing extends Subscriber {
         throw new RuntimeException("Not implemented yet.");
     }
 
+
+    // ----------------------------------------------------------------------------------------------------------------
+    // --- TurbulentAirFlowSensor -----------------------------------------------------------------------------------------------
+    public void receive(TurbulentAirFlowSensorWingMeasure turbulentAirFlowSensorWingMeasure) {
+        FlightRecorder.instance.insert("Wing", "receive(" + turbulentAirFlowSensorWingMeasure.toString() + ")");
+    }
     // ----------------------------------------------------------------------------------------------------------------
 
     // ----------------------------------------------------------------------------------------------------------------

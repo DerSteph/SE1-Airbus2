@@ -54,27 +54,18 @@ event/slat/SlatFullDown.java
  event.slat.SlatFullDown
 event/portable_watertank/PortableWaterTankRefill.java
  event.portable_watertank.PortableWaterTankRefill
-base/Airplane.java
- base.Airplane
-base/PrimaryFlightDisplayGUI.java
- base.PrimaryFlightDisplayGUI
- base.PrimaryFlightDisplayGUI$1
- base.PrimaryFlightDisplayGUI$2
- base.PrimaryFlightDisplayGUI$3
- base.PrimaryFlightDisplayGUI$4
- base.PrimaryFlightDisplayGUI$5
- base.PrimaryFlightDisplayGUI$6
- base.PrimaryFlightDisplayGUI$7
- base.PrimaryFlightDisplayGUI$8
- base.PrimaryFlightDisplayGUI$9
+factory/GPSFactory.java
+ factory.GPSFactory
+event/sat_com/SatComReceive.java
+ event.sat_com.SatComReceive
 event/radar/GPSOn.java
  event.radar.GPSOn
 event/tcas/TCASConnect.java
  event.tcas.TCASConnect
 base/Cockpit.java
  base.Cockpit
-factory/TurbulentAirFlowSensorFactory.java
- factory.TurbulentAirFlowSensorFactory
+event/wastewater_tank/WasteWaterTankLock.java
+ event.wastewater_tank.WasteWaterTankLock
 event/weather_radar/WeatherRadarOn.java
  event.weather_radar.WeatherRadarOn
 event/slat/SlatDown.java
@@ -107,8 +98,8 @@ factory/Factory.java
  factory.Factory
 event/droop_nose/DroopNoseFullDown.java
  event.droop_nose.DroopNoseFullDown
-factory/GPSFactory.java
- factory.GPSFactory
+event/vhf/VHFOff.java
+ event.vhf.VHFOff
 event/radar/GPSScan.java
  event.radar.GPSScan
 event/portable_watertank/PortableWaterTankUnlock.java
@@ -131,8 +122,8 @@ event/droop_nose/DroopNoseUp.java
  event.droop_nose.DroopNoseUp
 event/tcas/TCASAlarm.java
  event.tcas.TCASAlarm
-factory/RadarFactory.java
- factory.RadarFactory
+event/vhf/VHFSearch.java
+ event.vhf.VHFSearch
 event/nitrogen_bottle/NitrogenBottleRefill.java
  event.nitrogen_bottle.NitrogenBottleRefill
 event/weather_radar/WeatherRadarOff.java
@@ -143,33 +134,42 @@ event/gps/GPSOff.java
  event.gps.GPSOff
 recorder/FlightRecorder.java
  recorder.FlightRecorder
-base/PrimaryFlightDisplay.java
- base.PrimaryFlightDisplay
+factory/TurbulentAirFlowSensorFactory.java
+ factory.TurbulentAirFlowSensorFactory
 event/gps/GPSOn.java
  event.gps.GPSOn
 event/droop_nose/DroopNoseNeutral.java
  event.droop_nose.DroopNoseNeutral
 event/radar/GPSOff.java
  event.radar.GPSOff
-factory/CameraFactory.java
- factory.CameraFactory
+factory/DroopNoseFactory.java
+ factory.DroopNoseFactory
 event/camera/CameraWingOff.java
  event.camera.CameraWingOff
 event/gps/GPSConnect.java
  event.gps.GPSConnect
 event/vhf/VHFOn.java
  event.vhf.VHFOn
-event/vhf/VHFSearch.java
- event.vhf.VHFSearch
-event/sat_com/SatComReceive.java
- event.sat_com.SatComReceive
+factory/CameraFactory.java
+ factory.CameraFactory
+factory/RadarFactory.java
+ factory.RadarFactory
 section/Body.java
  section.Body
-event/wastewater_tank/WasteWaterTankLock.java
- event.wastewater_tank.WasteWaterTankLock
-event/vhf/VHFOff.java
- event.vhf.VHFOff
+base/Airplane.java
+ base.Airplane
+base/PrimaryFlightDisplayGUI.java
+ base.PrimaryFlightDisplayGUI
+ base.PrimaryFlightDisplayGUI$1
+ base.PrimaryFlightDisplayGUI$2
+ base.PrimaryFlightDisplayGUI$3
+ base.PrimaryFlightDisplayGUI$4
+ base.PrimaryFlightDisplayGUI$5
+ base.PrimaryFlightDisplayGUI$6
+ base.PrimaryFlightDisplayGUI$7
+ base.PrimaryFlightDisplayGUI$8
+ base.PrimaryFlightDisplayGUI$9
+base/PrimaryFlightDisplay.java
+ base.PrimaryFlightDisplay
 section/Wing.java
  section.Wing
-factory/DroopNoseFactory.java
- factory.DroopNoseFactory

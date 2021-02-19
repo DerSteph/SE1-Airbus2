@@ -18,4 +18,5 @@ public enum PrimaryFlightDisplay {
     public boolean isTCASAlarm;
     public int altitudeTCAS;
     public int degreeDroopNose;
+    public boolean isTurbulentAirFlowAlarm;
 }

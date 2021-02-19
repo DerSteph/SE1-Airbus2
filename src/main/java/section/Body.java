@@ -449,4 +449,10 @@ public class Body extends Subscriber {
         LogEngine.instance.write("PrimaryFlightDisplay (isTCASOff): " + PrimaryFlightDisplay.instance.isTCASOn);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTCASOff: " + PrimaryFlightDisplay.instance.isTCASOn);
     }
+    // ----------------------------------------------------------------------------------------------------------------
+    // --- TurbulentAirFlowSensor -----------------------------------------------------------------------------------------------
+    public void receive(TurbulentAirFlowSensorBodyMeasure turbulentAirFlowSensorBodyMeasure) {
+        FlightRecorder.instance.insert("Body", "receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
+    }
+
 }

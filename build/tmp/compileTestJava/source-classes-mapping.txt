@@ -2,3 +2,5 @@ TestTCAS.java
  TestTCAS
 TestDroopNose.java
  TestDroopNose
+TestTurbulentAirFlowSensor.java
+ TestTurbulentAirFlowSensor

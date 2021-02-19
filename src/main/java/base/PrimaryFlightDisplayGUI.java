@@ -51,6 +51,11 @@ public class PrimaryFlightDisplayGUI extends Application {
     //sat_com
     private PrimaryFlightDisplayEntry satComEntry;
 
+    //tcas
+    private PrimaryFlightDisplayEntry tcasEntry;
+    private RadioButton tcasOnButton;
+    private RadioButton tcasOffButton;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -278,6 +283,21 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(satComLabel, 15, 0);
         // ...
 
+        // tcas
+
+        Label tcasLabel = new Label("TCAS : ");
+        gridPane.add(tcasLabel, 16, 0);
+
+        ToggleGroup tcasToggleGroup = new ToggleGroup();
+        tcasOffButton = new RadioButton("Off");
+        tcasOffButton.setToggleGroup(tcasToggleGroup);
+        tcasOffButton.setSelected(true);
+        gridPane.add(tcasOffButton, 17, 0);
+
+        tcasOnButton = new RadioButton("On");
+        tcasOnButton.setToggleGroup(weatherRadarToggleGroup);
+        tcasOnButton.setSelected(false);
+        gridPane.add(tcasOnButton, 18, 0);
 
         // --- insert section: end
 
@@ -340,6 +360,8 @@ public class PrimaryFlightDisplayGUI extends Application {
         weatherRadarIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         setWeatherRadarToggleGroup(PrimaryFlightDisplay.instance.isWeatherRadarOn);
 
+
+        
         tableView.refresh();
     }
 }
