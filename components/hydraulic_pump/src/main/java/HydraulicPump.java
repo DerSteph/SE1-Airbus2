@@ -24,28 +24,28 @@ public class HydraulicPump{
     }
 
     public int innerCompress(){
-        System.out.println("Engine compressing "+amount);
+        System.out.println("HydraulicPump compressing "+amount);
         return amount;
     }
 
     public int innerCompress(int amount){
-        System.out.println("Engine compressing "+amount);
+        System.out.println("HydraulicPump compressing "+amount);
         return amount;
     }
 
     public int innerDecompress(){
-        System.out.println("Engine decompressing "+amount);
+        System.out.println("HydraulicPump decompressing "+amount);
         return amount;
     }
 
     public int innerRefillOil(){
-        System.out.println("Engine refueled");
+        System.out.println("HydraulicPump refueled");
         amount=1000;
         return amount;
     }
 
     public int innerRefillOil(int amount){
-        System.out.println("Engine refueled for "+amount);
+        System.out.println("HydraulicPump refueled for "+amount);
         this.amount+=amount;
         return amount;
     }
