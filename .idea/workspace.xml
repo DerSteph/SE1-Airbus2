@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/anti_collision_light/AntiCollisionLightOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/anti_collision_light/AntiCollisionLightOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightDim.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerAddCheckPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOptimize.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerRemoveCheckPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerValidate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightBodyOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightBodyOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightWingOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightWingOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronFullDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronFullUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronNeutral.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_navigation_light/LeftNavigationLightOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/left_navigation_light/LeftNavigationLightOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/logo_light/LogoLightOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/logo_light/LogoLightOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronFullDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronFullUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronNeutral.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/CheckPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementAdd.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementOff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementOn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementRemove.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementSetCostIndex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderFullLeft.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderFullRight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderLeft.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderNeutral.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderRight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerFullUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerNeutral.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/AntiCollisionLightFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/CargoCompartmentLightFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/CostOptimizerFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/LandingLightFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/LeftAileronFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/LeftNavigationLightFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/LogoLightFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/RightAileronFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/RouteManagementFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/RudderFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/factory/SpoilerFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/AntiCollisionLightTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/CargoCompartmentLightTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/CostOptimizerTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/CostOptimizerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/LandingLightTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/LeftAileronTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/LeftNavigationLightTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/LogoLightTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/RightAileronTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/RouteManagementTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/RudderTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/SlatTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/SpoilerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/WeatherRadarTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/distributions/SE1-Airbus2-1.0.tar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/distributions/SE1-Airbus2-1.0.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/libs/SE1-Airbus2-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/AntiCollisionLightTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/CargoCompartmentLightTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/CostOptimizerTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/LandingLightTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/LeftAileronTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/LeftNavigationLightTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/LogoLightTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/RightAileronTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/RouteManagementTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/RudderTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/SlatTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/SpoilerTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/WeatherRadarTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/scripts/SE1-Airbus2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/scripts/SE1-Airbus2.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-AntiCollisionLightTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-CargoCompartmentLightTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-CostOptimizerTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-LandingLightTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-LeftAileronTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-LeftNavigationLightTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-LogoLightTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-RightAileronTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-RouteManagementTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-RudderTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-SlatTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-SpoilerTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-WeatherRadarTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/anti_collision_light.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/build/classes/java/main/AntiCollisionLight$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/build/classes/java/main/AntiCollisionLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/build/classes/java/main/IAntiCollisionLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/build/libs/anti_collision_light.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/src/main/java/AntiCollisionLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/anti_collision_light/src/main/java/IAntiCollisionLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/cargo_compartment_light.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build/classes/java/main/CargoCompartmentLight$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build/classes/java/main/CargoCompartmentLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build/classes/java/main/ICargoCompartmentLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build/libs/cargo_compartment_light.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/CargoCompartmentLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cargo_compartment_light/src/main/java/ICargoCompartmentLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/cost_optimizer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/classes/java/main/CheckPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/classes/java/main/CostOptimizer$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/classes/java/main/CostOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/classes/java/main/ICostOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/libs/cost_optimizer.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/CostOptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cost_optimizer/src/main/java/ICostOptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/landing_light.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build/classes/java/main/ILandingLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build/classes/java/main/LandingLight$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build/classes/java/main/LandingLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build/libs/landing_light.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/src/main/java/ILandingLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/landing_light/src/main/java/LandingLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.idea/modules/left_aileron.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/classes/java/main/ILeftAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/classes/java/main/LeftAileron$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/classes/java/main/LeftAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/libs/left_aileron.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_aileron/src/main/java/LeftAileron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/left_navigation_light.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/classes/java/main/ILeftNavigationLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/classes/java/main/LeftNavigationLight$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/classes/java/main/LeftNavigationLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/classes/java/main/LightType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/classes/java/main/Position.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/libs/left_navigation_light.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/ILeftNavigationLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/LeftNavigationLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/LightType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/left_navigation_light/src/main/java/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/logo_light.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build/classes/java/main/ILogoLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build/classes/java/main/LogoLight$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build/classes/java/main/LogoLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build/libs/logo_light.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/src/main/java/ILogoLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/logo_light/src/main/java/LogoLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.idea/modules/right_aileron.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/main/IRightAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/main/RightAileron$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/main/RightAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/test/IRightAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/test/RightAileron$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/classes/java/test/RightAileron.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/libs/right_aileron.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/reports/tests/test/css/base-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/reports/tests/test/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/reports/tests/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/reports/tests/test/js/report.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/tmp/compileTestJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/src/main/java/IRightAileron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/src/main/java/RightAileron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/src/test/java/IRightAileron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/right_aileron/src/test/java/RightAileron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/modules/route_management.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/classes/java/main/CheckPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/classes/java/main/IRouteManagement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/classes/java/main/RouteManagement$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/classes/java/main/RouteManagement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/libs/route_management.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/src/main/java/CheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/src/main/java/IRouteManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/route_management/src/main/java/RouteManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/modules/rudder.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/classes/java/main/IRudder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/classes/java/main/Rudder$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/classes/java/main/Rudder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/libs/rudder.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/src/main/java/IRudder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rudder/src/main/java/Rudder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/slat/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/slat/build/classes/java/main/Slat$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/spoiler.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/build/classes/java/main/ISpoiler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/build/classes/java/main/Spoiler$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/build/classes/java/main/Spoiler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/build/libs/spoiler.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/src/main/java/ISpoiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/spoiler/src/main/java/Spoiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/weather_radar/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/weather_radar/build/classes/java/main/WeatherRadar$Port.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/anti_collision_light/AntiCollisionLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/anti_collision_light/AntiCollisionLightOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cargo_compartment_light/CargoCompartmentLightDim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cargo_compartment_light/CargoCompartmentLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cargo_compartment_light/CargoCompartmentLightOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerAddCheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerOptimize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerRemoveCheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/cost_optimizer/CostOptimizerValidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightBodyOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightBodyOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightWingOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/landing_light/LandingLightWingOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_aileron/LeftAileronDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_aileron/LeftAileronFullDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_aileron/LeftAileronFullUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_aileron/LeftAileronNeutral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_aileron/LeftAileronUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_navigation_light/LeftNavigationLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/left_navigation_light/LeftNavigationLightOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/logo_light/LogoLightOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/logo_light/LogoLightOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/right_aileron/RightAileronDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/right_aileron/RightAileronFullDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/right_aileron/RightAileronFullUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/right_aileron/RightAileronNeutral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/right_aileron/RightAileronUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/CheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/RouteManagementAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/RouteManagementOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/RouteManagementOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/RouteManagementRemove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/route_management/RouteManagementSetCostIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/rudder/RudderFullLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/rudder/RudderFullRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/rudder/RudderLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/rudder/RudderNeutral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/rudder/RudderRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/spoiler/SpoilerDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/spoiler/SpoilerFullUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/spoiler/SpoilerNeutral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/spoiler/SpoilerUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/AntiCollisionLightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/CargoCompartmentLightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/CostOptimizerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/LandingLightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/LeftAileronFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/LeftNavigationLightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/LogoLightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/RightAileronFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/RouteManagementFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/RudderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/SpoilerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AntiCollisionLightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CargoCompartmentLightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CostOptimizerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LandingLightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LeftAileronTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LeftNavigationLightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LogoLightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RightAileronTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RouteManagementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RudderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SlatTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SpoilerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/WeatherRadarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/configuration/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/configuration/Configuration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatDown.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatDown.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatUp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/weather_radar/WeatherRadarOff.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/event/weather_radar/WeatherRadarOff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/section/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/section/Body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/section/Wing.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/section/Wing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/spoiler/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.3/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/6.8.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/configuration-cache/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/modules/droop_nose.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/components/spoiler/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/classes/java/main/DroopNose$Port.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/classes/java/main/DroopNose.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/classes/java/main/IDroopNose.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/libs/droop_nose.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/src/main/java/DroopNose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/droop_nose/src/main/java/IDroopNose.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/src/main/java/ILeftAileron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/.idea/slat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/.idea/slat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/build/classes/java/main/Slat.class" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/build/classes/java/main/Slat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/build/libs/slat.jar" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/build/libs/slat.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/slat/src/main/java/Slat.java" beforeDir="false" afterPath="$PROJECT_DIR$/components/slat/src/main/java/Slat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/logo_light/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/anti_collision_light/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.3/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/6.8.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/left_aileron/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/configuration-cache/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/6.5/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/components/cost_optimizer/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/right_aileron/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/right_aileron/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/spoiler/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/modules/tcas.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/tcas.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/components/rudder/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/classes/java/main/ITCAS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/classes/java/main/TCAS$Port.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/classes/java/main/TCAS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/libs/tcas.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/components/right_aileron/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/components/cargo_compartment_light/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/components/right_aileron/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/components/right_aileron/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/src/main/java/ITCAS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tcas/src/main/java/TCAS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/6.8.2/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/weather_radar/build/libs/weather_radar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/components/weather_radar/build/libs/weather_radar.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/flight_recorder_a350.db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/flight_recorder_a350.db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/flight_recorder_a350.db.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/flight_recorder_a350.db.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/airbus_a350.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/airbus_a350.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplayEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplayEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplayGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/PrimaryFlightDisplayGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/event/slat/SlatDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/event/slat/SlatDown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/event/slat/SlatUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/event/slat/SlatUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/event/weather_radar/WeatherRadarOff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/event/weather_radar/WeatherRadarOff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/section/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/section/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/section/Wing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/section/Wing.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SE1-Airbus2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SE1-Airbus2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SE1-Airbus2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1oZctwW9K76zdjsjTkwrngMF3zq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/event" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Gradle.carstens-airbus [run]">
+    <configuration name="carstens-airbus [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="carstens-airbus [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.carstens-airbus [run]" />
+        <item itemvalue="Gradle.carstens-airbus [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f9e8597-4543-43d8-95f6-88a2a59b4b44" name="Default Changelist" comment="" />
+      <created>1613497775391</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613497775391</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

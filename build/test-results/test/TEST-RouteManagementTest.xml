@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RouteManagementTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:31" hostname="devman" time="1.046">
+  <properties/>
+  <testcase name="factory()" classname="RouteManagementTest" time="0.146"/>
+  <testcase name="methods()" classname="RouteManagementTest" time="0.149"/>
+  <testcase name="on()" classname="RouteManagementTest" time="0.15"/>
+  <testcase name="off()" classname="RouteManagementTest" time="0.163"/>
+  <testcase name="add()" classname="RouteManagementTest" time="0.15"/>
+  <testcase name="remove()" classname="RouteManagementTest" time="0.132"/>
+  <testcase name="setCostIndex()" classname="RouteManagementTest" time="0.147"/>
+  <system-out><![CDATA[
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+RouteManagement$Port.add(event.route_management.CheckPoint)
+
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+RouteManagement$Port.add(event.route_management.CheckPoint)
+
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+data exception: string data, right truncation;  table: DATA column: CLASSNAME
+RouteManagement$Port.add(event.route_management.CheckPoint)
+
+CostOptimizer$Port.setCostIndex(int)
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:32 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:32 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:32 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:32 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:32 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

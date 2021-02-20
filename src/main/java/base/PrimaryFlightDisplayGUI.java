@@ -31,7 +31,20 @@ public class PrimaryFlightDisplayGUI extends Application {
     private RadioButton weatherRadarOnButton;
 
     // slat
-    private PrimaryFlightDisplayEntry slatEntry;
+    private PrimaryFlightDisplayEntry slatDegreeEntry;
+    private Spinner<Integer> slatSpinner;
+
+    // left_aileron
+    private PrimaryFlightDisplayEntry leftAileronDegreeEntry;
+    private Spinner<Integer> leftAileronSpinner;
+
+    // right_aileron
+    private PrimaryFlightDisplayEntry rightAileronDegreeEntry;
+    private Spinner<Integer> rightAileronSpinner;
+
+    // rudder
+    private PrimaryFlightDisplayEntry rudderDegreeEntry;
+    private Spinner<Integer> rudderSpinner;
 
     // apu
     private PrimaryFlightDisplayEntry apuIsOnEntry;
@@ -250,10 +263,6 @@ public class PrimaryFlightDisplayGUI extends Application {
         weatherRadarOnButton.setSelected(false);
         gridPane.add(weatherRadarOnButton, 8, 0);
 
-        // slat
-        Label slatLabel = new Label("Slat : ");
-        gridPane.add(slatLabel, 9, 0);
-
         // apu
         Label apuLabel = new Label("APU : ");
         gridPane.add(apuLabel, 0, 2);
@@ -348,16 +357,56 @@ public class PrimaryFlightDisplayGUI extends Application {
         hydraulicPumpWingOilAmountValueLabel = new Label("0");
         gridPane.add(hydraulicPumpWingOilAmountValueLabel, 9, 3);
 
+        // slat
+        Label slatLabel = new Label("Slat : ");
+        gridPane.add(slatLabel, 0, 4);
+
+        slatSpinner = new Spinner<>();
+        slatSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> slatSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        slatSpinner.setValueFactory(slatSpinnerValueFactory);
+        gridPane.add(slatSpinner, 1, 4);
+
+        // left_aileron
+        Label leftAileronLabel = new Label("LeftAileron : ");
+        gridPane.add(leftAileronLabel, 2, 4);
+
+        leftAileronSpinner = new Spinner<>();
+        leftAileronSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> leftAileronSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        leftAileronSpinner.setValueFactory(leftAileronSpinnerValueFactory);
+        gridPane.add(leftAileronSpinner, 3, 4);
+
+        // right_aileron
+        Label rightAileronLabel = new Label("RightAileron : ");
+        gridPane.add(rightAileronLabel, 4, 4);
+
+        rightAileronSpinner = new Spinner<>();
+        rightAileronSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> rightAileronSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        rightAileronSpinner.setValueFactory(rightAileronSpinnerValueFactory);
+        gridPane.add(rightAileronSpinner, 5, 4);
+
+        // rudder
+        Label rudderLabel = new Label("Rudder : ");
+        gridPane.add(rudderLabel, 6, 4);
+
+        rudderSpinner = new Spinner<>();
+        rudderSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> rudderSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
+        rudderSpinner.setValueFactory(rudderSpinnerValueFactory);
+        gridPane.add(rudderSpinner, 7, 4);
+
         // --- insert section: end
 
         Label frequencyLabel = new Label("Frequency : ");
-        gridPane.add(frequencyLabel, 0, 4);
+        gridPane.add(frequencyLabel, 0, 5);
 
         Spinner<Integer> vcfSpinner = new Spinner<>();
         vcfSpinner.setMaxWidth(60);
         SpinnerValueFactory<Integer> vcfSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(200, 300, 250);
         vcfSpinner.setValueFactory(vcfSpinnerValueFactory);
-        gridPane.add(vcfSpinner, 1, 4);
+        gridPane.add(vcfSpinner, 1, 5);
 
         return gridPane;
     }
@@ -429,11 +478,13 @@ public class PrimaryFlightDisplayGUI extends Application {
         // weather_radar
         weatherRadarIsOnEntry = new PrimaryFlightDisplayEntry("WeatherRadar (isOn)", Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         dataList.add(weatherRadarIsOnEntry);
+
         // apu
         apuIsOnEntry = new PrimaryFlightDisplayEntry("APU (isAPUStarted)", Boolean.toString(PrimaryFlightDisplay.instance.isAPUStarted));
         dataList.add(apuIsOnEntry);
         apuFrequencyEntry = new PrimaryFlightDisplayEntry("APU (rpmAPU)", Integer.toString(PrimaryFlightDisplay.instance.rpmAPU));
         dataList.add(apuFrequencyEntry);
+
         // engine
         engineIsOnEntry = new PrimaryFlightDisplayEntry("Engine (isEngineStarted)", Boolean.toString(PrimaryFlightDisplay.instance.isEngineStarted));
         dataList.add(engineIsOnEntry);
@@ -441,16 +492,34 @@ public class PrimaryFlightDisplayGUI extends Application {
         dataList.add(engineFrequencyEntry);
         engineFireEntry = new PrimaryFlightDisplayEntry("Engine (isEngineFire)", Boolean.toString(PrimaryFlightDisplay.instance.isEngineFire));
         dataList.add(engineFireEntry);
+
         // gear
         gearIsOnEntry = new PrimaryFlightDisplayEntry("Gear (isGearDown)", Boolean.toString(PrimaryFlightDisplay.instance.isGearDown));
         dataList.add(gearIsOnEntry);
         gearBrakeEntry = new PrimaryFlightDisplayEntry("Gear (gearBrakePercentage)", Integer.toString(PrimaryFlightDisplay.instance.gearBrakePercentage));
         dataList.add(gearBrakeEntry);
+
         // hydraulic_pump
         hydraulicPumpBodyOilAmountEntry = new PrimaryFlightDisplayEntry("HydraulicPump (hydraulicPumpBodyOilAmount)", Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpBodyOilAmount));
         dataList.add(hydraulicPumpBodyOilAmountEntry);
         hydraulicPumpWingOilAmountEntry = new PrimaryFlightDisplayEntry("HydraulicPump (hydraulicPumpWingOilAmount)", Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpWingOilAmount));
         dataList.add(hydraulicPumpWingOilAmountEntry);
+
+        // slat
+        slatDegreeEntry = new PrimaryFlightDisplayEntry("Slat (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeSlat));
+        dataList.add(slatDegreeEntry);
+
+        // left_aileron
+        leftAileronDegreeEntry = new PrimaryFlightDisplayEntry("LeftAileron (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeLeftAileron));
+        dataList.add(leftAileronDegreeEntry);
+
+        // right_aileron
+        rightAileronDegreeEntry = new PrimaryFlightDisplayEntry("RightAileron (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeRightAileron));
+        dataList.add(rightAileronDegreeEntry);
+
+        // rudder
+        rudderDegreeEntry = new PrimaryFlightDisplayEntry("Rudder (degree)", Integer.toString(PrimaryFlightDisplay.instance.degreeRudder));
+        dataList.add(rudderDegreeEntry);
     }
 
     private ObservableList getInitialTableData() {
@@ -463,24 +532,41 @@ public class PrimaryFlightDisplayGUI extends Application {
         // weather_radar
         weatherRadarIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         setWeatherRadarToggleGroup(PrimaryFlightDisplay.instance.isWeatherRadarOn);
+
         // apu
         apuIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isAPUStarted));
         setAPUToggleGroup(PrimaryFlightDisplay.instance.isAPUStarted);
         apuFrequencyEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.rpmAPU));
+
         //engine
         engineIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isEngineStarted));
         setEngineToggleGroup(PrimaryFlightDisplay.instance.isEngineStarted);
         engineFrequencyEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.rpmEngine));
         engineFireEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isEngineFire));
+
         // gear
         gearIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isGearDown));
         setGearToggleGroup(PrimaryFlightDisplay.instance.isGearDown);
         gearBrakeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.gearBrakePercentage));
+
         // hydraulic_pump
         hydraulicPumpBodyOilAmountEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpBodyOilAmount));
         hydraulicPumpBodyOilAmountValueLabel.setText(Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpBodyOilAmount));
         hydraulicPumpWingOilAmountEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpWingOilAmount));
         hydraulicPumpWingOilAmountValueLabel.setText(Integer.toString(PrimaryFlightDisplay.instance.hydraulicPumpWingOilAmount));
+
+        // slat
+        slatDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeSlat));
+
+        // left_aileron
+        leftAileronDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeLeftAileron));
+
+        // right_aileron
+        rightAileronDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeRightAileron));
+
+        // rudder
+        rudderDegreeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.degreeRudder));
+
         tableView.refresh();
     }
 }

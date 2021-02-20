@@ -12,4 +12,8 @@ public class SlatDown {
     public String toString() {
         return "Event: Slat - Down";
     }
+
+    public int getDegree() {
+        return degree;
+    }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CostOptimizerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:30" hostname="devman" time="1.212">
+  <properties/>
+  <testcase name="factory()" classname="CostOptimizerTest" time="0.155"/>
+  <testcase name="methods()" classname="CostOptimizerTest" time="0.151"/>
+  <testcase name="on()" classname="CostOptimizerTest" time="0.15"/>
+  <testcase name="off()" classname="CostOptimizerTest" time="0.15"/>
+  <testcase name="add()" classname="CostOptimizerTest" time="0.151"/>
+  <testcase name="remove()" classname="CostOptimizerTest" time="0.157"/>
+  <testcase name="optimize()" classname="CostOptimizerTest" time="0.147"/>
+  <testcase name="validate()" classname="CostOptimizerTest" time="0.14"/>
+  <system-out><![CDATA[
+
+CostOptimizer$Port.add(event.route_management.CheckPoint)
+
+
+
+CostOptimizer$Port.add(event.route_management.CheckPoint)
+
+CostOptimizer$Port.add(event.route_management.CheckPoint)
+null
+
+
+null
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:30 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:30 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:30 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:31 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

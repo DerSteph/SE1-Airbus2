@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LeftAileronTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-02-18T16:01:33" hostname="devman" time="1.034">
+  <properties/>
+  <testcase name="factory()" classname="LeftAileronTest" time="0.15"/>
+  <testcase name="methods()" classname="LeftAileronTest" time="0.147"/>
+  <testcase name="neutral()" classname="LeftAileronTest" time="0.143"/>
+  <testcase name="fullUp()" classname="LeftAileronTest" time="0.144"/>
+  <testcase name="fullDown()" classname="LeftAileronTest" time="0.148"/>
+  <testcase name="up()" classname="LeftAileronTest" time="0.144"/>
+  <testcase name="down()" classname="LeftAileronTest" time="0.149"/>
+  <system-out><![CDATA[
+
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[Feb. 18, 2021 5:01:33 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:33 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:34 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:34 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:34 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:34 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Feb. 18, 2021 5:01:34 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>
