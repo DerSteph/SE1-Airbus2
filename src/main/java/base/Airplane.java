@@ -2,6 +2,10 @@ package base;
 
 import com.google.common.eventbus.EventBus;
 import event.Subscriber;
+import event.right_navigation_light.RightNavigationLightOff;
+import event.right_navigation_light.RightNavigationLightOn;
+import event.tail_navigation_light.TailNavigationLightOff;
+import event.tail_navigation_light.TailNavigationLightOn;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import section.Body;
@@ -35,11 +39,18 @@ public class Airplane implements IAirplane {
     public void startup() {
         // weather_radar
         eventBus.post(new WeatherRadarOn());
+
     }
 
     public void taxi() {
         // weather_radar
         eventBus.post(new WeatherRadarOn());
+
+        // right_navigation_light
+        eventBus.post(new RightNavigationLightOn());
+
+        // tail_navigation_light
+        eventBus.post(new TailNavigationLightOn());
     }
 
     public void takeoff() {
@@ -75,5 +86,9 @@ public class Airplane implements IAirplane {
     public void shutdown() {
         // weather_radar
         eventBus.post(new WeatherRadarOff());
+        // right_navigation_light
+        eventBus.post(new RightNavigationLightOff());
+        // tail_navigation_light
+        eventBus.post(new TailNavigationLightOff());
     }
 }

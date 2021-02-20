@@ -25,7 +25,7 @@ public enum Configuration {
 
     //right_navigation_light
     public String pathToRightNavigationLight = commonPathToJavaArchive + "right_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "right_navigation_light.jar";
-    public int numberOfLeftNavigationLight = 1;
+    public int numberOfRightNavigationLight = 1;
 
     //tail_navigation_light
     public String pathToTailNavigationLight = commonPathToJavaArchive + "tail_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "tail_navigation_light.jar";

@@ -5,4 +5,6 @@ public enum PrimaryFlightDisplay {
     public boolean isWeatherRadarOn;
     public int degreeSlat;
     // Add new fields below...
+    public boolean isRightNavigationLightOn;
+    public boolean isTailNavigationLightOn;
 }

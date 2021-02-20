@@ -33,6 +33,16 @@ public class PrimaryFlightDisplayGUI extends Application {
     // slat
     private PrimaryFlightDisplayEntry slatEntry;
 
+    // right_navigation_light
+    private PrimaryFlightDisplayEntry rightNavigationLightIsOnEntry;
+    private RadioButton rightNavigationLightOffButton;
+    private RadioButton rightNavigationLightOnButton;
+
+    // tail_navigation_light
+    private PrimaryFlightDisplayEntry tailNavigationLightIsOnEntry;
+    private RadioButton tailNavigationLightOffButton;
+    private RadioButton tailNavigationLightOnButton;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -230,6 +240,38 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(slatLabel, 9, 0);
         // ...
 
+        // right_navigation_light
+        Label rightNavigationLightLabel = new Label("RightNavigationLight : ");
+        gridPane.add(rightNavigationLightLabel,6,1);
+
+        ToggleGroup rightNavigationLightToggleGroup = new ToggleGroup();
+
+        rightNavigationLightOffButton = new RadioButton("Off");
+        rightNavigationLightOffButton.setToggleGroup(rightNavigationLightToggleGroup);
+        rightNavigationLightOffButton.setSelected(true);
+        gridPane.add(rightNavigationLightOffButton,7,1);
+
+        rightNavigationLightOnButton = new RadioButton("On");
+        rightNavigationLightOnButton.setToggleGroup(rightNavigationLightToggleGroup);
+        rightNavigationLightOnButton.setSelected(false);
+        gridPane.add(rightNavigationLightOnButton,8,1);
+
+        // tail_navigation_light
+        Label tailNavigationLightLabel = new Label("TailNavigationLight : ");
+        gridPane.add(tailNavigationLightLabel,6,2);
+
+        ToggleGroup tailNavigationLightToggleGroup = new ToggleGroup();
+
+        tailNavigationLightOffButton = new RadioButton("Off");
+        tailNavigationLightOffButton.setToggleGroup(tailNavigationLightToggleGroup);
+        tailNavigationLightOffButton.setSelected(true);
+        gridPane.add(tailNavigationLightOffButton,7,2);
+
+        tailNavigationLightOnButton = new RadioButton("On");
+        tailNavigationLightOnButton.setToggleGroup(tailNavigationLightToggleGroup);
+        tailNavigationLightOnButton.setSelected(false);
+        gridPane.add(tailNavigationLightOnButton,8,2);
+
 
 
         // --- insert section: end
@@ -274,12 +316,44 @@ public class PrimaryFlightDisplayGUI extends Application {
         }
     }
 
+    // right_navigation_light
+    public void setRightNavigationLightToggleGroup(boolean isRightNavigationLightOn){
+
+        if(isRightNavigationLightOn) {
+            rightNavigationLightOnButton.setSelected(true);
+            rightNavigationLightOffButton.setSelected(false);
+        } else {
+            rightNavigationLightOnButton.setSelected(false);
+            rightNavigationLightOffButton.setSelected(true);
+        }
+    }
+
+    // tail_navigation_light
+    public void setTailNavigationLightToggleGroup(boolean isTailNavigationLightOn){
+
+        if(isTailNavigationLightOn) {
+            tailNavigationLightOnButton.setSelected(true);
+            tailNavigationLightOffButton.setSelected(false);
+        } else {
+            tailNavigationLightOnButton.setSelected(false);
+            tailNavigationLightOffButton.setSelected(true);
+        }
+    }
+
     private void initData() {
         dataList = new ArrayList<>();
 
         // weather_radar
         weatherRadarIsOnEntry = new PrimaryFlightDisplayEntry("WeatherRadar (isOn)", Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         dataList.add(weatherRadarIsOnEntry);
+
+        // right_navigation_light
+        rightNavigationLightIsOnEntry = new PrimaryFlightDisplayEntry("RightNavigationLight (isOn)",Boolean.toString(PrimaryFlightDisplay.instance.isRightNavigationLightOn));
+        dataList.add(rightNavigationLightIsOnEntry);
+
+        // tail_navigation_light
+        tailNavigationLightIsOnEntry = new PrimaryFlightDisplayEntry("TailNavigationLight (isOn)",Boolean.toString(PrimaryFlightDisplay.instance.isTailNavigationLightOn));
+        dataList.add(tailNavigationLightIsOnEntry);
     }
 
     private ObservableList getInitialTableData() {
@@ -292,6 +366,14 @@ public class PrimaryFlightDisplayGUI extends Application {
         // weather_radar
         weatherRadarIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         setWeatherRadarToggleGroup(PrimaryFlightDisplay.instance.isWeatherRadarOn);
+
+        // right_navigation_light
+        rightNavigationLightIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isRightNavigationLightOn));
+        setRightNavigationLightToggleGroup(PrimaryFlightDisplay.instance.isRightNavigationLightOn);
+
+        // tail_navigation_light
+        tailNavigationLightIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTailNavigationLightOn));
+        setTailNavigationLightToggleGroup(PrimaryFlightDisplay.instance.isTailNavigationLightOn);
 
         tableView.refresh();
     }
