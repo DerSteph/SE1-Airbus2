@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TemperatureSensorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-18T21:56:12" hostname="DESKTOP-NIO2R51" time="2.228">
+<testsuite name="TemperatureSensorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-22T13:36:42" hostname="DESKTOP-NIO2R51" time="1.065">
   <properties/>
-  <testcase name="factory()" classname="TemperatureSensorTest" time="0.527"/>
-  <testcase name="alarm()" classname="TemperatureSensorTest" time="0.53"/>
-  <testcase name="measure()" classname="TemperatureSensorTest" time="0.563"/>
-  <testcase name="methods()" classname="TemperatureSensorTest" time="0.607"/>
+  <testcase name="factory()" classname="TemperatureSensorTest" time="0.263"/>
+  <testcase name="alarm()" classname="TemperatureSensorTest" time="0.281"/>
+  <testcase name="measure()" classname="TemperatureSensorTest" time="0.267"/>
+  <testcase name="methods()" classname="TemperatureSensorTest" time="0.253"/>
   <system-out><![CDATA[
 data exception: string data, right truncation;  table: DATA column: CLASSNAME
 data exception: string data, right truncation;  table: DATA column: CLASSNAME
@@ -22,13 +22,13 @@ data exception: string data, right truncation;  table: DATA column: CLASSNAME
 data exception: string data, right truncation;  table: DATA column: CLASSNAME
 data exception: string data, right truncation;  table: DATA column: CLASSNAME
 ]]></system-out>
-  <system-err><![CDATA[Feb 18, 2021 10:56:12 PM org.hsqldb.persist.Logger logInfoEvent
+  <system-err><![CDATA[Feb 22, 2021 2:36:43 PM org.hsqldb.persist.Logger logInfoEvent
 INFO: Database closed
-Feb 18, 2021 10:56:13 PM org.hsqldb.persist.Logger logInfoEvent
+Feb 22, 2021 2:36:43 PM org.hsqldb.persist.Logger logInfoEvent
 INFO: Database closed
-Feb 18, 2021 10:56:14 PM org.hsqldb.persist.Logger logInfoEvent
+Feb 22, 2021 2:36:43 PM org.hsqldb.persist.Logger logInfoEvent
 INFO: Database closed
-Feb 18, 2021 10:56:14 PM org.hsqldb.persist.Logger logInfoEvent
+Feb 22, 2021 2:36:43 PM org.hsqldb.persist.Logger logInfoEvent
 INFO: Database closed
 ]]></system-err>
 </testsuite>

@@ -1,8 +1,37 @@
-BatteryTest.java
- BatteryTest
+RightAileronTest.java
+ RightAileronTest
+ProcedureTest.java
+ ProcedureTest
+RudderTest.java
+ RudderTest
+LeftNavigationLightTest.java
+ LeftNavigationLightTest
 DeIcingSystemTest.java
  DeIcingSystemTest
+SpoilerTest.java
+ SpoilerTest
 AirflowSensorTest.java
  AirflowSensorTest
+LeftAileronTest.java
+ LeftAileronTest
+SlatTest.java
+ SlatTest
+LandingLightTest.java
+ LandingLightTest
 TemperatureSensorTest.java
  TemperatureSensorTest
+CargoCompartmentLightTest.java
+ CargoCompartmentLightTest
+BatteryTest.java
+ BatteryTest
+CostOptimizerTest.java
+ CostOptimizerTest
+ CostOptimizerTest$1
+AntiCollisionLightTest.java
+ AntiCollisionLightTest
+RouteManagementTest.java
+ RouteManagementTest
+WeatherRadarTest.java
+ WeatherRadarTest
+LogoLightTest.java
+ LogoLightTest
