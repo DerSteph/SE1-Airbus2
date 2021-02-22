@@ -4,3 +4,7 @@ TestDroopNose.java
  TestDroopNose
 TestTurbulentAirFlowSensor.java
  TestTurbulentAirFlowSensor
+NitrogenBottleTest.java
+ NitrogenBottleTest
+OxygenBottleTest.java
+ OxygenBottleTest

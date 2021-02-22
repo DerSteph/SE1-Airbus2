@@ -9,6 +9,7 @@ public enum PrimaryFlightDisplay {
     public boolean isPortableWaterTankLocked;
     public int amountPortableWater;
     public int oxygenBottleAmount;
+    public int nitrogenBottleAmount;
     public int amountOfNitrogen;
     public boolean isVHFOn;
     public String selectedChannelVHF;

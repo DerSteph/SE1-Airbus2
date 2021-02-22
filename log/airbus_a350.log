@@ -1,5 +1,5 @@
-2021-02-19 15:33:03 : Database Connection (isClosed): false
-2021-02-19 15:33:03 : sqlStringBuilder = DROP TABLE data
-2021-02-19 15:33:03 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (707439352401200,'turbulentAirFlowSensorFactory','turbulentAirFlowSensorClass922905015')
-2021-02-19 15:33:03 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (707439352856600,'TurbulentAirFlowSensorFactory','turbulentAirFlowSensorInstance: 383725766')
-2021-02-19 15:33:03 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (707439353223100,'TurbulentAirFlowSensorFactory','TurbulentAirFlowSensorPort: 1639504870')
+2021-02-22 00:45:40 : Database Connection (isClosed): false
+2021-02-22 00:45:40 : sqlStringBuilder = DROP TABLE data
+2021-02-22 00:45:40 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (652085375759000,'oxygenBottleFactory','oxygenBottleClass504853986')
+2021-02-22 00:45:40 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (652085377454000,'OxygenBottleFactory','oxygenBottleInstance: 707816323')
+2021-02-22 00:45:40 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (652085378381200,'OxygenBottleFactory','OxygenBottlePort: 1230931384')

@@ -41,9 +41,13 @@ public class PrimaryFlightDisplayGUI extends Application {
 
     //oxygen_bottle
     private PrimaryFlightDisplayEntry oxygenBottleEntry;
+    private RadioButton oxygenBottleTakeOutButton;
+    private RadioButton oxygenBottleRefillButton;
 
     //nitrogen_bottle
     private PrimaryFlightDisplayEntry nitrogenBottleEntry;
+    private RadioButton nitrogenBottleTakeOutButton;
+    private RadioButton nitrogenBottleRefillButton;
 
     //vhf
     private PrimaryFlightDisplayEntry vhfEntry;
@@ -266,38 +270,61 @@ public class PrimaryFlightDisplayGUI extends Application {
         // oxygen_bottle
         Label oxygenBottleLabel = new Label("OxygenBottle : ");
         gridPane.add(oxygenBottleLabel, 12, 0);
+
+        ToggleGroup oxygenBottleToggleGroup = new ToggleGroup();
+        oxygenBottleTakeOutButton = new RadioButton("Oxy TakeOut");
+        oxygenBottleTakeOutButton.setToggleGroup(oxygenBottleToggleGroup);
+        oxygenBottleTakeOutButton.setSelected(true);
+        gridPane.add(oxygenBottleTakeOutButton, 13, 0);
+
+        oxygenBottleRefillButton = new RadioButton("Oxy Refill");
+        oxygenBottleRefillButton.setToggleGroup(weatherRadarToggleGroup);
+        oxygenBottleRefillButton.setSelected(false);
+        gridPane.add(oxygenBottleRefillButton, 14, 0);
+
         // ...
 
         // nitrogen_bottle
         Label nitrogenBottleLabel = new Label("NitrogenBottle : ");
-        gridPane.add(nitrogenBottleLabel, 13, 0);
+        gridPane.add(nitrogenBottleLabel, 15, 0);
+
+        ToggleGroup nitrogenBottleToggleGroup = new ToggleGroup();
+        nitrogenBottleTakeOutButton = new RadioButton("Nit Takeout");
+        nitrogenBottleTakeOutButton.setToggleGroup(nitrogenBottleToggleGroup);
+        nitrogenBottleTakeOutButton.setSelected(true);
+        gridPane.add(nitrogenBottleTakeOutButton, 16, 0);
+
+        nitrogenBottleRefillButton = new RadioButton("Nit Refill");
+        nitrogenBottleRefillButton.setToggleGroup(weatherRadarToggleGroup);
+        nitrogenBottleRefillButton.setSelected(false);
+        gridPane.add(nitrogenBottleRefillButton, 17, 0);
         // ...
 
         // vhf
         Label vhfLabel = new Label("VHF : ");
-        gridPane.add(vhfLabel, 14, 0);
+        gridPane.add(vhfLabel, 18, 0);
         // ...
 
         // sat_com
         Label satComLabel = new Label("VHF : ");
-        gridPane.add(satComLabel, 15, 0);
+        gridPane.add(satComLabel, 19, 0);
         // ...
 
         // tcas
 
         Label tcasLabel = new Label("TCAS : ");
-        gridPane.add(tcasLabel, 16, 0);
+        gridPane.add(tcasLabel, 20, 0);
 
         ToggleGroup tcasToggleGroup = new ToggleGroup();
         tcasOffButton = new RadioButton("Off");
         tcasOffButton.setToggleGroup(tcasToggleGroup);
         tcasOffButton.setSelected(true);
-        gridPane.add(tcasOffButton, 17, 0);
+        gridPane.add(tcasOffButton, 21, 0);
 
         tcasOnButton = new RadioButton("On");
         tcasOnButton.setToggleGroup(weatherRadarToggleGroup);
         tcasOnButton.setSelected(false);
-        gridPane.add(tcasOnButton, 18, 0);
+        gridPane.add(tcasOnButton, 22, 0);
 
         // --- insert section: end
 

@@ -222,12 +222,53 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(OxygenBottleTakeOut takeOut) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Body.receive(" + takeOut.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + takeOut.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfOxygenBottle; i++) {
+                Method takeOutMethod = oxygenBottlePortList.get(i).getClass().getDeclaredMethod("takeOut");
+                LogEngine.instance.write("takeOutMethod = " + takeOutMethod);
+
+                int oxygenBottleAmount = (int)takeOutMethod.invoke(oxygenBottlePortList.get(i));
+                LogEngine.instance.write("oxygenBottleAmount = " + oxygenBottleAmount);
+
+                PrimaryFlightDisplay.instance.oxygenBottleAmount = oxygenBottleAmount;
+                FlightRecorder.instance.insert("Body", "oxygenBottle(takeOut):" + oxygenBottleAmount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (OxygenBottleTakeOut): " + PrimaryFlightDisplay.instance.oxygenBottleAmount);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "OxygenBottleTakeOut: " + PrimaryFlightDisplay.instance.oxygenBottleAmount);
     }
 
     @Subscribe
     public void receive(OxygenBottleRefill refill) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Body.receive(" + refill.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + refill.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfOxygenBottle; i++) {
+                Method refillMethod = oxygenBottlePortList.get(i).getClass().getDeclaredMethod("refill");
+                LogEngine.instance.write("refillMethod = " + refillMethod);
+
+                int oxygenBottleAmount = (int)refillMethod.invoke(oxygenBottlePortList.get(i));
+                LogEngine.instance.write("oxygenBottleAmount = " + oxygenBottleAmount);
+
+                PrimaryFlightDisplay.instance.oxygenBottleAmount = oxygenBottleAmount;
+                FlightRecorder.instance.insert("Body", "oxygenBottle(takeOut):" + oxygenBottleAmount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        LogEngine.instance.write("PrimaryFlightDisplay (OxygenBottleTakeOut): " + PrimaryFlightDisplay.instance.oxygenBottleAmount);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "OxygenBottleRefill: " + PrimaryFlightDisplay.instance.oxygenBottleAmount);
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -236,12 +277,55 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(NitrogenBottleTakeOut takeOut) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Body.receive(" + takeOut.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + takeOut.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
+                Method takeOutMethod = nitrogenBottlePortList.get(i).getClass().getDeclaredMethod("takeOut");
+                LogEngine.instance.write("takeOutMethod = " + takeOutMethod);
+
+                int nitrogenBottleAmount = (int)takeOutMethod.invoke(nitrogenBottlePortList.get(i));
+                LogEngine.instance.write("nitrogenBottleAmount = " + nitrogenBottleAmount);
+
+                PrimaryFlightDisplay.instance.nitrogenBottleAmount = nitrogenBottleAmount;
+                FlightRecorder.instance.insert("Body", "nitrogenBottle(takeOut):" + nitrogenBottleAmount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (NitrogenBottleTakeOut): " + PrimaryFlightDisplay.instance.nitrogenBottleAmount);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "NitrogenBottleTakeOut: " + PrimaryFlightDisplay.instance.nitrogenBottleAmount);
+
     }
 
     @Subscribe
     public void receive(NitrogenBottleRefill refill) {
-        throw new RuntimeException("Not implemented yet.");
+        LogEngine.instance.write("+ Body.receive(" + refill.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + refill.toString() + ")");
+
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
+                Method refillMethod = nitrogenBottlePortList.get(i).getClass().getDeclaredMethod("refill");
+                LogEngine.instance.write("refillMethod = " + refillMethod);
+
+                int nitrogenBottleAmount = (int)refillMethod.invoke(nitrogenBottlePortList.get(i));
+                LogEngine.instance.write("nitrogenBottleAmount = " + nitrogenBottleAmount);
+
+                PrimaryFlightDisplay.instance.nitrogenBottleAmount = nitrogenBottleAmount;
+                FlightRecorder.instance.insert("Body", "nitrogenBottle(takeOut):" + nitrogenBottleAmount);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        LogEngine.instance.write("PrimaryFlightDisplay (nitrogenBottleTakeOut): " + PrimaryFlightDisplay.instance.nitrogenBottleAmount);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "nitrogenBottleRefill: " + PrimaryFlightDisplay.instance.nitrogenBottleAmount);
+
     }
 
     // ----------------------------------------------------------------------------------------------------------------
