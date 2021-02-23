@@ -5,265 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cb4da57-0f7c-4083-9b88-5e7e6614cb4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/Airplane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/Cockpit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/IAirplane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/ICockpit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/base/PrimaryFlightDisplayGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/configuration/Configuration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/Subscriber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_conditioning/AirConditioningClean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_conditioning/AirConditioningCool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_conditioning/AirConditioningHeat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_conditioning/AirConditioningOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_conditioning/AirConditioningOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_flow_sensor/AirFlowSensorBodyMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/air_flow_sensor/AirFlowSensorWingMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/anti_collision_light/AntiCollisionLightOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/anti_collision_light/AntiCollisionLightOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/apu/APUDecreaseRPM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/apu/APUIncreaseRPM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/apu/APUShutdown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/apu/APUStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/battery/BatteryCharge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/battery/BatteryDischarge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightDim.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cargo_compartment_light/CargoCompartmentLightOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerAddCheckPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerOptimize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerRemoveCheckPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/cost_optimizer/CostOptimizerValidate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/deicing_system/DeIcingSystemActivate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/deicing_system/DeIcingSystemDeIce.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/deicing_system/DeIcingSystemDeactivate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/deicing_system/DeIcingSystemRefill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine/EngineDecreaseRPM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine/EngineIncreaseRPM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine/EngineShutdown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine/EngineStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine_oil_tank/EngineOilTankDecreaseLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/engine_oil_tank/EngineOilTankIncreaseLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/fuel_tank/FuelTankRefill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/fuel_tank/FuelTankTakeOut.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/gear/GearDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/gear/GearReleaseBrake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/gear/GearSetBrake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/gear/GearSetBrakePercentage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/gear/GearUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpBodyCompress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpBodyCompressAmount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpBodyDecompress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpBodyRefillOil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpBodyRefillOilAmount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpWingCompress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpWingCompressAmount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpWingDecompress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpWingRefillOil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/hydraulic_pump/HydraulicPumpWingRefillOilAmount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/kitchen/KitchenCleanUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/kitchen/KitchenFill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/kitchen/KitchenLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/kitchen/KitchenUnlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightBodyOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightBodyOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightWingOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/landing_light/LandingLightWingOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronFullDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronFullUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronNeutral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_aileron/LeftAileronUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_navigation_light/LeftNavigationLightOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/left_navigation_light/LeftNavigationLightOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/logo_light/LogoLightOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/logo_light/LogoLightOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/pitot_tube/PitotTubeClean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/pitot_tube/PitotTubeMeasureStaticPressure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/pitot_tube/PitotTubeMeasureTotalPressure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/pitot_tube/PitotTubeMeasureVelocity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/radar_altimeter/RadarAltimeterMeasureAltitude.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/radar_altimeter/RadarAltimeterOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/radar_altimeter/RadarAltimeterOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/radar_altimeter/RadarAltimeterReceive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/radar_altimeter/RadarAltimeterSend.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronFullDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronFullUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronNeutral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/right_aileron/RightAileronUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/CheckPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementAdd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementRemove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/route_management/RouteManagementSetCostIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderFullLeft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderFullRight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderLeft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderNeutral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/rudder/RudderRight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/shock_sensor/ShockSensorBodyCalibrate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/shock_sensor/ShockSensorBodyMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/shock_sensor/ShockSensorWingCalibrate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/shock_sensor/ShockSensorWingMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatFullDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatNeutral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/slat/SlatUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerFullUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerNeutral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/spoiler/SpoilerUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/stalling_sensor/StallingSensorBodyMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/stalling_sensor/StallingSensorWingMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/temperature_sensor/TemperatureSensorBodyMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/temperature_sensor/TemperatureSensorWingMeasure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/weather_radar/WeatherRadarOff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/weather_radar/WeatherRadarOn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/event/weather_radar/WeatherRadarScan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/APUFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/AirConditioningFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/AirFlowSensorFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/AntiCollisionLightFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/BatteryFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/CargoCompartmentLightFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/CostOptimizerFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/DeIcingSystemFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/EngineFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/EngineOilTankFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/Factory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/FuelTankFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/GearFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/HydraulicPumpFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/KitchenFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/LandingLightFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/LeftAileronFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/LeftNavigationLightFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/LogoLightFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/PitotTubeFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/RadarAltimeterFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/RightAileronFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/RouteManagementFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/RudderFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/ShockSensorFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/SlatFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/SpoilerFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/StallingSensorFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/TemperatureSensorFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/factory/WeatherRadarFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/logging/LogEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/recorder/FlightRecorder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/section/Body.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/section/Wing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/AirflowSensorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/AntiCollisionLightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/BatteryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/CargoCompartmentLightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/CostOptimizerTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/CostOptimizerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/DeIcingSystemTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/LandingLightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/LeftAileronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/LeftNavigationLightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/LogoLightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ProcedureTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/RightAileronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/RouteManagementTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/RudderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/SlatTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/SpoilerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TemperatureSensorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/WeatherRadarTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/SE1-Airbus2-1.0.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/SE1-Airbus2-1.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/SE1-Airbus2-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/AirflowSensorTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/AntiCollisionLightTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/BatteryTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/CargoCompartmentLightTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/CostOptimizerTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/DeIcingSystemTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/LandingLightTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/LeftAileronTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/LeftNavigationLightTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/LogoLightTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ProcedureTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/RightAileronTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/RouteManagementTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/RudderTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/SlatTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/SpoilerTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TemperatureSensorTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/WeatherRadarTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/SE1-Airbus2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/SE1-Airbus2.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-AirflowSensorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-AntiCollisionLightTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-BatteryTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-CargoCompartmentLightTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-CostOptimizerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-DeIcingSystemTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-LandingLightTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-LeftAileronTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-LeftNavigationLightTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-LogoLightTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ProcedureTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-RightAileronTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-RouteManagementTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-RudderTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-SlatTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-SpoilerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TemperatureSensorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-WeatherRadarTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProcedureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProcedureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,6 +70,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../project_zoox_5813630" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager" selected="Gradle.ProcedureTest">
@@ -389,6 +132,14 @@
       <option name="presentableId" value="Default" />
       <updated>1614006077136</updated>
     </task>
+    <task id="LOCAL-00001" summary="Tasty Tests">
+      <created>1614016917552</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614016917552</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -414,5 +165,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tasty Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tasty Tests" />
   </component>
 </project>
