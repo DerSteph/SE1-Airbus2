@@ -13,26 +13,37 @@ public class ProcedureTest {
     private Cockpit cockpit;
 
     // Ports
-    private Object airConditioningPort;
-    private Object airFlowSensorPort;               // TODO alarm - method
-    private Object apuPort;
-    private Object batteryPort;
-    private Object deicingSystemPort;
-    // ToDo private Object droopNosePort;
-    private Object enginePort;
-    // TODO: private Object engineOilTankPort;   Was für Level mrk?
-    private Object fuelTank;                        // TODO: refill(amount) - method
-    private Object gearPort;
-    private Object hydraulicPumpPort;
-    private Object kitchenPort;
-    private Object pitotTubePort;
-    private Object radarAltimeter;                  // TODO: send - method
-    private Object shockSensorPort;
-    // ToDo private Object slatPort;
-    // TODO: private Object stallingSensorPort;      // TODO: alarm - method
-    // ToDo private Object tcasPort;
-    private Object temperatureSensorPort;           // TODO: alarm - method
-    private Object weatherRadarPort;
+    private Object
+        airConditioningPort,
+        airFlowSensorPort,               // TODO alarm - method
+        antiCollisionLightPort,
+        apuPort,
+        batteryPort,
+        cargoCompartmentLightPort,
+        costOptimizerPort,
+        deicingSystemPort,
+        enginePort,
+        // engineOilTankPort,   // ToDo Was für Level mrk?
+        fuelTank,                       // TODO: refill(amount) - method
+        gearPort,
+        hydraulicPumpPort,               // ToDo: shutdown - off
+        kitchenPort,
+        landingLightPort,
+        //leftAileronPort,              // ToDo: no methods in PFD
+        leftNavigationLightPort,
+        logoLightPort,
+        pitotTubePort,
+        radarAltimeter,                  // TODO: send - method
+        // rightAileronPort,             // ToDo: no methods in PFD
+        routeManagementPort,
+        //rudderPort,                   // ToDo: no methods in PFD
+        shockSensorPort,
+        // slatPort,                     // ToDo: no methods in PFD
+        // spoilerPort,                 // ToDo: no methods in PFD
+        // stallingSensorPort,      // TODO: alarm - method
+        // tcasPort,    // ToDo
+        temperatureSensorPort,           // TODO: alarm - method
+        weatherRadarPort;
 
     @BeforeEach
     public void init(){
@@ -51,16 +62,22 @@ public class ProcedureTest {
     public void startup(){
         airConditioningPort = AirConditioningFactory.build();
         airFlowSensorPort = AirFlowSensorFactory.build();
+        antiCollisionLightPort = AntiCollisionLightFactory.build();
         apuPort = APUFactory.build();
         batteryPort = BatteryFactory.build();
+        cargoCompartmentLightPort = CargoCompartmentLightFactory.build();
+        costOptimizerPort = CostOptimizerFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         enginePort = EngineFactory.build();
         fuelTank = FuelTankFactory.build();
         gearPort = GearFactory.build();
         hydraulicPumpPort = HydraulicPumpFactory.build();
         kitchenPort = KitchenFactory.build();
+        leftNavigationLightPort = LeftNavigationLightFactory.build();
+        logoLightPort = LogoLightFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
+        routeManagementPort = RouteManagementFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
@@ -76,7 +93,13 @@ public class ProcedureTest {
             Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure");
             int airPressure = (int) measureMethod.invoke(airFlowSensorPort);
             PrimaryFlightDisplay.instance.airPressure = airPressure;
-            assertEquals(airPressure, 0);                                                       // TODO: no value to compare
+            assertEquals(airPressure, 0);                                                       // TODO: no value to compare. ">0" ?
+
+            // anti collision light (on)
+            onMethod = antiCollisionLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(antiCollisionLightPort);
+            PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
 
             // apu (start)
             Method startMethod = apuPort.getClass().getDeclaredMethod("start");
@@ -95,6 +118,18 @@ public class ProcedureTest {
             int brakePercentage = (int) brakeMethod.invoke(gearPort);
             PrimaryFlightDisplay.instance.gearBrakePercentage = brakePercentage;
             assertEquals(PrimaryFlightDisplay.instance.gearBrakePercentage, 100);
+
+            // cargo compartment light (on)
+            onMethod = cargoCompartmentLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(cargoCompartmentLightPort);
+            PrimaryFlightDisplay.instance.isCargoCompartmentLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+
+            // cost optimizer (on)
+            onMethod = costOptimizerPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(costOptimizerPort);
+            PrimaryFlightDisplay.instance.isCostOptimizerOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isCostOptimizerOn);
 
             // deicing system (activate)
             Method activateMethod = deicingSystemPort.getClass().getDeclaredMethod("activate");
@@ -145,6 +180,18 @@ public class ProcedureTest {
 //            PrimaryFlightDisplay.instance.trolleyWeight = trolleyWeight;
 //            assertTrue(PrimaryFlightDisplay.instance.trolleyWeight > 0);
 
+            // left navigation light (on)
+            onMethod = leftNavigationLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(leftNavigationLightPort);
+            PrimaryFlightDisplay.instance.isLeftNavigationLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
+
+            // logo light (on)
+            onMethod = logoLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(logoLightPort);
+            PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isLogoLightOn);
+
             // pitot tube (clean)
             Method cleanMethod = pitotTubePort.getClass().getDeclaredMethod("clean");
             boolean isCleaned = (boolean) cleanMethod.invoke(pitotTubePort);
@@ -156,6 +203,12 @@ public class ProcedureTest {
             isOn = (boolean) onMethod.invoke(radarAltimeter);
             PrimaryFlightDisplay.instance.isRadarAltimeterOn = isOn;
             assertTrue(PrimaryFlightDisplay.instance.isRadarAltimeterOn);
+
+            // route management (on)
+            onMethod = routeManagementPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(routeManagementPort);
+            PrimaryFlightDisplay.instance.isRouteManagementOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isRouteManagementOn);
 
             // shock sensor (calibrated)
             Method calibrateMethod = shockSensorPort.getClass().getDeclaredMethod("calibrate");
@@ -188,6 +241,7 @@ public class ProcedureTest {
     @Order(2)
     public void taxi(){
         apuPort = APUFactory.build();
+        cargoCompartmentLightPort = CargoCompartmentLightFactory.build();
         kitchenPort = KitchenFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         // radarAltimeter = RadarAltimeterFactory.build();
@@ -205,6 +259,12 @@ public class ProcedureTest {
             int brakePercentage = (int) brakeMethod.invoke(gearPort);
             PrimaryFlightDisplay.instance.gearBrakePercentage = brakePercentage;
             assertEquals(PrimaryFlightDisplay.instance.gearBrakePercentage, 0);
+
+            // cargo compartment light (off)
+            Method offMethod = cargoCompartmentLightPort.getClass().getDeclaredMethod("off");
+            boolean isOn = (boolean) offMethod.invoke(cargoCompartmentLightPort);
+            PrimaryFlightDisplay.instance.isCargoCompartmentLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
 
             // ToDo kitchen (lock)
             Method unlockMethod = kitchenPort.getClass().getDeclaredMethod("unlock");
@@ -240,6 +300,7 @@ public class ProcedureTest {
     public void takeOff(){
         airFlowSensorPort = AirFlowSensorFactory.build();
         enginePort = EngineFactory.build();
+        logoLightPort = LogoLightFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         shockSensorPort = ShockSensorFactory.build();
@@ -258,6 +319,13 @@ public class ProcedureTest {
             int oldrpm = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
             assertTrue(PrimaryFlightDisplay.instance.rpmEngine > oldrpm);
+
+
+            // logo light (off)
+            Method offMethod = logoLightPort.getClass().getDeclaredMethod("off");
+            boolean isOn = (boolean) offMethod.invoke(logoLightPort);
+            PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isLogoLightOn);
 
             // pitot tube (velocity)
             Method measureVelocityMethod = pitotTubePort.getClass().getDeclaredMethod("measureVelocity");
@@ -539,6 +607,8 @@ public class ProcedureTest {
         apuPort = APUFactory.build();
         enginePort = EngineFactory.build();
         gearPort = GearFactory.build();
+        landingLightPort = LandingLightFactory.build();
+        logoLightPort = LogoLightFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         shockSensorPort = ShockSensorFactory.build();
@@ -570,6 +640,20 @@ public class ProcedureTest {
             boolean isDown = (boolean) gearDownMethod.invoke(gearPort);
             PrimaryFlightDisplay.instance.isGearDown = isDown;
             assertTrue(PrimaryFlightDisplay.instance.isGearDown);
+
+            // landing light (on)
+            Method onMethod = landingLightPort.getClass().getDeclaredMethod("on");
+            boolean isOn = (boolean) onMethod.invoke(landingLightPort);
+            PrimaryFlightDisplay.instance.isLandingLightBodyOn = isOn;
+            PrimaryFlightDisplay.instance.isLandingLightWingOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isLandingLightBodyOn);
+            assertTrue(PrimaryFlightDisplay.instance.isLandingLightWingOn);
+
+            // logo light (on)
+            onMethod = logoLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(logoLightPort);
+            PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isLogoLightOn);
 
             // pitot tube (velocity)
             Method measureVelocityMethod = pitotTubePort.getClass().getDeclaredMethod("measureVelocity");
@@ -619,14 +703,21 @@ public class ProcedureTest {
     @Order(9)
     public void shutdown(){
         // airConditioningPort = AirConditioningFactory.build();
+        antiCollisionLightPort = AntiCollisionLightFactory.build();
         // apuPort = APUFactory.build();
         batteryPort = BatteryFactory.build();
+        cargoCompartmentLightPort = CargoCompartmentLightFactory.build();
+        costOptimizerPort = CostOptimizerFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         enginePort = EngineFactory.build();
         fuelTank = FuelTankFactory.build();
         // gearPort = GearFactory.build();
+        landingLightPort = LandingLightFactory.build();
+        leftNavigationLightPort = LeftNavigationLightFactory.build();
+        logoLightPort = LogoLightFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
+        routeManagementPort = RouteManagementFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
 
         try {
@@ -635,6 +726,12 @@ public class ProcedureTest {
             boolean isOn = (boolean) offMethod.invoke(airConditioningPort);
 //            PrimaryFlightDisplay.instance.isAirConditioningOn = isOn;
 //            assertFalse(PrimaryFlightDisplay.instance.isAirConditioningOn);
+
+            // anti collision light (off)
+            offMethod = antiCollisionLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(antiCollisionLightPort);
+            PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
 
             // apu (shutdown)
             Method shutdownMethod = apuPort.getClass().getDeclaredMethod("shutdown");
@@ -653,6 +750,18 @@ public class ProcedureTest {
             int brakePercentage = (int) brakeMethod.invoke(gearPort);
             PrimaryFlightDisplay.instance.gearBrakePercentage = brakePercentage;
             assertEquals(PrimaryFlightDisplay.instance.gearBrakePercentage, 100);
+
+            // cargo compartment light (on)
+            Method onMethod = cargoCompartmentLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(cargoCompartmentLightPort);
+            PrimaryFlightDisplay.instance.isCargoCompartmentLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isCargoCompartmentLightOn);
+
+            // cost optimizer (off)
+            offMethod = costOptimizerPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(costOptimizerPort);
+            PrimaryFlightDisplay.instance.isCostOptimizerOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isCostOptimizerOn);
 
             // deicing system (refill)
             Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
@@ -677,6 +786,26 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.amountOfFuel = amount;
             // assertEquals(PrimaryFlightDisplay.instance.amountOfFuel, ?);                         TODO: no value to compare
 
+            // landing light (off)
+            offMethod = landingLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) onMethod.invoke(landingLightPort);
+            PrimaryFlightDisplay.instance.isLandingLightBodyOn = isOn;
+            PrimaryFlightDisplay.instance.isLandingLightWingOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isLandingLightBodyOn);
+            assertFalse(PrimaryFlightDisplay.instance.isLandingLightWingOn);
+
+            // left navigation light (off)
+            offMethod = leftNavigationLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(leftNavigationLightPort);
+            PrimaryFlightDisplay.instance.isLeftNavigationLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isLeftNavigationLightOn);
+
+            // logo light (off)
+            offMethod = logoLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(logoLightPort);
+            PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isLogoLightOn);
+
             // pitot tube - clean
             Method cleanMethod = pitotTubePort.getClass().getDeclaredMethod("clean");
             boolean isCleaned = (boolean) cleanMethod.invoke(pitotTubePort);
@@ -688,6 +817,12 @@ public class ProcedureTest {
             isOn = (boolean) offMethod.invoke(radarAltimeter);
             PrimaryFlightDisplay.instance.isRadarAltimeterOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isRadarAltimeterOn);
+
+            // route management (off)
+            offMethod = routeManagementPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(routeManagementPort);
+            PrimaryFlightDisplay.instance.isRouteManagementOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isRouteManagementOn);
 
             // temperature sensor (measure)
             Method measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
