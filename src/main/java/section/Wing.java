@@ -113,10 +113,10 @@ public class Wing extends Subscriber {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
         LogEngine.instance.write("PrimaryFlightDisplay (isRightNavigationLightOn): " + PrimaryFlightDisplay.instance.isRightNavigationLightOn);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "isRightNavigationLightOn: " + PrimaryFlightDisplay.instance.isRightNavigationLightOn);
-
     }
+    // ----------------------------------------------------------------------------------------------------------------
+
 
 }

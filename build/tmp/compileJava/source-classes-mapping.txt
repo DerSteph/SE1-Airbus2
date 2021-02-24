@@ -1,25 +1,45 @@
-section/Body.java
- section.Body
+base/ICockpit.java
+ base.ICockpit
 event/Subscriber.java
  event.Subscriber
-event/weather_radar/WeatherRadarOff.java
- event.weather_radar.WeatherRadarOff
 configuration/Configuration.java
  configuration.Configuration
-recorder/FlightRecorder.java
- recorder.FlightRecorder
 event/slat/SlatUp.java
  event.slat.SlatUp
 base/PrimaryFlightDisplayEntry.java
  base.PrimaryFlightDisplayEntry
+event/right_navigation_light/RightNavigationLightOff.java
+ event.right_navigation_light.RightNavigationLightOff
+factory/Factory.java
+ factory.Factory
+factory/RightNavigationLightFactory.java
+ factory.RightNavigationLightFactory
+factory/SlatFactory.java
+ factory.SlatFactory
+event/right_navigation_light/RightNavigationLightOn.java
+ event.right_navigation_light.RightNavigationLightOn
+logging/LogEngine.java
+ logging.LogEngine
+event/weather_radar/WeatherRadarScan.java
+ event.weather_radar.WeatherRadarScan
+event/slat/SlatDown.java
+ event.slat.SlatDown
+event/slat/SlatNeutral.java
+ event.slat.SlatNeutral
+base/IAirplane.java
+ base.IAirplane
+factory/WeatherRadarFactory.java
+ factory.WeatherRadarFactory
+event/weather_radar/WeatherRadarOff.java
+ event.weather_radar.WeatherRadarOff
+recorder/FlightRecorder.java
+ recorder.FlightRecorder
 base/PrimaryFlightDisplay.java
  base.PrimaryFlightDisplay
 event/slat/SlatFullDown.java
  event.slat.SlatFullDown
-factory/Factory.java
- factory.Factory
-base/Airplane.java
- base.Airplane
+factory/TailNavigationLightFactory.java
+ factory.TailNavigationLightFactory
 base/PrimaryFlightDisplayGUI.java
  base.PrimaryFlightDisplayGUI
  base.PrimaryFlightDisplayGUI$1
@@ -31,25 +51,17 @@ base/PrimaryFlightDisplayGUI.java
  base.PrimaryFlightDisplayGUI$7
  base.PrimaryFlightDisplayGUI$8
  base.PrimaryFlightDisplayGUI$9
-factory/SlatFactory.java
- factory.SlatFactory
 base/Cockpit.java
  base.Cockpit
-logging/LogEngine.java
- logging.LogEngine
 event/weather_radar/WeatherRadarOn.java
  event.weather_radar.WeatherRadarOn
-event/weather_radar/WeatherRadarScan.java
- event.weather_radar.WeatherRadarScan
-event/slat/SlatDown.java
- event.slat.SlatDown
+event/tail_navigation_light/TailNavigationLightOn.java
+ event.tail_navigation_light.TailNavigationLightOn
+event/tail_navigation_light/TailNavigationLightOff.java
+ event.tail_navigation_light.TailNavigationLightOff
+section/Body.java
+ section.Body
+base/Airplane.java
+ base.Airplane
 section/Wing.java
  section.Wing
-event/slat/SlatNeutral.java
- event.slat.SlatNeutral
-base/ICockpit.java
- base.ICockpit
-base/IAirplane.java
- base.IAirplane
-factory/WeatherRadarFactory.java
- factory.WeatherRadarFactory

@@ -164,4 +164,7 @@ public class Body extends Subscriber {
         LogEngine.instance.write("PrimaryFlightDisplay (isTailNavigationLightOn): " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
         FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTailNavigationLightOn: " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
     }
+    // ----------------------------------------------------------------------------------------------------------------
+
+
 }
