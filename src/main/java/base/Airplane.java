@@ -66,23 +66,23 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemActivate());
         // engine
         eventBus.post(new EngineStart());
-        // fuel tank
-        eventBus.post(new FuelTankRefill());
+//        // fuel tank
+//        eventBus.post(new FuelTankRefill());
         // hydraulic pump
         eventBus.post(new HydraulicPumpBodyCompress());
         // left navigation light
         eventBus.post(new LeftNavigationLightOn());
         // logo light
         eventBus.post(new LogoLightOn());
-        // pilot tube
-        eventBus.post(new PitotTubeClean());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pilot tube
+//        eventBus.post(new PitotTubeClean());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // route management
         eventBus.post(new RouteManagementOn());
-        // shock sensor
-        eventBus.post(new ShockSensorBodyCalibrate(5));
-        eventBus.post(new ShockSensorWingCalibrate("5")); // ToDo ?
+//        // shock sensor
+//        eventBus.post(new ShockSensorBodyCalibrate(5));
+//        eventBus.post(new ShockSensorWingCalibrate("5")); // ToDo ?
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
