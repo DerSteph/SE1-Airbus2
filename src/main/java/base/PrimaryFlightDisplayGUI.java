@@ -376,110 +376,99 @@ public class PrimaryFlightDisplayGUI extends Application {
         gridPane.add(deIcingSystemAmountText, 3, 12);
         deIcingSystemAmountText.setPrefSize(50, 20);
 
-        // --- insert section: end
-
-        Label frequencyLabel = new Label("Frequency : ");
-        gridPane.add(frequencyLabel, 0, 2);
-
-        Spinner<Integer> vcfSpinner = new Spinner<>();
-        vcfSpinner.setMaxWidth(60);
-        SpinnerValueFactory<Integer> vcfSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(200, 300, 250);
-        vcfSpinner.setValueFactory(vcfSpinnerValueFactory);
-        gridPane.add(vcfSpinner, 1, 2);
-
         // apu
         Label apuLabel = new Label("APU : ");
-        gridPane.add(apuLabel, 0, 3);
+        gridPane.add(apuLabel, 0, 14);
 
         ToggleGroup apuToggleGroup = new ToggleGroup();
 
         apuOffButton = new RadioButton("Off");
         apuOffButton.setToggleGroup(apuToggleGroup);
         apuOffButton.setSelected(true);
-        gridPane.add(apuOffButton, 1, 3);
+        gridPane.add(apuOffButton, 1, 14);
 
         apuOnButton = new RadioButton("On");
         apuOnButton.setToggleGroup(apuToggleGroup);
         apuOnButton.setSelected(false);
-        gridPane.add(apuOnButton, 2, 3);
+        gridPane.add(apuOnButton, 2, 14);
 
         Label apuFrequencyLabel = new Label("Frequency : ");
-        gridPane.add(apuFrequencyLabel, 3, 3);
+        gridPane.add(apuFrequencyLabel, 3, 14);
 
         Spinner<Integer> apuFrequencySpinner = new Spinner<>();
         apuFrequencySpinner.setMaxWidth(60);
         SpinnerValueFactory<Integer> apuFrequencySpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 4000, 0);
         apuFrequencySpinner.setValueFactory(apuFrequencySpinnerValueFactory);
-        gridPane.add(apuFrequencySpinner, 4, 3);
+        gridPane.add(apuFrequencySpinner, 4, 14);
 
         // engine
         Label engineLabel = new Label("Engine : ");
-        gridPane.add(engineLabel, 5, 3);
+        gridPane.add(engineLabel, 5, 14);
 
         ToggleGroup engineToggleGroup = new ToggleGroup();
 
         engineOffButton = new RadioButton("Off");
         engineOffButton.setToggleGroup(engineToggleGroup);
         engineOffButton.setSelected(true);
-        gridPane.add(engineOffButton, 6, 3);
+        gridPane.add(engineOffButton, 6, 14);
 
         engineOnButton = new RadioButton("On");
         engineOnButton.setToggleGroup(engineToggleGroup);
         engineOnButton.setSelected(false);
-        gridPane.add(engineOnButton, 7, 3);
+        gridPane.add(engineOnButton, 7, 14);
 
         Label engineFrequencyLabel = new Label("Frequency : ");
-        gridPane.add(engineFrequencyLabel, 8, 3);
+        gridPane.add(engineFrequencyLabel, 8, 14);
 
         Spinner<Integer> engineFrequencySpinner = new Spinner<>();
         engineFrequencySpinner.setMaxWidth(60);
         SpinnerValueFactory<Integer> engineFrequencySpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 4000, 0);
         engineFrequencySpinner.setValueFactory(engineFrequencySpinnerValueFactory);
-        gridPane.add(engineFrequencySpinner, 9, 3);
+        gridPane.add(engineFrequencySpinner, 9, 14);
 
         CheckBox engineFireCheckbox = new CheckBox("Fire");
-        gridPane.add(engineFireCheckbox, 10, 3);
+        gridPane.add(engineFireCheckbox, 10, 14);
 
         // gear
         Label gearLabel = new Label("Gear : ");
-        gridPane.add(gearLabel, 0, 4);
+        gridPane.add(gearLabel, 0, 15);
 
         ToggleGroup gearToggleGroup = new ToggleGroup();
 
         gearOnButton = new RadioButton("Down");
         gearOnButton.setToggleGroup(gearToggleGroup);
         gearOnButton.setSelected(true);
-        gridPane.add(gearOnButton, 1, 4);
+        gridPane.add(gearOnButton, 1, 15);
 
         gearOffButton = new RadioButton("Up");
         gearOffButton.setToggleGroup(gearToggleGroup);
         gearOffButton.setSelected(false);
-        gridPane.add(gearOffButton, 2, 4);
+        gridPane.add(gearOffButton, 2, 15);
 
         Label gearBrakeLabel = new Label("Brake : ");
-        gridPane.add(gearBrakeLabel, 3, 4);
+        gridPane.add(gearBrakeLabel, 3, 15);
 
         Spinner<Integer> gearBrakeSpinner = new Spinner<>();
         gearBrakeSpinner.setMaxWidth(60);
         SpinnerValueFactory<Integer> gearBrakeSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
         gearBrakeSpinner.setValueFactory(gearBrakeSpinnerValueFactory);
-        gridPane.add(gearBrakeSpinner, 4, 4);
+        gridPane.add(gearBrakeSpinner, 4, 15);
 
         // hydraulic_pump
         Label hydraulicPumpLabel = new Label("HydraulicPump : ");
-        gridPane.add(hydraulicPumpLabel, 5, 4);
+        gridPane.add(hydraulicPumpLabel, 5, 15);
 
         Label hydraulicPumpBodyOilAmountLabel = new Label("Body Oil Amount");
-        gridPane.add(hydraulicPumpBodyOilAmountLabel, 6, 4);
+        gridPane.add(hydraulicPumpBodyOilAmountLabel, 6, 15);
 
         hydraulicPumpBodyOilAmountValueLabel = new Label("0");
-        gridPane.add(hydraulicPumpBodyOilAmountValueLabel, 7, 4);
+        gridPane.add(hydraulicPumpBodyOilAmountValueLabel, 7, 15);
 
         Label hydraulicPumpWingOilAmountLabel = new Label("Wing Oil Amount");
-        gridPane.add(hydraulicPumpWingOilAmountLabel, 8, 4);
+        gridPane.add(hydraulicPumpWingOilAmountLabel, 8, 15);
 
         hydraulicPumpWingOilAmountValueLabel = new Label("0");
-        gridPane.add(hydraulicPumpWingOilAmountValueLabel, 9, 3);
+        gridPane.add(hydraulicPumpWingOilAmountValueLabel, 9, 15);
 
         // slat
         Label slatLabel = new Label("Slat : ");
