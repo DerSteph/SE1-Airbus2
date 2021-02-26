@@ -82,7 +82,7 @@ public class Airplane implements IAirplane {
         eventBus.post(new RouteManagementOn());
 //        // shock sensor
 //        eventBus.post(new ShockSensorBodyCalibrate(5));
-//        eventBus.post(new ShockSensorWingCalibrate("5")); // ToDo ?
+//        eventBus.post(new ShockSensorWingCalibrate("5"));
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }

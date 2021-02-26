@@ -57,6 +57,12 @@ public class ProcedureTest {
         cockpit = new Cockpit(airplane);
     }
 
+    @AfterEach
+    public void cleanup(){
+        FlightRecorder.instance.shutdown();
+        LogEngine.instance.close();
+    }
+
     @Test
     @Order(1)
     public void startup(){
