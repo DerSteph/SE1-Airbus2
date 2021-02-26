@@ -154,11 +154,11 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.amountOfFuel = amount;
             assertEquals(PrimaryFlightDisplay.instance.amountOfFuel, 1000);
 
-            // gear (down)
-            Method gearDownMethod = gearPort.getClass().getDeclaredMethod("down");
-            boolean isDown = (boolean) gearDownMethod.invoke(gearPort);
-            PrimaryFlightDisplay.instance.isGearDown = isDown;
-            assertTrue(PrimaryFlightDisplay.instance.isGearDown);
+//            // gear (down)
+//            Method gearDownMethod = gearPort.getClass().getDeclaredMethod("down");
+//            boolean isDown = (boolean) gearDownMethod.invoke(gearPort);
+//            PrimaryFlightDisplay.instance.isGearDown = isDown;
+//            assertTrue(PrimaryFlightDisplay.instance.isGearDown);
 
             // hydraulic pump (oilAmount > 0)
             Method compressMethod = hydraulicPumpPort.getClass().getDeclaredMethod("compress");
