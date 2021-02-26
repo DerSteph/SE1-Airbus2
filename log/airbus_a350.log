@@ -1,0 +1,5 @@
+2021-02-20 19:08:31 : Database Connection (isClosed): false
+2021-02-20 19:08:31 : sqlStringBuilder = DROP TABLE data
+2021-02-20 19:08:31 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (182627471870700,'HydraulicPumpFactory','hydraulicPumpClass: 1055346575')
+2021-02-20 19:08:31 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (182627472100200,'HydraulicPumpFactory','hydraulicPumpInstance: 1100104108')
+2021-02-20 19:08:31 : sqlStringBuilder = INSERT INTO data (id,className,message) VALUES (182627472215100,'HydraulicPumpFactory','hydraulicPumpPort: 1110769639')
