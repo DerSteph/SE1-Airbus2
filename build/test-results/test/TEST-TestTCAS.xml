@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestTCAS" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-03-01T20:54:42" hostname="DESKTOP-DLH5840" time="1.709">
+  <properties/>
+  <testcase name="factory()" classname="TestTCAS" time="0.408"/>
+  <testcase name="methods()" classname="TestTCAS" time="0.194"/>
+  <testcase name="on()" classname="TestTCAS" time="0.172"/>
+  <testcase name="connect()" classname="TestTCAS" time="0.161"/>
+  <testcase name="scan()" classname="TestTCAS" time="0.167"/>
+  <testcase name="alarm()" classname="TestTCAS" time="0.153"/>
+  <testcase name="determineAltitude()" classname="TestTCAS" time="0.151"/>
+  <testcase name="setAltitude()" classname="TestTCAS" time="0.143"/>
+  <testcase name="off()" classname="TestTCAS" time="0.151"/>
+  <system-out><![CDATA[
+
+java.lang.reflect.Method.determineAltitude(java.lang.String)
+
+
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[März 01, 2021 9:54:42 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:42 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:42 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:42 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:43 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:43 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:43 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:43 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+März 01, 2021 9:54:43 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+]]></system-err>
+</testsuite>

@@ -56,9 +56,17 @@ public class PrimaryFlightDisplayGUI extends Application {
     private PrimaryFlightDisplayEntry satComEntry;
 
     //tcas
-    private PrimaryFlightDisplayEntry tcasEntry;
+    private PrimaryFlightDisplayEntry tcasIsOnEntry;
+    private PrimaryFlightDisplayEntry tcasIsAlarmEntry;
+    private PrimaryFlightDisplayEntry tcasIsConnectedEntry;
+    private PrimaryFlightDisplayEntry tcasAltitudeEntry;
     private RadioButton tcasOnButton;
     private RadioButton tcasOffButton;
+
+    // turbulent air flow sensor
+    private PrimaryFlightDisplayEntry turbulentAirFlowSensorIsAlarmEntry;
+    private RadioButton turbulentAirFlowSensorOnButton;
+    private RadioButton turbulentAirFlowSensorOffButton;
 
     public static void main(String... args) {
         LogEngine.instance.init();
@@ -312,19 +320,62 @@ public class PrimaryFlightDisplayGUI extends Application {
 
         // tcas
 
-        Label tcasLabel = new Label("TCAS : ");
-        gridPane.add(tcasLabel, 20, 0);
+        Label tcasIsOnLabel = new Label("TCAS : ");
+        gridPane.add(tcasIsOnLabel, 0, 1);
 
         ToggleGroup tcasToggleGroup = new ToggleGroup();
         tcasOffButton = new RadioButton("Off");
         tcasOffButton.setToggleGroup(tcasToggleGroup);
         tcasOffButton.setSelected(true);
-        gridPane.add(tcasOffButton, 21, 0);
+        gridPane.add(tcasOffButton, 1, 1);
 
         tcasOnButton = new RadioButton("On");
-        tcasOnButton.setToggleGroup(weatherRadarToggleGroup);
+        tcasOnButton.setToggleGroup(tcasToggleGroup);
         tcasOnButton.setSelected(false);
-        gridPane.add(tcasOnButton, 22, 0);
+        gridPane.add(tcasOnButton, 2, 1);
+
+        Spinner<Integer> tcasSpinner = new Spinner<>();
+        tcasSpinner.setMaxWidth(60);
+        SpinnerValueFactory<Integer> tcasSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(200, 300, 250);
+        tcasSpinner.setValueFactory(tcasSpinnerValueFactory);
+        gridPane.add(tcasSpinner, 3, 1);
+
+        Button tcasConnect = new Button("Connect");
+        gridPane.add(tcasConnect, 4, 1);
+
+        TextField tcasScanTextField = new TextField();
+        gridPane.add(tcasScanTextField, 5, 1);
+
+        Button tcasScanButton = new Button("Scan");
+        gridPane.add(tcasScanButton, 6, 1);
+
+        TextField tcasAltitude = new TextField();
+        gridPane.add(tcasAltitude, 7, 1);
+
+        Button tcasSetAltitude = new Button("Set Alt");
+        gridPane.add(tcasSetAltitude, 8, 1);
+
+        Button tcasDetermineAltitude = new Button("Det Alt");
+        gridPane.add(tcasDetermineAltitude, 9 ,1);
+
+        Button tcasAlarm = new Button("Alarm");
+        gridPane.add(tcasAlarm, 10 ,1);
+
+
+        // TurbulentAirFlowSensor
+        Label turbulentAirFlowSensorLabel = new Label("TurbulentAirFlowSensor (isAlarm) : ");
+        gridPane.add(turbulentAirFlowSensorLabel, 0, 3);
+
+        ToggleGroup turbulentAirFlowSensorToggleGroup = new ToggleGroup();
+        turbulentAirFlowSensorOffButton = new RadioButton("True");
+        turbulentAirFlowSensorOffButton.setToggleGroup(turbulentAirFlowSensorToggleGroup);
+        turbulentAirFlowSensorOffButton.setSelected(true);
+        gridPane.add(turbulentAirFlowSensorOffButton, 1, 3);
+
+        turbulentAirFlowSensorOnButton = new RadioButton("False");
+        turbulentAirFlowSensorOnButton.setToggleGroup(turbulentAirFlowSensorToggleGroup);
+        turbulentAirFlowSensorOnButton.setSelected(false);
+        gridPane.add(turbulentAirFlowSensorOnButton, 1, 4);
 
         // --- insert section: end
 
@@ -368,12 +419,56 @@ public class PrimaryFlightDisplayGUI extends Application {
         }
     }
 
+    // tcas
+    public void setTCASToggleGroup(boolean isTCASOn) {
+        if(isTCASOn)
+        {
+            tcasOffButton.setSelected(false);
+            tcasOnButton.setSelected(true);
+
+        }
+        else
+        {
+            tcasOffButton.setSelected(true);
+            tcasOnButton.setSelected(false);
+        }
+    }
+
+    // turbulent air flow sensor
+    public void setTurbulentAirFlowSensor(boolean isTurbulentAirFlowSensor) {
+        if(isTurbulentAirFlowSensor)
+        {
+            turbulentAirFlowSensorOffButton.setSelected(false);
+            turbulentAirFlowSensorOnButton.setSelected(true);
+        }
+        else
+        {
+            turbulentAirFlowSensorOffButton.setSelected(true);
+            turbulentAirFlowSensorOnButton.setSelected(false);
+        }
+    }
+
     private void initData() {
         dataList = new ArrayList<>();
 
         // weather_radar
         weatherRadarIsOnEntry = new PrimaryFlightDisplayEntry("WeatherRadar (isOn)", Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         dataList.add(weatherRadarIsOnEntry);
+
+        // tcas
+        tcasIsOnEntry = new PrimaryFlightDisplayEntry("TCAS (isOn)", Boolean.toString(PrimaryFlightDisplay.instance.isTCASOn));
+        tcasIsAlarmEntry = new PrimaryFlightDisplayEntry("TCAS (isAlarm)", Boolean.toString(PrimaryFlightDisplay.instance.isTCASAlarm));
+        tcasIsConnectedEntry = new PrimaryFlightDisplayEntry("TCAS (isConnected)", Boolean.toString(PrimaryFlightDisplay.instance.isTCASConnected));
+        tcasAltitudeEntry = new PrimaryFlightDisplayEntry("TCAS (Altitude)", Integer.toString(PrimaryFlightDisplay.instance.altitudeTCAS));
+
+        dataList.add(tcasIsOnEntry);
+        dataList.add(tcasIsAlarmEntry);
+        dataList.add(tcasIsConnectedEntry);
+        dataList.add(tcasAltitudeEntry);
+
+        // turbulent air flow sensor
+        turbulentAirFlowSensorIsAlarmEntry = new PrimaryFlightDisplayEntry("TurbulentAirFlowSensor (isAlarm)", Boolean.toString(PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm));
+        dataList.add(turbulentAirFlowSensorIsAlarmEntry);
     }
 
     private ObservableList getInitialTableData() {
@@ -387,8 +482,17 @@ public class PrimaryFlightDisplayGUI extends Application {
         weatherRadarIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isWeatherRadarOn));
         setWeatherRadarToggleGroup(PrimaryFlightDisplay.instance.isWeatherRadarOn);
 
+        // tcas
+        tcasIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTCASOn));
+        tcasIsConnectedEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTCASConnected));
+        tcasIsAlarmEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTCASAlarm));
+        tcasAltitudeEntry.setValue(Integer.toString(PrimaryFlightDisplay.instance.altitudeTCAS));
+        setTCASToggleGroup(PrimaryFlightDisplay.instance.isTCASOn);
 
-        
+        // turbulent air flow sensor
+        turbulentAirFlowSensorIsAlarmEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTurbulentAirFlowAlarm));
+        setTurbulentAirFlowSensor(PrimaryFlightDisplay.instance.isTCASAlarm);
+
         tableView.refresh();
     }
 }
