@@ -123,7 +123,7 @@ public class Airplane implements IAirplane {
 
     public void taxi() {
         // apu
-        eventBus.post(new APUDecreaseRPM(0));
+        eventBus.post(new APUDecreaseRPM(1000));
         eventBus.post(new APUShutdown());
         // brake
         eventBus.post(new GearReleaseBrake());

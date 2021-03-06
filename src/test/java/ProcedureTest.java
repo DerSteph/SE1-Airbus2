@@ -17,36 +17,36 @@ public class ProcedureTest {
 
     // Ports
     private Object
-            airConditioningPort,              // ToDo: not in PFD
-            airFlowSensorPort,               // TODO alarm - method
-            antiCollisionLightPort,
-            apuPort,
-            batteryPort,
-            cargoCompartmentLightPort,
-            costOptimizerPort,
-            deicingSystemPort,
-            enginePort,
-    // engineOilTankPort,   // ToDo Was für Level mrk?
-    fuelTank,                       // TODO: refill(amount) - method
-            gearPort,
-            hydraulicPumpPort,               // ToDo: shutdown - off
-            kitchenPort,                    // ToDo: not in PFD
-            landingLightPort,
-            leftAileronPort,
-            leftNavigationLightPort,
-            logoLightPort,
-            pitotTubePort,
-            radarAltimeter,                  // TODO: send - method
-            rightAileronPort,
-            routeManagementPort,
-            rudderPort,
-            shockSensorPort,
-            slatPort,
-            spoilerPort,
-    // stallingSensorPort,      // TODO: alarm - method
-    // tcasPort,                // ToDo: not in PFD
-    temperatureSensorPort,           // TODO: alarm - method
-            weatherRadarPort;
+        airConditioningPort,              // ToDo: not in PFD
+        airFlowSensorPort,               // TODO alarm - method
+        antiCollisionLightPort,
+        apuPort,
+        batteryPort,
+        cargoCompartmentLightPort,
+        costOptimizerPort,
+        deicingSystemPort,
+        enginePort,
+        // engineOilTankPort,   // ToDo Was für Level mrk?
+        fuelTank,                       // TODO: refill(amount) - method
+        gearPort,
+        hydraulicPumpPort,               // ToDo: shutdown - off
+        kitchenPort,                    // ToDo: not in PFD
+        landingLightPort,
+        leftAileronPort,
+        leftNavigationLightPort,
+        logoLightPort,
+        pitotTubePort,
+        radarAltimeter,                  // TODO: send - method
+        rightAileronPort,
+        routeManagementPort,
+        rudderPort,
+        shockSensorPort,
+        slatPort,
+        spoilerPort,
+        // stallingSensorPort,      // TODO: alarm - method
+        // tcasPort,                // ToDo: not in PFD
+        temperatureSensorPort,           // TODO: alarm - method
+        weatherRadarPort;
 
     @BeforeEach
     public void init() {
@@ -93,12 +93,6 @@ public class ProcedureTest {
         weatherRadarPort = WeatherRadarFactory.build();
 
         try {
-//            // ToDo air conditioning (on)
-//            Method onMethod = airConditioningPort.getClass().getDeclaredMethod("on");
-//            boolean isOn = (boolean) onMethod.invoke(airConditioningPort);
-//            PrimaryFlightDisplay.instance.isAirConditioningOn = isOn;
-//            assertTrue(PrimaryFlightDisplay.instance.isAirConditioningOn);
-
             // air flow sensor (measure)
             Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure");
             int airPressure = (int) measureMethod.invoke(airFlowSensorPort);
@@ -117,12 +111,13 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isAPUStarted = isStarted;
             assertTrue(PrimaryFlightDisplay.instance.isAPUStarted);
 
-            // apu (increaseRPM) ToDo value
-            Method increaseRPM = apuPort.getClass().getDeclaredMethod("increaseRPM");
-            int rpm = (int) increaseRPM.invoke(apuPort);
+            // apu (increaseRPM)
+            Method increaseRPM = apuPort.getClass().getDeclaredMethod("increaseRPM", int.class);
+            int rpm = (int) increaseRPM.invoke(apuPort, 1000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
             assertTrue(PrimaryFlightDisplay.instance.rpmAPU > oldRPM);
+            assertEquals(PrimaryFlightDisplay.instance.rpmAPU, 1000);
 
             // battery (charge)
             Method chargeMethod = batteryPort.getClass().getDeclaredMethod("charge");
@@ -165,12 +160,13 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isEngineStarted = isStarted;
             assertTrue(PrimaryFlightDisplay.instance.isEngineStarted);
 
-            // engine (increase rpm) ToDo value
-            Method increaseRPMMethod = enginePort.getClass().getDeclaredMethod("increaseRPM");
-            rpm = (int) increaseRPMMethod.invoke(enginePort);
+            // engine (increase rpm)
+            Method increaseRPMMethod = enginePort.getClass().getDeclaredMethod("increaseRPM", int.class);
+            rpm = (int) increaseRPMMethod.invoke(enginePort, 1000);
             oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
             assertTrue(PrimaryFlightDisplay.instance.rpmEngine > oldRPM);
+            assertEquals(PrimaryFlightDisplay.instance.rpmEngine, 1000);
 
             // fuel tank (refill)
             Method refillMethod = fuelTank.getClass().getDeclaredMethod("refill");
@@ -279,12 +275,16 @@ public class ProcedureTest {
         shockSensorPort = ShockSensorFactory.build();
 
         try {
-            // apu (decreaseRPM) ToDo value
-            Method decreaseRPM = apuPort.getClass().getDeclaredMethod("decreaseRPM");
-            int rpm = (int) decreaseRPM.invoke(apuPort);
+            // apu (decreaseRPM)
+            Method decreaseRPM = apuPort.getClass().getDeclaredMethod("decreaseRPM", int.class);
+            int rpm = (int) decreaseRPM.invoke(apuPort, 1000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmAPU < oldRPM);
+            if (oldRPM >= 1000){
+                assertEquals(PrimaryFlightDisplay.instance.rpmAPU, oldRPM - 1000);
+            } else {
+                assertEquals(PrimaryFlightDisplay.instance.rpmAPU, 0);
+            }
 
             // apu (shutdown)
             Method shutdownMethod = apuPort.getClass().getDeclaredMethod("shutdown");
@@ -354,12 +354,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.airPressure = airPressure;
             assertEquals(airPressure, 0);                                                       // TODO: no value to compare
 
-            // engine (increase RPM) ToDo value
-            Method increaseMethod = enginePort.getClass().getDeclaredMethod("increaseRPM");
-            int rpm = (int) increaseMethod.invoke(increaseMethod);
+            // engine (increase RPM)
+            Method increaseMethod = enginePort.getClass().getDeclaredMethod("increaseRPM", int.class);
+            int rpm = (int) increaseMethod.invoke(increaseMethod, 2000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmEngine > oldRPM);
+            assertEquals(PrimaryFlightDisplay.instance.rpmEngine, oldRPM + 2000);
 
             // gear (up)
             Method gearUpMethod = gearPort.getClass().getDeclaredMethod("up");
@@ -749,19 +749,23 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isAPUStarted = isStarted;
             assertTrue(PrimaryFlightDisplay.instance.isAPUStarted);
 
-            // apu (increaseRPM) ToDo value
-            Method increaseRPM = apuPort.getClass().getDeclaredMethod("increaseRPM");
-            int rpm = (int) increaseRPM.invoke(apuPort);
+            // apu (increaseRPM)
+            Method increaseRPM = apuPort.getClass().getDeclaredMethod("increaseRPM", int.class);
+            int rpm = (int) increaseRPM.invoke(apuPort, 2000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmAPU > oldRPM);
+            assertEquals(oldRPM + 2000, PrimaryFlightDisplay.instance.rpmAPU);
 
-            // engine (decrease RPM) // ToDo value
-            Method decreaseMethod = enginePort.getClass().getDeclaredMethod("decreaseRPM");
-            rpm = (int) decreaseMethod.invoke(decreaseMethod);
+            // engine (decrease RPM)
+            Method decreaseMethod = enginePort.getClass().getDeclaredMethod("decreaseRPM", int.class);
+            rpm = (int) decreaseMethod.invoke(decreaseMethod, 1000);
             oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmEngine < oldRPM);
+            if (oldRPM >= 1000) {
+                assertEquals(oldRPM - 1000, PrimaryFlightDisplay.instance.rpmEngine);
+            } else{
+                assertEquals(0, PrimaryFlightDisplay.instance.rpmEngine);
+            }
 
             // gear (down)
             Method gearDownMethod = gearPort.getClass().getDeclaredMethod("down");
@@ -876,12 +880,16 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
 
-            // apu (decreaseRPM) ToDo value
-            Method decreaseRPM = apuPort.getClass().getDeclaredMethod("decreaseRPM");
-            int rpm = (int) decreaseRPM.invoke(apuPort);
+            // apu (decreaseRPM)
+            Method decreaseRPM = apuPort.getClass().getDeclaredMethod("decreaseRPM", int.class);
+            int rpm = (int) decreaseRPM.invoke(apuPort, 2000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmAPU < oldRPM);
+            if (oldRPM >= 2000){
+                assertEquals(oldRPM - 2000, PrimaryFlightDisplay.instance.rpmAPU);
+            } else {
+                assertEquals(0, PrimaryFlightDisplay.instance.rpmAPU);
+            }
 
             // apu (shutdown)
             Method shutdownMethod = apuPort.getClass().getDeclaredMethod("shutdown");
@@ -890,7 +898,7 @@ public class ProcedureTest {
             assertFalse(PrimaryFlightDisplay.instance.isAPUStarted);
 
             // battery (discharge)
-            Method dischargeMethod = batteryPort.getClass().getDeclaredMethod("charge");
+            Method dischargeMethod = batteryPort.getClass().getDeclaredMethod("discharge");
             int percentage = (int) dischargeMethod.invoke(batteryPort);
             PrimaryFlightDisplay.instance.percentageBattery = percentage;
             assertEquals(PrimaryFlightDisplay.instance.percentageBattery, 0);
@@ -924,12 +932,16 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isDeIcingSystemActivated = isActivated;
             assertFalse(PrimaryFlightDisplay.instance.isDeIcingSystemActivated);
 
-            // engine (decreaseRPM rpm) ToDo value
-            Method decreaseRPMMethod = enginePort.getClass().getDeclaredMethod("decreaseRPM");
-            rpm = (int) decreaseRPMMethod.invoke(enginePort);
+            // engine (decreaseRPM rpm)
+            Method decreaseRPMMethod = enginePort.getClass().getDeclaredMethod("decreaseRPM", int.class);
+            rpm = (int) decreaseRPMMethod.invoke(enginePort, 1000);
             oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
-            assertTrue(PrimaryFlightDisplay.instance.rpmEngine < oldRPM);
+            if (oldRPM >= 1000){
+                assertEquals(oldRPM - 1000, PrimaryFlightDisplay.instance.rpmEngine);
+            } else {
+                assertEquals(0, PrimaryFlightDisplay.instance.rpmEngine);
+            }
 
             // engine (shutdown)
             shutdownMethod = enginePort.getClass().getDeclaredMethod("shutdown");
