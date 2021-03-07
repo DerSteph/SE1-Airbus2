@@ -3,6 +3,7 @@ package base;
 import javafx.beans.property.SimpleStringProperty;
 
 public class PrimaryFlightDisplayEntry {
+
     private SimpleStringProperty attribute;
     private SimpleStringProperty value;
 
