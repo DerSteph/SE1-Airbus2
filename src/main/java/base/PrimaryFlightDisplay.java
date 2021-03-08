@@ -74,5 +74,4 @@ public enum PrimaryFlightDisplay {
     public boolean isCostOptimizerOn;
     public int indexCostOptimizer;
     public int numberOfCheckPointsCostOptimizer;
-
 }
