@@ -113,8 +113,8 @@ public class ProcedureTest {
 
         try {
             // air flow sensor (measure)
-            Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure");
-            int airPressure = (int) measureMethod.invoke(airFlowSensorPort);
+            Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure", String.class);
+            int airPressure = (int) measureMethod.invoke(airFlowSensorPort, "air");
             PrimaryFlightDisplay.instance.airPressure = airPressure;
             assertEquals(PrimaryFlightDisplay.instance.airPressure, airPressure);       // TODO: airPressure is never signed in component
 
@@ -185,6 +185,7 @@ public class ProcedureTest {
             // deicing system (refill & deice)
             Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
             refillMethod.invoke(deicingSystemPort);
+            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 1000);
             Method deIceMethod = deicingSystemPort.getClass().getDeclaredMethod("deIce", int.class);
             int amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
             PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
@@ -317,10 +318,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.degreeSpoiler = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeSpoiler, 0);
 
+            /* TODO: no attribute in primary flight display
             // stalling sensor (measure)
             measureMethod = stallingSensorPort.getClass().getDeclaredMethod("measure", String.class);
             int stalling = (int) measureMethod.invoke(stallingSensorPort, "air");
             assertEquals(stalling, 21);
+            */
 
             // tcas (on)
             onMethod = tcasPort.getClass().getDeclaredMethod("on");
@@ -360,7 +363,7 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isWasteWaterTankLocked = isLocked;
             assertFalse(PrimaryFlightDisplay.instance.isWasteWaterTankLocked);
 
-            // portable water tank (pumpOut)
+            // waste water tank (pumpOut)
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("pumpOut");
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -474,12 +477,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.amountPortableWater = amount;
             assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 990);
 
-            // shock sensor (alarm - shock detected (body))
-            Method alarmMethod = shockSensorPort.getClass().getDeclaredMethod("alarm");
-            boolean isShockDetected = (boolean) alarmMethod.invoke(shockSensorPort);
-            PrimaryFlightDisplay.instance.isShockSensorBodyShockDetected = isShockDetected;
-            assertFalse(PrimaryFlightDisplay.instance.isShockSensorBodyShockDetected);
-
             // tcas (determine altitude)
             Method determineAltitude = tcasPort.getClass().getDeclaredMethod("determineAltitude", String.class);
             int altitude = (int) determineAltitude.invoke(tcasPort, "ground");
@@ -494,7 +491,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 10);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -527,8 +524,8 @@ public class ProcedureTest {
 
         try {
             // air flow sensor (measure)
-            Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure");
-            int airPressure = (int) measureMethod.invoke(airFlowSensorPort);
+            Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure", String.class);
+            int airPressure = (int) measureMethod.invoke(airFlowSensorPort, "air");
             PrimaryFlightDisplay.instance.airPressure = airPressure;
             assertEquals(PrimaryFlightDisplay.instance.airPressure, airPressure);       // TODO: airPressure is never signed in component
 
@@ -626,7 +623,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -724,10 +721,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.degreeRudder = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeRudder, 0);
 
+            /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
             int shock = (int) measureMethod.invoke(shockSensorPort);
             assertEquals(shock, 21);
+            */
 
             // slat (neutral)
             Method fullDownMethod = slatPort.getClass().getDeclaredMethod("neutral");
@@ -739,7 +738,7 @@ public class ProcedureTest {
             Method setAltitude = tcasPort.getClass().getDeclaredMethod("setAltitude", int.class);
             setAltitude.invoke(tcasPort, 2000);
             Method determineAltitude = tcasPort.getClass().getDeclaredMethod("determineAltitude", String.class);
-            altitude = (int) determineAltitude.invoke(tcasPort, "ground");
+            altitude = (int) determineAltitude.invoke(tcasPort, "high");
             PrimaryFlightDisplay.instance.altitudeTCAS = altitude;
             assertEquals(PrimaryFlightDisplay.instance.altitudeTCAS, 2000);
 
@@ -751,7 +750,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -854,10 +853,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.degreeRudder = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeRudder, 60);
 
+            /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
             int shock = (int) measureMethod.invoke(shockSensorPort);
             assertEquals(shock, 21);
+             */
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
@@ -867,7 +868,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -969,10 +970,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.degreeRudder = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeRudder, -60);
 
+            /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
             int shock = (int) measureMethod.invoke(shockSensorPort);
             assertEquals(shock, 21);
+             */
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
@@ -982,7 +985,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -1071,16 +1074,18 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.degreeRudder = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeRudder, 0);
 
+            /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
             int shock = (int) measureMethod.invoke(shockSensorPort);
             assertEquals(shock, 21);
+             */
 
             // tcas (set altitude & determine altitude)
             Method setAltitude = tcasPort.getClass().getDeclaredMethod("setAltitude", int.class);
             setAltitude.invoke(tcasPort, 1000);
             Method determineAltitude = tcasPort.getClass().getDeclaredMethod("determineAltitude", String.class);
-            altitude = (int) determineAltitude.invoke(tcasPort, "ground");
+            altitude = (int) determineAltitude.invoke(tcasPort, "low");
             PrimaryFlightDisplay.instance.altitudeTCAS = altitude;
             assertEquals(PrimaryFlightDisplay.instance.altitudeTCAS, 1000);
 
@@ -1092,7 +1097,7 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -1206,10 +1211,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.amountPortableWater = amount;
             assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 480);
 
+            /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
             int shock = (int) measureMethod.invoke(shockSensorPort);
             assertEquals(shock, 21);
+             */
 
             // slat (full down)
             Method fullDownMethod = slatPort.getClass().getDeclaredMethod("fullDown");
@@ -1245,7 +1252,7 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.selectedChannelVHF = channel;
             assertEquals(PrimaryFlightDisplay.instance.selectedChannelVHF, "");
 
-            // portable water tank (add(int amount))
+            // waste water tank (add(int amount))
             Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
             int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 10);
             PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
@@ -1259,7 +1266,6 @@ public class ProcedureTest {
     @Order(9)
     public void shutdown() {
         // airConditioningPort = AirConditioningFactory.build();
-        airFlowSensorPort = AirFlowSensorFactory.build();
         antiCollisionLightPort = AntiCollisionLightFactory.build();
         apuPort = APUFactory.build();
         batteryPort = BatteryFactory.build();
@@ -1267,20 +1273,16 @@ public class ProcedureTest {
         costOptimizerPort = CostOptimizerFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         enginePort = EngineFactory.build();
-        fuelTankPort = FuelTankFactory.build();
         // gearPort = GearFactory.build();
         landingLightPort = LandingLightFactory.build();
         leftNavigationLightPort = LeftNavigationLightFactory.build();
         logoLightPort = LogoLightFactory.build();
-        nitrogenBottlePort = NitrogenBottleFactory.build();
-        oxygenBottlePort = OxygenBottleFactory.build();
         portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         routeManagementPort = RouteManagementFactory.build();
         slatPort = SlatFactory.build();
         spoilerPort = SpoilerFactory.build();
         tcasPort = TCASFactory.build();
-        temperatureSensorPort = TemperatureSensorFactory.build();
         vhfPort = VHFFactory.build();
         wasteWaterTankPort = WasteWaterTankFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
@@ -1297,12 +1299,6 @@ public class ProcedureTest {
             boolean isOn = (boolean) offMethod.invoke(antiCollisionLightPort);
             PrimaryFlightDisplay.instance.isAntiCollisionLightOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isAntiCollisionLightOn);
-
-            // air flow sensor (measure)
-            Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure");
-            int airPressure = (int) measureMethod.invoke(airFlowSensorPort);
-            PrimaryFlightDisplay.instance.airPressure = airPressure;
-            assertEquals(PrimaryFlightDisplay.instance.airPressure, airPressure);       // TODO: airPressure is never signed in component
 
             // apu (decreaseRPM)
             Method decreaseRPM = apuPort.getClass().getDeclaredMethod("decreaseRPM", int.class);
@@ -1345,12 +1341,7 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isCostOptimizerOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isCostOptimizerOn);
 
-            // deicing system (refill)
-            Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
-            int amount = (int) refillMethod.invoke(deicingSystemPort);
-            PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 1000);
-            // (deactivate)
+            // deicing system (deactivate)
             Method deactivateMethod = deicingSystemPort.getClass().getDeclaredMethod("deactivate");
             boolean isActivated = (boolean) deactivateMethod.invoke(deicingSystemPort);
             PrimaryFlightDisplay.instance.isDeIcingSystemActivated = isActivated;
@@ -1373,12 +1364,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isEngineStarted = isStarted;
             assertFalse(PrimaryFlightDisplay.instance.isEngineStarted);
 
-            // fuel tank (refill(int refill))
-            refillMethod = fuelTankPort.getClass().getDeclaredMethod("refill", int.class);
-            amount = (int) refillMethod.invoke(fuelTankPort, 520);
-            PrimaryFlightDisplay.instance.amountOfFuel = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountOfFuel, 1000);
-
             // landing light (off)
             offMethod = landingLightPort.getClass().getDeclaredMethod("off");
             isOn = (boolean) onMethod.invoke(landingLightPort);
@@ -1400,29 +1385,11 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isLogoLightOn);
 
-            // nitrogen bottle (refill(int mount))
-            refillMethod = nitrogenBottlePort.getClass().getDeclaredMethod("refill", int.class);
-            amount = (int) refillMethod.invoke(nitrogenBottlePort, 52);
-            PrimaryFlightDisplay.instance.amountOfNitrogen = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountOfNitrogen, 100);
-
-            // oxygen bottle (refill(int mount))
-            refillMethod = oxygenBottlePort.getClass().getDeclaredMethod("refill", int.class);
-            amount = (int) refillMethod.invoke(oxygenBottlePort, 52);
-            PrimaryFlightDisplay.instance.oxygenBottleAmount = amount;
-            assertEquals(PrimaryFlightDisplay.instance.oxygenBottleAmount, 100);
-
             // portable water tank (lock)
             Method lockMethod = portableWaterTank.getClass().getDeclaredMethod("unlock");
             boolean isLocked = (boolean) lockMethod.invoke(portableWaterTank);
             PrimaryFlightDisplay.instance.isPortableWaterTankLocked = isLocked;
             assertTrue(PrimaryFlightDisplay.instance.isPortableWaterTankLocked);
-
-            // portable water tank (refill(int amount))
-            refillMethod = portableWaterTank.getClass().getDeclaredMethod("refill", int.class);
-            amount = (int) refillMethod.invoke(portableWaterTank, 520);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 1000);
 
             // radar altimeter (off)
             offMethod = radarAltimeter.getClass().getDeclaredMethod("off");
@@ -1453,14 +1420,6 @@ public class ProcedureTest {
             isOn = (boolean) offMethod.invoke(tcasPort);
             PrimaryFlightDisplay.instance.isTCASOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isTCASOn);
-
-            // temperature sensor (measure)
-            measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
-            PrimaryFlightDisplay.instance.temperatureBody = temperature;
-            PrimaryFlightDisplay.instance.temperatureWing = temperature;
-            assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
-            assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
             // vhf (off)
             offMethod = vhfPort.getClass().getDeclaredMethod("off");
