@@ -177,10 +177,10 @@ public class Wing extends Subscriber {
 
         // Add a new iteration for each service...
         for (int i = 0; i < Configuration.instance.numberOfEngine; i++) {
-            engineList.add(SlatFactory.build());
+            engineList.add(EngineFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfHydraulicPumpWing; i++) {
-            hydraulicPumpList.add(SlatFactory.build());
+            hydraulicPumpList.add(HydraulicPumpFactory.build());
         }
 
         for (int i = 0; i < Configuration.instance.numberOfLeftAileron; i++) {
