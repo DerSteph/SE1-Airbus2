@@ -6,28 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="7cb4da57-0f7c-4083-9b88-5e7e6614cb4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestTCAS.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestTCAS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/flight_recorder_a350.db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/flight_recorder_a350.db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/flight_recorder_a350.db.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/flight_recorder_a350.db.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/airbus_a350.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/airbus_a350.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/section/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/section/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/section/Wing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/section/Wing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/components/battery">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/components/deicing_system">
       <ProjectState />
     </projectState>
   </component>
@@ -68,7 +65,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Team-12" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,7 +93,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../project_zoox_5813630" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Gradle.ProcedureTest">
+  <component name="RunManager" selected="Application.PrimaryFlightDisplayGUI">
+    <configuration name="PrimaryFlightDisplayGUI" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="base.PrimaryFlightDisplayGUI" />
+      <module name="SE1-Airbus2.main" />
+      <option name="VM_PARAMETERS" value="--module-path=&quot;C:\Users\kanja\Downloads\javafx-sdk-15.0.1\lib&quot; --add-modules=javafx.controls" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="02_abgabe [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -164,6 +169,7 @@
       <item itemvalue="Gradle.AirBus2 [build]" />
       <item itemvalue="Gradle.ProcedureTest" />
       <item itemvalue="Gradle.02_abgabe [run]" />
+      <item itemvalue="Application.PrimaryFlightDisplayGUI" />
     </list>
     <recent_temporary>
       <list>
@@ -206,6 +212,9 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -217,7 +226,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Team-11" />
+                        <option value="Team-12" />
                       </list>
                     </value>
                   </entry>
