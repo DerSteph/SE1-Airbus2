@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class ExhaustGasTemperaturSensor{
+public class ExhaustGasTemperatureSensor{
     //static instance
-    private static ExhaustGasTemperaturSensor instance = new ExhaustGasTemperaturSensor();
+    private static ExhaustGasTemperatureSensor instance = new ExhaustGasTemperatureSensor();
     //port
     public Port port;
 

@@ -43,6 +43,19 @@ public class PrimaryFlightDisplayGUI extends Application {
     private RadioButton tailNavigationLightOffButton;
     private RadioButton tailNavigationLightOnButton;
 
+    // exhaust_gas_temperature_sensor
+    private PrimaryFlightDisplayEntry temperatureExhaustGasTemperatureSensorEntry;
+    private PrimaryFlightDisplayEntry isAlarmMajorExhaustGasTemperatureSensorEntry;
+    private PrimaryFlightDisplayEntry isAlarmCriticalExhaustGasTemperatureSensorEntry;
+
+    private TextField temperatureExhaustGasTemperatureSensorText;
+    private TextField isAlarmMajorExhaustGasTemperatureSensorText;
+    private TextField isAlarmCriticalExhaustGasTemperatureSensorText;
+
+    // fuel_flow_sensor
+    private PrimaryFlightDisplayEntry fuelFlowEntry;
+    private TextField fuelFlowText;
+
     public static void main(String... args) {
         LogEngine.instance.init();
         FlightRecorder.instance.startup();
@@ -272,6 +285,40 @@ public class PrimaryFlightDisplayGUI extends Application {
         tailNavigationLightOnButton.setSelected(false);
         gridPane.add(tailNavigationLightOnButton,8,2);
 
+        // exhaust_gas_temperature_sensor
+        Label exhaustGasTemperatureSensorLabel = new Label("ExhaustGasTemperatureSensor : ");
+        gridPane.add(exhaustGasTemperatureSensorLabel, 6,3);
+        Label exhaustGasTemperatureLabel = new Label("ExhaustGasTemperature : ");
+        gridPane.add(exhaustGasTemperatureLabel, 7, 3);
+        Label isAlarmMajorExhaustGasTemperatureSensorLabel = new Label("IsAlarmMajorExhaustGas : ");
+        gridPane.add(isAlarmMajorExhaustGasTemperatureSensorLabel, 9,3);
+        Label isAlarmCriticalExhaustGasTemperatureSensorLabel = new Label("IsAlarmCriticalExhaustGas : ");
+        gridPane.add(isAlarmCriticalExhaustGasTemperatureSensorLabel, 11,3);
+
+
+
+        temperatureExhaustGasTemperatureSensorText = new TextField(Integer.toString(PrimaryFlightDisplay.instance.exhaustGasTemperature));
+        isAlarmMajorExhaustGasTemperatureSensorText = new TextField(Boolean.toString(PrimaryFlightDisplay.instance.isAlarmMajorExhaustGasTemperatureSensor));
+        isAlarmCriticalExhaustGasTemperatureSensorText = new TextField(Boolean.toString(PrimaryFlightDisplay.instance.isAlarmCriticalExhaustGasTemperatureSensor));
+
+        gridPane.add(temperatureExhaustGasTemperatureSensorText, 8,3);
+        temperatureExhaustGasTemperatureSensorText.setPrefSize(50,20);
+        gridPane.add(isAlarmMajorExhaustGasTemperatureSensorText,10,3);
+        isAlarmMajorExhaustGasTemperatureSensorText.setPrefSize(50,20);
+        gridPane.add(isAlarmCriticalExhaustGasTemperatureSensorText,12,3);
+        isAlarmCriticalExhaustGasTemperatureSensorText.setPrefSize(50,20);
+
+        // fuel_flow_sensor
+
+        Label fuelFlowSensorLabel = new Label("FuelFlowSensor : ");
+        gridPane.add(fuelFlowSensorLabel,6,4);
+
+        ToggleGroup fuelFlowSensorToggleGroup = new ToggleGroup();
+
+        fuelFlowText = new TextField(Integer.toString(PrimaryFlightDisplay.instance.fuelFlow));
+
+        gridPane.add(fuelFlowText,7,4);
+        fuelFlowText.setPrefSize(50,20);
 
 
         // --- insert section: end
@@ -354,6 +401,19 @@ public class PrimaryFlightDisplayGUI extends Application {
         // tail_navigation_light
         tailNavigationLightIsOnEntry = new PrimaryFlightDisplayEntry("TailNavigationLight (isOn)",Boolean.toString(PrimaryFlightDisplay.instance.isTailNavigationLightOn));
         dataList.add(tailNavigationLightIsOnEntry);
+
+        // exhaust_gas_temperature_sensor
+        temperatureExhaustGasTemperatureSensorEntry = new PrimaryFlightDisplayEntry("ExhaustGasTemperature",Integer.toString(PrimaryFlightDisplay.instance.exhaustGasTemperature));
+        dataList.add(temperatureExhaustGasTemperatureSensorEntry);
+        isAlarmMajorExhaustGasTemperatureSensorEntry = new PrimaryFlightDisplayEntry("IsAlarmMajorExhaustGasTemperature",Boolean.toString(PrimaryFlightDisplay.instance.isAlarmMajorExhaustGasTemperatureSensor));
+        dataList.add(isAlarmMajorExhaustGasTemperatureSensorEntry);
+        isAlarmCriticalExhaustGasTemperatureSensorEntry = new PrimaryFlightDisplayEntry("IsAlarmCriticalExhaustGasTemperature",Boolean.toString(PrimaryFlightDisplay.instance.isAlarmCriticalExhaustGasTemperatureSensor));
+        dataList.add(isAlarmCriticalExhaustGasTemperatureSensorEntry);
+
+        // fuel_flow_sensor
+        fuelFlowEntry = new PrimaryFlightDisplayEntry("FuelFlow",Integer.toString(PrimaryFlightDisplay.instance.fuelFlow));
+        dataList.add(fuelFlowEntry);
+
     }
 
     private ObservableList getInitialTableData() {
@@ -374,6 +434,9 @@ public class PrimaryFlightDisplayGUI extends Application {
         // tail_navigation_light
         tailNavigationLightIsOnEntry.setValue(Boolean.toString(PrimaryFlightDisplay.instance.isTailNavigationLightOn));
         setTailNavigationLightToggleGroup(PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+
+
+
 
         tableView.refresh();
     }

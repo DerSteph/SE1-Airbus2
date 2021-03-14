@@ -31,4 +31,11 @@ public enum Configuration {
     public String pathToTailNavigationLight = commonPathToJavaArchive + "tail_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "tail_navigation_light.jar";
     public int numberOfTailNavigationLight = 2;
 
+    //exhaust_gas_temperature_sensor
+    public String pathToExhaustGasTemperatureSensor = commonPathToJavaArchive + "exhaust_gas_temperature_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "exhaust_gas_temperature_sensor.jar";
+    public int numberOfExhaustGasTemperatureSensor = 2;
+
+    //fuel_flow_sensor
+    public String pathToFuelFlowSensor = commonPathToJavaArchive + "fuel_flow_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "fuel_flow_sensor.jar";
+    public int numberOfFuelFlowSensor = 4;
 }
