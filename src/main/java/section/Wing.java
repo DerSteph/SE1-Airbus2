@@ -16,6 +16,8 @@ import event.slat.SlatDown;
 import event.slat.SlatFullDown;
 import event.slat.SlatNeutral;
 import event.slat.SlatUp;
+import factory.EngineFactory;
+import factory.HydraulicPumpFactory;
 import factory.SlatFactory;
 import logging.LogEngine;
 import recorder.FlightRecorder;
@@ -45,10 +47,10 @@ public class Wing extends Subscriber {
 
         // Add a new iteration for each service...
         for (int i = 0; i < Configuration.instance.numberOfEngine; i++) {
-            engineList.add(SlatFactory.build());
+            engineList.add(EngineFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfHydraulicPumpWing; i++) {
-            hydraulicPumpList.add(SlatFactory.build());
+            hydraulicPumpList.add(HydraulicPumpFactory.build());
         }
     }
 

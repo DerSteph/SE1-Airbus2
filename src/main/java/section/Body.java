@@ -14,9 +14,7 @@ import event.hydraulic_pump.*;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import event.weather_radar.WeatherRadarScan;
-import factory.APUFactory;
-import factory.SlatFactory;
-import factory.WeatherRadarFactory;
+import factory.*;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -62,16 +60,16 @@ public class Body extends Subscriber {
             apuList.add(APUFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfGear; i++) {
-            gearList.add(APUFactory.build());
+            gearList.add(GearFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfHydraulicPumpBody; i++) {
-            hydraulicPumpList.add(APUFactory.build());
+            hydraulicPumpList.add(HydraulicPumpFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfAirConditioning; i++) {
-            airConditioningList.add(APUFactory.build());
+            airConditioningList.add(AirConditioningFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfKitchen; i++) {
-            kitchenList.add(APUFactory.build());
+            kitchenList.add(KitchenFactory.build());
         }
     }
 
