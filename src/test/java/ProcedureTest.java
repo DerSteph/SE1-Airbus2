@@ -40,21 +40,17 @@ public class ProcedureTest {
         nitrogenBottlePort,
         oxygenBottlePort,
         pitotTubePort,
-        portableWaterTank,
         radar,                          // TODO: no attributes in Primary Flight Display
         radarAltimeter,
         rightAileronPort,
         routeManagementPort,
         rudderPort,
-        satComPort,
         shockSensorPort,
         slatPort,
         spoilerPort,
         stallingSensorPort,
         tcasPort,
         temperatureSensorPort,
-        vhfPort,
-        wasteWaterTankPort,
         weatherRadarPort;
 
     @BeforeEach
@@ -98,17 +94,13 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         routeManagementPort = RouteManagementFactory.build();
-        satComPort = SatComFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         spoilerPort = SpoilerFactory.build();
         stallingSensorPort = StallingSensorFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        vhfPort = VHFFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
 
         try {
@@ -274,18 +266,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isPitotTubeCleaned = isCleaned;
             assertTrue(PrimaryFlightDisplay.instance.isPitotTubeCleaned);
 
-            // portable water tank (unlock)
-            Method unlockMethod = portableWaterTank.getClass().getDeclaredMethod("unlock");
-            boolean isLocked = (boolean) unlockMethod.invoke(portableWaterTank);
-            PrimaryFlightDisplay.instance.isPortableWaterTankLocked = isLocked;
-            assertFalse(PrimaryFlightDisplay.instance.isPortableWaterTankLocked);
-
-            // portable water tank (refill)
-            refillMethod = portableWaterTank.getClass().getDeclaredMethod("refill");
-            amount = (int) refillMethod.invoke(portableWaterTank);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 1000);
-
             // radar altimeter (on)
             onMethod = radarAltimeter.getClass().getDeclaredMethod("on");
             isOn = (boolean) onMethod.invoke(radarAltimeter);
@@ -297,12 +277,6 @@ public class ProcedureTest {
             isOn = (boolean) onMethod.invoke(routeManagementPort);
             PrimaryFlightDisplay.instance.isRouteManagementOn = isOn;
             assertTrue(PrimaryFlightDisplay.instance.isRouteManagementOn);
-
-            // satcom (on)
-            Method connectMethod = satComPort.getClass().getDeclaredMethod("connect", String.class, String.class);
-            boolean isConnected = (boolean) connectMethod.invoke(satComPort, "satelite 1", "89,5 MHz");
-            PrimaryFlightDisplay.instance.isSatComConnected = isConnected;
-            assertTrue(PrimaryFlightDisplay.instance.isSatComConnected);
 
             // shock sensor (calibrated)
             Method calibrateMethod = shockSensorPort.getClass().getDeclaredMethod("calibrate");
@@ -332,8 +306,8 @@ public class ProcedureTest {
             assertTrue(PrimaryFlightDisplay.instance.isTCASOn);
 
             // tcas (connect)
-            connectMethod= tcasPort.getClass().getDeclaredMethod("connect", String.class);
-            isConnected = (boolean) connectMethod.invoke(tcasPort, "89,5 MHz");
+            Method connectMethod= tcasPort.getClass().getDeclaredMethod("connect", String.class);
+            boolean isConnected = (boolean) connectMethod.invoke(tcasPort, "89,5 MHz");
             PrimaryFlightDisplay.instance.isTCASConnected = isConnected;
             assertTrue(PrimaryFlightDisplay.instance.isTCASConnected);
 
@@ -344,30 +318,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
-
-            // vhf (on)
-            onMethod = vhfPort.getClass().getDeclaredMethod("on");
-            isOn = (boolean) onMethod.invoke(vhfPort);
-            PrimaryFlightDisplay.instance.isVHFOn = isOn;
-            assertTrue(PrimaryFlightDisplay.instance.isVHFOn);
-
-            // vhf (selectChannel(String channel))
-            Method selectChannelMethod = vhfPort.getClass().getDeclaredMethod("selectChannel", String.class);
-            String channel = (String) selectChannelMethod.invoke(vhfPort, "channel");
-            PrimaryFlightDisplay.instance.selectedChannelVHF = channel;
-            assertEquals(PrimaryFlightDisplay.instance.selectedChannelVHF, "");
-
-            // waste water tank (unlock)
-            unlockMethod = wasteWaterTankPort.getClass().getDeclaredMethod("unlock");
-            isLocked = (boolean) unlockMethod.invoke(wasteWaterTankPort);
-            PrimaryFlightDisplay.instance.isWasteWaterTankLocked = isLocked;
-            assertFalse(PrimaryFlightDisplay.instance.isWasteWaterTankLocked);
-
-            // waste water tank (pumpOut)
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("pumpOut");
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 1000);
 
             // weather radar (on)
             onMethod = weatherRadarPort.getClass().getDeclaredMethod("on");
@@ -392,12 +342,9 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        vhfPort = VHFFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -471,12 +418,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 10);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 990);
-
             // tcas (determine altitude)
             Method determineAltitude = tcasPort.getClass().getDeclaredMethod("determineAltitude", String.class);
             int altitude = (int) determineAltitude.invoke(tcasPort, "ground");
@@ -491,11 +432,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 10);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 990);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -514,13 +450,11 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         rudderPort = RudderFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         slatPort = SlatFactory.build();
         tcasPort = TCASFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -578,12 +512,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 100);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 890);
-
             // radar altimeter (measureAltitude)
             Method measureAltitudeMethod = radarAltimeter.getClass().getDeclaredMethod("receive");
             int altitude = (int) measureAltitudeMethod.invoke(radarAltimeter);
@@ -623,11 +551,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 890);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -645,14 +568,12 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         rudderPort = RudderFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         slatPort = SlatFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -703,12 +624,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 100);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 790);
-
             // radar altimeter (measureAltitude)
             Method measureAltitudeMethod = radarAltimeter.getClass().getDeclaredMethod("receive");
             int altitude = (int) measureAltitudeMethod.invoke(radarAltimeter);
@@ -750,11 +665,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 790);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -772,13 +682,11 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         rightAileronPort = RightAileronFactory.build();
         rudderPort = RudderFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -829,12 +737,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 100);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 690);
-
             // radar altimeter (measureAltitude)
             Method measureAltitudeMethod = radarAltimeter.getClass().getDeclaredMethod("receive");
             int altitude = (int) measureAltitudeMethod.invoke(radarAltimeter);
@@ -868,11 +770,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 690);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -889,13 +786,11 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         rightAileronPort = RightAileronFactory.build();
         rudderPort = RudderFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -946,12 +841,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 100);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 590);
-
             // radar altimeter (measureAltitude)
             Method measureAltitudeMethod = radarAltimeter.getClass().getDeclaredMethod("receive");
             int altitude = (int) measureAltitudeMethod.invoke(radarAltimeter);
@@ -985,11 +874,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 590);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -1005,13 +889,11 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         rudderPort = RudderFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -1056,12 +938,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 100);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 490);
-
             // radar altimeter (measureAltitude)
             Method measureAltitudeMethod = radarAltimeter.getClass().getDeclaredMethod("receive");
             int altitude = (int) measureAltitudeMethod.invoke(radarAltimeter);
@@ -1097,11 +973,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 100);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 490);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -1120,14 +991,11 @@ public class ProcedureTest {
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         slatPort = SlatFactory.build();
         spoilerPort = SpoilerFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
-        vhfPort = VHFFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
 
         try {
             // air flow sensor (measure)
@@ -1205,12 +1073,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.velocity = velocity;
             assertEquals(PrimaryFlightDisplay.instance.velocity, 30);
 
-            // portable water tank (takeOut(int amount))
-            takeOutMethod = portableWaterTank.getClass().getDeclaredMethod("takeOut", int.class);
-            amount = (int) takeOutMethod.invoke(portableWaterTank, 10);
-            PrimaryFlightDisplay.instance.amountPortableWater = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountPortableWater, 480);
-
             /*
             // shock sensor (measure)
             measureMethod = shockSensorPort.getClass().getDeclaredMethod("measure");
@@ -1246,17 +1108,6 @@ public class ProcedureTest {
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
             assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
 
-            // vhf (forwardChannel)
-            Method forwardChannelMethod = vhfPort.getClass().getDeclaredMethod("forwardChannel");
-            String channel = (String) forwardChannelMethod.invoke(vhfPort);
-            PrimaryFlightDisplay.instance.selectedChannelVHF = channel;
-            assertEquals(PrimaryFlightDisplay.instance.selectedChannelVHF, "");
-
-            // waste water tank (add(int amount))
-            Method pumpOutMethod = wasteWaterTankPort.getClass().getDeclaredMethod("add", int.class);
-            int capacity = (int) pumpOutMethod.invoke(wasteWaterTankPort, 10);
-            PrimaryFlightDisplay.instance.capacityWasteWater = capacity;
-            assertEquals(PrimaryFlightDisplay.instance.capacityWasteWater, 480);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -1277,14 +1128,11 @@ public class ProcedureTest {
         landingLightPort = LandingLightFactory.build();
         leftNavigationLightPort = LeftNavigationLightFactory.build();
         logoLightPort = LogoLightFactory.build();
-        portableWaterTank = PortableWaterTankFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
         routeManagementPort = RouteManagementFactory.build();
         slatPort = SlatFactory.build();
         spoilerPort = SpoilerFactory.build();
         tcasPort = TCASFactory.build();
-        vhfPort = VHFFactory.build();
-        wasteWaterTankPort = WasteWaterTankFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
 
         try {
@@ -1385,12 +1233,6 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isLogoLightOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isLogoLightOn);
 
-            // portable water tank (lock)
-            Method lockMethod = portableWaterTank.getClass().getDeclaredMethod("unlock");
-            boolean isLocked = (boolean) lockMethod.invoke(portableWaterTank);
-            PrimaryFlightDisplay.instance.isPortableWaterTankLocked = isLocked;
-            assertTrue(PrimaryFlightDisplay.instance.isPortableWaterTankLocked);
-
             // radar altimeter (off)
             offMethod = radarAltimeter.getClass().getDeclaredMethod("off");
             isOn = (boolean) offMethod.invoke(radarAltimeter);
@@ -1420,18 +1262,6 @@ public class ProcedureTest {
             isOn = (boolean) offMethod.invoke(tcasPort);
             PrimaryFlightDisplay.instance.isTCASOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isTCASOn);
-
-            // vhf (off)
-            offMethod = vhfPort.getClass().getDeclaredMethod("off");
-            isOn = (boolean) offMethod.invoke(vhfPort);
-            PrimaryFlightDisplay.instance.isVHFOn = isOn;
-            assertFalse(PrimaryFlightDisplay.instance.isVHFOn);
-
-            // waste water tank (lock)
-            lockMethod = wasteWaterTankPort.getClass().getDeclaredMethod("lock");
-            isLocked = (boolean) lockMethod.invoke(wasteWaterTankPort);
-            PrimaryFlightDisplay.instance.isWasteWaterTankLocked = isLocked;
-            assertTrue(PrimaryFlightDisplay.instance.isWasteWaterTankLocked);
 
             // weather radar (off)
             offMethod = weatherRadarPort.getClass().getDeclaredMethod("off");

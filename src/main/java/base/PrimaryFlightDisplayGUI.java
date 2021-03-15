@@ -117,12 +117,6 @@ public class PrimaryFlightDisplayGUI extends Application {
     // fuel_tank
     private PrimaryFlightDisplayEntry amountOfFuel;
 
-    //wastewater_tank
-    private PrimaryFlightDisplayEntry wasteWaterTankEntry;
-
-    //portable_watertank
-    private PrimaryFlightDisplayEntry portableWaterTankEntry;
-
     //oxygen_bottle
     private PrimaryFlightDisplayEntry oxygenBottleEntry;
     private RadioButton oxygenBottleTakeOutButton;
@@ -132,12 +126,6 @@ public class PrimaryFlightDisplayGUI extends Application {
     private PrimaryFlightDisplayEntry nitrogenBottleEntry;
     private RadioButton nitrogenBottleTakeOutButton;
     private RadioButton nitrogenBottleRefillButton;
-
-    //vhf
-    private PrimaryFlightDisplayEntry vhfEntry;
-
-    //sat_com
-    private PrimaryFlightDisplayEntry satComEntry;
 
     //tcas
     private PrimaryFlightDisplayEntry tcasIsOnEntry;
@@ -543,15 +531,6 @@ public class PrimaryFlightDisplayGUI extends Application {
         SpinnerValueFactory<Integer> rudderSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(-60, 60, 0);
         rudderSpinner.setValueFactory(rudderSpinnerValueFactory);
         gridPane.add(rudderSpinner, 7, 4);
-        // wastewater_tank
-        Label wasteWaterTankLabel = new Label("WasteWaterTank : ");
-        gridPane.add(wasteWaterTankLabel, 10, 0);
-        // ...
-
-        // portable_watertank
-        Label portableWaterTankLabel = new Label("PortableWaterTank : ");
-        gridPane.add(portableWaterTankLabel, 11, 0);
-        // ...
 
         // oxygen_bottle
         Label oxygenBottleLabel = new Label("OxygenBottle : ");
@@ -584,16 +563,6 @@ public class PrimaryFlightDisplayGUI extends Application {
         nitrogenBottleRefillButton.setToggleGroup(weatherRadarToggleGroup);
         nitrogenBottleRefillButton.setSelected(false);
         gridPane.add(nitrogenBottleRefillButton, 17, 0);
-        // ...
-
-        // vhf
-        Label vhfLabel = new Label("VHF : ");
-        gridPane.add(vhfLabel, 18, 0);
-        // ...
-
-        // sat_com
-        Label satComLabel = new Label("VHF : ");
-        gridPane.add(satComLabel, 19, 0);
         // ...
 
         // tcas

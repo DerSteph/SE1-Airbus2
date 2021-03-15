@@ -47,10 +47,6 @@ import event.oxygen_bottle.OxygenBottleRefill;
 import event.oxygen_bottle.OxygenBottleTakeOut;
 import event.pitot_tube.PitotTubeClean;
 import event.pitot_tube.PitotTubeMeasureVelocity;
-import event.portable_watertank.PortableWaterTankLock;
-import event.portable_watertank.PortableWaterTankRefill;
-import event.portable_watertank.PortableWaterTankTakeOut;
-import event.portable_watertank.PortableWaterTankUnlock;
 import event.radar_altimeter.RadarAltimeterOff;
 import event.radar_altimeter.RadarAltimeterOn;
 import event.right_aileron.RightAileronFullDown;
@@ -60,7 +56,6 @@ import event.route_management.RouteManagementOn;
 import event.rudder.RudderFullLeft;
 import event.rudder.RudderFullRight;
 import event.rudder.RudderNeutral;
-import event.sat_com.SatComOn;
 import event.shock_sensor.ShockSensorBodyCalibrate;
 import event.shock_sensor.ShockSensorBodyMeasure;
 import event.shock_sensor.ShockSensorWingCalibrate;
@@ -72,12 +67,6 @@ import event.spoiler.SpoilerNeutral;
 import event.tcas.*;
 import event.temperature_sensor.TemperatureSensorBodyMeasure;
 import event.temperature_sensor.TemperatureSensorWingMeasure;
-import event.vhf.VHFForwardChannel;
-import event.vhf.VHFOff;
-import event.vhf.VHFSelectChannel;
-import event.wastewater_tank.WasteWaterTankLock;
-import event.wastewater_tank.WasteWaterTankPumpOut;
-import event.wastewater_tank.WasteWaterTankUnlock;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import section.Body;
@@ -152,15 +141,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleRefill());
         // pilot tube
         eventBus.post(new PitotTubeClean());
-        // portable water bottle
-        eventBus.post(new PortableWaterTankUnlock());
-        eventBus.post(new PortableWaterTankRefill());
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // route management
         eventBus.post(new RouteManagementOn());
-        // satcom
-        eventBus.post(new SatComOn());
         // shock sensor
         eventBus.post(new ShockSensorBodyCalibrate(5));
         eventBus.post(new ShockSensorWingCalibrate("5"));
@@ -173,11 +157,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // vhf
-        eventBus.post(new VHFSelectChannel("channel"));
-        // waste water tank
-        eventBus.post(new WasteWaterTankUnlock());
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -203,15 +182,11 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(1));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(10));
         // tcas
         eventBus.post(new TCASDetermineAltitude("ground"));
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -236,8 +211,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(100));
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // rudder
@@ -253,8 +226,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -277,8 +248,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(100));
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // rudder
@@ -289,8 +258,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -313,8 +280,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(100));
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // right aileron
@@ -324,8 +289,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -348,8 +311,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(100));
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // right aileron
@@ -359,8 +320,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -381,8 +340,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(100));
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
         // rudder
@@ -393,8 +350,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -424,8 +379,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(1));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // portable water tank
-        eventBus.post(new PortableWaterTankTakeOut(10));
         // slat
         eventBus.post(new SlatFullDown());
         // spoiler
@@ -436,10 +389,6 @@ public class Airplane implements IAirplane {
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
         eventBus.post(new TemperatureSensorWingMeasure());
-        // vhf
-        eventBus.post(new VHFForwardChannel());
-        // waste water tank
-        eventBus.post(new WasteWaterTankPumpOut());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
     }
@@ -470,8 +419,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new LeftNavigationLightOff());
         // logo light
         eventBus.post(new LogoLightOff());
-        // portable water tank
-        eventBus.post(new PortableWaterTankLock());
         // radar altimeter
         eventBus.post(new RadarAltimeterOff());
         // route management
@@ -482,10 +429,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new SpoilerNeutral());
         // tcas
         eventBus.post(new TCASOff());
-        // vhf
-        eventBus.post(new VHFOff());
-        // waste water tank
-        eventBus.post(new WasteWaterTankLock());
         // weather_radar
         eventBus.post(new WeatherRadarOff());
     }

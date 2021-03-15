@@ -8,19 +8,10 @@ import event.nitrogen_bottle.NitrogenBottleRefill;
 import event.nitrogen_bottle.NitrogenBottleTakeOut;
 import event.oxygen_bottle.OxygenBottleRefill;
 import event.oxygen_bottle.OxygenBottleTakeOut;
-import event.portable_watertank.PortableWaterTankLock;
-import event.portable_watertank.PortableWaterTankRefill;
-import event.portable_watertank.PortableWaterTankTakeOut;
-import event.portable_watertank.PortableWaterTankUnlock;
 import event.sat_com.*;
 import event.tcas.*;
 import event.turbulent_airflow_sensor.TurbulentAirFlowSensorBodyMeasure;
 import event.turbulent_airflow_sensor.TurbulentAirFlowSensorWingMeasure;
-import event.vhf.*;
-import event.wastewater_tank.WasteWaterTankAdd;
-import event.wastewater_tank.WasteWaterTankLock;
-import event.wastewater_tank.WasteWaterTankPumpOut;
-import event.wastewater_tank.WasteWaterTankUnlock;
 
 
 import event.air_flow_sensor.*;
@@ -65,12 +56,8 @@ import java.util.ArrayList;
 public class Body extends Subscriber {
     private ArrayList<Object> weatherRadarPortList;
     private ArrayList<Object> slatPortList;
-    private ArrayList<Object> wasteWaterTankPortList;
-    private ArrayList<Object> portableWaterTankPortList;
     private ArrayList<Object> oxygenBottlePortList;
     private ArrayList<Object> nitrogenBottlePortList;
-    private ArrayList<Object> vHFPortList;
-    private ArrayList<Object> satComPortList;
     private ArrayList<Object> cameraPortList;
     private ArrayList<Object> gpsPortList;
     private ArrayList<Object> radarPortList;
@@ -134,12 +121,8 @@ public class Body extends Subscriber {
         logoLightPortList = new ArrayList<>();
         costOptimizerPortList = new ArrayList<>();
 
-        wasteWaterTankPortList = new ArrayList<>();
-        portableWaterTankPortList = new ArrayList<>();
         oxygenBottlePortList = new ArrayList<>();
         nitrogenBottlePortList = new ArrayList<>();
-        vHFPortList = new ArrayList<>();
-        satComPortList = new ArrayList<>();
         cameraPortList = new ArrayList<>();
         gpsPortList = new ArrayList<>();
         radarPortList = new ArrayList<>();
@@ -239,23 +222,11 @@ public class Body extends Subscriber {
         for (int i = 0; i < Configuration.instance.numberOfKitchen; i++) {
             kitchenList.add(APUFactory.build());
         }
-        for (int i = 0; i < Configuration.instance.numberOfWasteWaterTank; i++) {
-            wasteWaterTankPortList .add(WasteWaterTankFactory.build());
-        }
-        for (int i = 0; i < Configuration.instance.numberOfPortableWaterTank; i++) {
-            portableWaterTankPortList .add(PortableWaterTankFactory.build());
-        }
         for (int i = 0; i < Configuration.instance.numberOfOxygenBottle; i++) {
             oxygenBottlePortList .add(OxygenBottleFactory.build());
         }
         for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
             nitrogenBottlePortList .add(NitrogenBottleFactory.build());
-        }
-        for (int i = 0; i < Configuration.instance.numberOfVHF; i++) {
-            vHFPortList .add(VHFFactory.build());
-        }
-        for (int i = 0; i < Configuration.instance.numberOfSatCom; i++) {
-            vHFPortList .add(SatComFactory.build());
         }
         for(int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
             tcasPortList.add(TCASFactory.build());
@@ -1621,56 +1592,6 @@ public class Body extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
-    // --- WasteWaterTank -------------------------------------------------------------------------------------------------------
-
-    @Subscribe
-    public void receive(WasteWaterTankLock lock) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(WasteWaterTankUnlock unlock) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(WasteWaterTankAdd add) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(WasteWaterTankPumpOut pumpOut) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    // ----------------------------------------------------------------------------------------------------------------
-
-
-    // --- PortableWaterTank -------------------------------------------------------------------------------------------------------
-
-    @Subscribe
-    public void receive(PortableWaterTankLock lock) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(PortableWaterTankUnlock unlock) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(PortableWaterTankTakeOut takeOut) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(PortableWaterTankRefill refill) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    // ----------------------------------------------------------------------------------------------------------------
-
-
     // --- OxygenBottle -------------------------------------------------------------------------------------------------------
 
     @Subscribe
@@ -1783,68 +1704,6 @@ public class Body extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
-    // --- VHF -------------------------------------------------------------------------------------------------------
-
-    @Subscribe
-    public void receive(VHFBackwardChannel backwardChannel) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(VHFForwardChannel forwardChannel) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(VHFSearch search) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(VHFSelectChannel selectChannel) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(VHFOff vhfOff) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(VHFOn vhfOn) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    // ----------------------------------------------------------------------------------------------------------------
-
-    // --- SatCom -------------------------------------------------------------------------------------------------------
-
-    @Subscribe
-    public void receive(SatComConnect connect) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(SatComOff off) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(SatComOn on) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(SatComReceive receive) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    @Subscribe
-    public void receive(SatComSend send) {
-//        throw new RuntimeException("Not implemented yet.");
-    }
-
-    // ----------------------------------------------------------------------------------------------------------------
     // --- TCAS -----------------------------------------------------------------------------------------------
 
     @Subscribe
