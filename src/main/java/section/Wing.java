@@ -553,24 +553,24 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(EngineOilTankIncreaseLevel engineOilTankIncreaseLevel){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(EngineOilTankDecreaseLevel engineOilTankDecreaseLevel){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // --- FuelTank -----------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(FuelTankTakeOut fuelTankTakeOut){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(FuelTankRefill fuelTankRefill){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -579,12 +579,12 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(ShockSensorWingCalibrate shockSensorWingCalibrate) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(ShockSensorWingMeasure shockSensorWingMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -593,7 +593,7 @@ public class Wing extends Subscriber {
 
     @Subscribe
     public void receive(StallingSensorWingMeasure stallingSensorWingMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
 

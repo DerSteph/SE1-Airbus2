@@ -1492,62 +1492,62 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(PitotTubeClean pitotTubeClean){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PitotTubeMeasureStaticPressure pitotTubeMeasureStaticPressure){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PitotTubeMeasureTotalPressure pitotTubeMeasureTotalPressure){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PitotTubeMeasureVelocity pitotTubeMeasureVelocity){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // --- RadarAltimeter -----------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(RadarAltimeterOn radarAltimeterOn){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(RadarAltimeterOff radarAltimeterOff){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(RadarAltimeterSend radarAltimeterSend){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(RadarAltimeterReceive radarAltimeterReceive){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(RadarAltimeterMeasureAltitude radarAltimeterMeasureAltitude){
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
-    // ----------------------------------------------------------------------------------------------------------------
+     //----------------------------------------------------------------------------------------------------------------
 
-    // --- ShockSensor ------------------------------------------------------------------------------------------------
+     //--- ShockSensor ------------------------------------------------------------------------------------------------
 
     @Subscribe
     public void receive(ShockSensorBodyCalibrate shockSensorBodyCalibrate) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(ShockSensorBodyMeasure shockSensorBodyMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -1556,7 +1556,7 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(StallingSensorBodyMeasure stallingSensorBodyMeasure) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -1625,22 +1625,22 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(WasteWaterTankLock lock) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(WasteWaterTankUnlock unlock) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(WasteWaterTankAdd add) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(WasteWaterTankPumpOut pumpOut) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -1650,22 +1650,22 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(PortableWaterTankLock lock) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PortableWaterTankUnlock unlock) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PortableWaterTankTakeOut takeOut) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(PortableWaterTankRefill refill) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -1787,32 +1787,32 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(VHFBackwardChannel backwardChannel) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(VHFForwardChannel forwardChannel) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(VHFSearch search) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(VHFSelectChannel selectChannel) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(VHFOff vhfOff) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(VHFOn vhfOn) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
@@ -1821,27 +1821,27 @@ public class Body extends Subscriber {
 
     @Subscribe
     public void receive(SatComConnect connect) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(SatComOff off) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(SatComOn on) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(SatComReceive receive) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     @Subscribe
     public void receive(SatComSend send) {
-        throw new RuntimeException("Not implemented yet.");
+//        throw new RuntimeException("Not implemented yet.");
     }
 
     // ----------------------------------------------------------------------------------------------------------------
