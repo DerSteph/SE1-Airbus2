@@ -188,4 +188,19 @@ public enum Configuration {
     public String pathToLogoLightJavaArchive = commonPathToJavaArchive + "logo_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "logo_light.jar";
     public int numberOfLogoLight = 2;
 
+    //right_navigation_light
+    public String pathToRightNavigationLight = commonPathToJavaArchive + "right_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "right_navigation_light.jar";
+    public int numberOfRightNavigationLight = 1;
+
+    //tail_navigation_light
+    public String pathToTailNavigationLight = commonPathToJavaArchive + "tail_navigation_light" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "tail_navigation_light.jar";
+    public int numberOfTailNavigationLight = 2;
+
+    //exhaust_gas_temperature_sensor
+    public String pathToExhaustGasTemperatureSensor = commonPathToJavaArchive + "exhaust_gas_temperature_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "exhaust_gas_temperature_sensor.jar";
+    public int numberOfExhaustGasTemperatureSensor = 2;
+
+    //fuel_flow_sensor
+    public String pathToFuelFlowSensor = commonPathToJavaArchive + "fuel_flow_sensor" + fileSeparator + "build" + fileSeparator + "libs" + fileSeparator + "fuel_flow_sensor.jar";
+    public int numberOfFuelFlowSensor = 4;
 }

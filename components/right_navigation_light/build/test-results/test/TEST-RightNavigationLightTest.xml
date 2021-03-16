@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RightNavigationLightTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-16T14:33:00" hostname="DESKTOP-UHN0P8F" time="0.018">
+  <properties/>
+  <testcase name="testRightNavigationLight()" classname="RightNavigationLightTest" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

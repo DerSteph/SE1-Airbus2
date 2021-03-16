@@ -23,6 +23,8 @@ import event.shock_sensor.*;
 import event.stalling_sensor.*;
 import event.temperature_sensor.*;
 
+import event.tail_navigation_light.TailNavigationLightOff;
+import event.tail_navigation_light.TailNavigationLightOn;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 
@@ -46,6 +48,10 @@ import event.route_management.*;
 import event.rudder.*;
 
 import factory.*;
+import event.weather_radar.WeatherRadarScan;
+import factory.SlatFactory;
+import factory.TailNavigationLightFactory;
+import factory.WeatherRadarFactory;
 import logging.LogEngine;
 import recorder.FlightRecorder;
 
@@ -89,6 +95,7 @@ public class Body extends Subscriber {
     private ArrayList<Object> landingLightPortList;
     private ArrayList<Object> logoLightPortList;
     private ArrayList<Object> costOptimizerPortList;
+    private ArrayList<Object> tailNavigationLightList;
 
 
     public Body() {
@@ -105,7 +112,9 @@ public class Body extends Subscriber {
         pitotTubePortList = new ArrayList<>();
         radarAltimeterPortList = new ArrayList<>();
 
+
         // Add a new list for each service...
+
         apuList = new ArrayList<>();
         gearList = new ArrayList<>();
         hydraulicPumpList = new ArrayList<>();
@@ -120,6 +129,7 @@ public class Body extends Subscriber {
         landingLightPortList = new ArrayList<>();
         logoLightPortList = new ArrayList<>();
         costOptimizerPortList = new ArrayList<>();
+        tailNavigationLightList = new ArrayList<>();
 
         oxygenBottlePortList = new ArrayList<>();
         nitrogenBottlePortList = new ArrayList<>();
@@ -219,6 +229,9 @@ public class Body extends Subscriber {
 
 
         // Add a new iteration for each service...
+
+
+
         for (int i = 0; i < Configuration.instance.numberOfKitchen; i++) {
             kitchenList.add(APUFactory.build());
         }
@@ -227,6 +240,9 @@ public class Body extends Subscriber {
         }
         for (int i = 0; i < Configuration.instance.numberOfNitrogenBottle; i++) {
             nitrogenBottlePortList .add(NitrogenBottleFactory.build());
+        }
+        for (int i = 0; i < Configuration.instance.numberOfTailNavigationLight; i++) {
+            tailNavigationLightList .add(TailNavigationLightFactory.build());
         }
         for(int i = 0; i < Configuration.instance.numberOfTCAS; i++) {
             tcasPortList.add(TCASFactory.build());
@@ -1704,6 +1720,61 @@ public class Body extends Subscriber {
 
     // ----------------------------------------------------------------------------------------------------------------
 
+
+    // ---  TailNavigationLight ---------------------------------------------------------------------------------------
+
+    @Subscribe
+    public void receive(TailNavigationLightOn tailNavigationLightOn){
+        LogEngine.instance.write("+ Body.receive(" + tailNavigationLightOn.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tailNavigationLightOn + ")");
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTailNavigationLight; i++) {
+                Method onMethod = tailNavigationLightList.get(i).getClass().getDeclaredMethod("on");
+                LogEngine.instance.write("onMethod = " + onMethod);
+
+                boolean isOn = (boolean) onMethod.invoke(tailNavigationLightList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isTailNavigationLightOn= isOn;
+                FlightRecorder.instance.insert("Body", "TailNavigationLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTailNavigationLightOn): " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTailNavigationLightOn: " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+    }
+
+    @Subscribe
+    public void receive(TailNavigationLightOff tailNavigationLightOff){
+        LogEngine.instance.write("+ Body.receive(" + tailNavigationLightOff.toString() + ")");
+        FlightRecorder.instance.insert("Body", "receive(" + tailNavigationLightOff + ")");
+        try {
+            for (int i = 0; i < Configuration.instance.numberOfTailNavigationLight; i++) {
+                Method offMethod = tailNavigationLightList.get(i).getClass().getDeclaredMethod("off");
+                LogEngine.instance.write("offMethod = " + offMethod);
+
+                boolean isOn = (boolean) offMethod.invoke(tailNavigationLightList.get(i));
+                LogEngine.instance.write("isOn = " + isOn);
+
+                PrimaryFlightDisplay.instance.isTailNavigationLightOn= isOn;
+                FlightRecorder.instance.insert("Body", "TailNavigationLight (isOn): " + isOn);
+
+                LogEngine.instance.write("+");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        LogEngine.instance.write("PrimaryFlightDisplay (isTailNavigationLightOn): " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+        FlightRecorder.instance.insert("PrimaryFlightDisplay", "isTailNavigationLightOn: " + PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+    }
+    // ----------------------------------------------------------------------------------------------------------------
+
+
     // --- TCAS -----------------------------------------------------------------------------------------------
 
     @Subscribe
@@ -1850,5 +1921,4 @@ public class Body extends Subscriber {
     public void receive(TurbulentAirFlowSensorBodyMeasure turbulentAirFlowSensorBodyMeasure) {
         FlightRecorder.instance.insert("Body", "receive(" + turbulentAirFlowSensorBodyMeasure.toString() + ")");
     }
-
 }

@@ -67,4 +67,10 @@ public enum PrimaryFlightDisplay {
     public boolean isCostOptimizerOn;
     public int indexCostOptimizer;
     public int numberOfCheckPointsCostOptimizer;
+    public boolean isRightNavigationLightOn;
+    public boolean isTailNavigationLightOn;
+    public int exhaustGasTemperature;
+    public boolean isAlarmMajorExhaustGasTemperatureSensor;
+    public boolean isAlarmCriticalExhaustGasTemperatureSensor;
+    public int fuelFlow;
 }

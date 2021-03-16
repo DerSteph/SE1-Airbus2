@@ -67,6 +67,10 @@ import event.spoiler.SpoilerNeutral;
 import event.tcas.*;
 import event.temperature_sensor.TemperatureSensorBodyMeasure;
 import event.temperature_sensor.TemperatureSensorWingMeasure;
+import event.right_navigation_light.RightNavigationLightOff;
+import event.right_navigation_light.RightNavigationLightOn;
+import event.tail_navigation_light.TailNavigationLightOff;
+import event.tail_navigation_light.TailNavigationLightOn;
 import event.weather_radar.WeatherRadarOff;
 import event.weather_radar.WeatherRadarOn;
 import section.Body;
@@ -182,6 +186,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(1));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
+        // right_navigation_light
+        /eventBus.post(new RightNavigationLightOn());
+        // tail_navigation_light
+        eventBus.post(new TailNavigationLightOn());
         // tcas
         eventBus.post(new TCASDetermineAltitude("ground"));
         // temperature sensor
@@ -189,7 +197,7 @@ public class Airplane implements IAirplane {
         eventBus.post(new TemperatureSensorWingMeasure());
         // weather_radar
         eventBus.post(new WeatherRadarOn());
-    }
+        }
 
     public void takeoff() {
         // air flow sensor
@@ -421,15 +429,20 @@ public class Airplane implements IAirplane {
         eventBus.post(new LogoLightOff());
         // radar altimeter
         eventBus.post(new RadarAltimeterOff());
+        // right_navigation_light
+        eventBus.post(new RightNavigationLightOff());
         // route management
         eventBus.post(new RouteManagementOff());
         // slat
         eventBus.post(new SlatNeutral());
         // spoiler
         eventBus.post(new SpoilerNeutral());
+        // tail_navigation_light
+        eventBus.post(new TailNavigationLightOff());
         // tcas
         eventBus.post(new TCASOff());
         // weather_radar
         eventBus.post(new WeatherRadarOff());
+
     }
 }
