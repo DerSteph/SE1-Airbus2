@@ -355,6 +355,8 @@ public class ProcedureTest {
         apuPort = APUFactory.build();
         cargoCompartmentLightPort = CargoCompartmentLightFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         kitchenPort = KitchenFactory.build();
         nitrogenBottlePort = NitrogenBottleFactory.build();
@@ -406,6 +408,18 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
             assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 800);
 
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
+
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
             amount = (int) takeOutMethod.invoke(fuelTankPort, 10);
@@ -444,7 +458,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -462,6 +476,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         enginePort = EngineFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         gearPort = GearFactory.build();
         logoLightPort = LogoLightFactory.build();
@@ -493,6 +509,18 @@ public class ProcedureTest {
             int oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
             assertEquals(PrimaryFlightDisplay.instance.rpmEngine, oldRPM + 2000);
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -563,7 +591,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -581,6 +609,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         engineOilTankPort = EngineOilTankFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         gearPort = EngineFactory.build();
         nitrogenBottlePort = NitrogenBottleFactory.build();
@@ -611,6 +641,18 @@ public class ProcedureTest {
             int level = (int) decreaseLevelMethod.invoke(engineOilTankPort, 1);
             PrimaryFlightDisplay.instance.levelEngineOilTank = level;
             assertEquals(PrimaryFlightDisplay.instance.levelEngineOilTank, 9);
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -677,7 +719,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -695,6 +737,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         engineOilTankPort = EngineOilTankFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         leftAileronPort = LeftAileronFactory.build();
         nitrogenBottlePort = NitrogenBottleFactory.build();
@@ -724,6 +768,18 @@ public class ProcedureTest {
             int level = (int) decreaseLevelMethod.invoke(engineOilTankPort, 1);
             PrimaryFlightDisplay.instance.levelEngineOilTank = level;
             assertEquals(PrimaryFlightDisplay.instance.levelEngineOilTank, 8);
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -782,7 +838,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -799,6 +855,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         engineOilTankPort = EngineOilTankFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         leftAileronPort = LeftAileronFactory.build();
         nitrogenBottlePort = NitrogenBottleFactory.build();
@@ -828,6 +886,18 @@ public class ProcedureTest {
             int level = (int) decreaseLevelMethod.invoke(engineOilTankPort, 1);
             PrimaryFlightDisplay.instance.levelEngineOilTank = level;
             assertEquals(PrimaryFlightDisplay.instance.levelEngineOilTank, 7);
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -886,7 +956,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -903,6 +973,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         deicingSystemPort = DeIcingSystemFactory.build();
         engineOilTankPort = EngineOilTankFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         nitrogenBottlePort = NitrogenBottleFactory.build();
         oxygenBottlePort = OxygenBottleFactory.build();
@@ -931,6 +1003,18 @@ public class ProcedureTest {
             int level = (int) decreaseLevelMethod.invoke(engineOilTankPort, 1);
             PrimaryFlightDisplay.instance.levelEngineOilTank = level;
             assertEquals(PrimaryFlightDisplay.instance.levelEngineOilTank, 6);
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -985,7 +1069,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
@@ -1002,6 +1086,8 @@ public class ProcedureTest {
         airFlowSensorPort = AirFlowSensorFactory.build();
         apuPort = APUFactory.build();
         enginePort = EngineFactory.build();
+        exhaustGasTemperatureSensor = ExhaustGasTemperatureSensorFactory.build();
+        fuelFlowSensorPort = FuelFlowSensorFactory.build();
         fuelTankPort = FuelTankFactory.build();
         gearPort = GearFactory.build();
         landingLightPort = LandingLightFactory.build();
@@ -1045,6 +1131,18 @@ public class ProcedureTest {
             } else {
                 assertEquals(0, PrimaryFlightDisplay.instance.rpmEngine);
             }
+
+            // exhaust gas temperature sensor (measure)
+            measureMethod = exhaustGasTemperatureSensor.getClass().getDeclaredMethod("measure");
+            int temperature = (int) measureMethod.invoke(exhaustGasTemperatureSensor);
+            PrimaryFlightDisplay.instance.exhaustGasTemperature = temperature;
+            assertTrue(PrimaryFlightDisplay.instance.exhaustGasTemperature > 0);
+
+            // fuel flow sensor (measure)
+            measureMethod = fuelFlowSensorPort.getClass().getDeclaredMethod("measure");
+            int fuelFlow = (int) measureMethod.invoke(fuelFlowSensorPort);
+            PrimaryFlightDisplay.instance.fuelFlow = fuelFlow;
+            assertTrue(PrimaryFlightDisplay.instance.fuelFlow >= 0 && PrimaryFlightDisplay.instance.fuelFlow < 101);
 
             // fuel tank (takeOut)
             Method takeOutMethod = fuelTankPort.getClass().getDeclaredMethod("takeOut", int.class);
@@ -1120,7 +1218,7 @@ public class ProcedureTest {
 
             // temperature sensor (measure)
             measureMethod = temperatureSensorPort.getClass().getDeclaredMethod("measure");
-            int temperature = (int) measureMethod.invoke(temperatureSensorPort);
+            temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
             assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
