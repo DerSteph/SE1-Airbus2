@@ -147,6 +147,8 @@ public class Airplane implements IAirplane {
         eventBus.post(new PitotTubeClean());
         // radar altimeter
         eventBus.post(new RadarAltimeterOn());
+        // right navigation light
+        eventBus.post(new RightNavigationLightOn());
         // route management
         eventBus.post(new RouteManagementOn());
         // shock sensor
@@ -154,9 +156,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new ShockSensorWingCalibrate("5"));
         // spoiler
         eventBus.post(new SpoilerNeutral());
+        // tail navigation light
+        eventBus.post(new TailNavigationLightOn());
         // tcas
         eventBus.post(new TCASOn());
-        // tcas
         eventBus.post(new TCASConnect("89,5 MHz"));
         // temperature sensor
         eventBus.post(new TemperatureSensorBodyMeasure());
@@ -186,10 +189,6 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(1));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // right_navigation_light
-        /eventBus.post(new RightNavigationLightOn());
-        // tail_navigation_light
-        eventBus.post(new TailNavigationLightOn());
         // tcas
         eventBus.post(new TCASDetermineAltitude("ground"));
         // temperature sensor

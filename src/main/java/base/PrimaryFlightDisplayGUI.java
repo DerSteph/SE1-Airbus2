@@ -628,38 +628,37 @@ public class PrimaryFlightDisplayGUI extends Application {
         Button tcasDetermineAltitude = new Button("Det Alt");
         gridPane.add(tcasDetermineAltitude, 9 ,1);
 
-        //TODO: Freie Plätze suchen
         // right_navigation_light
         Label rightNavigationLightLabel = new Label("RightNavigationLight : ");
-        gridPane.add(rightNavigationLightLabel,6,1);
+        gridPane.add(rightNavigationLightLabel,6,5);
 
         ToggleGroup rightNavigationLightToggleGroup = new ToggleGroup();
 
         rightNavigationLightOffButton = new RadioButton("Off");
         rightNavigationLightOffButton.setToggleGroup(rightNavigationLightToggleGroup);
         rightNavigationLightOffButton.setSelected(true);
-        gridPane.add(rightNavigationLightOffButton,7,1);
+        gridPane.add(rightNavigationLightOffButton,7,5);
 
         rightNavigationLightOnButton = new RadioButton("On");
         rightNavigationLightOnButton.setToggleGroup(rightNavigationLightToggleGroup);
         rightNavigationLightOnButton.setSelected(false);
-        gridPane.add(rightNavigationLightOnButton,8,1);
+        gridPane.add(rightNavigationLightOnButton,8,5);
 
         // tail_navigation_light
         Label tailNavigationLightLabel = new Label("TailNavigationLight : ");
-        gridPane.add(tailNavigationLightLabel,6,2);
+        gridPane.add(tailNavigationLightLabel,6,6);
 
         ToggleGroup tailNavigationLightToggleGroup = new ToggleGroup();
 
         tailNavigationLightOffButton = new RadioButton("Off");
         tailNavigationLightOffButton.setToggleGroup(tailNavigationLightToggleGroup);
         tailNavigationLightOffButton.setSelected(true);
-        gridPane.add(tailNavigationLightOffButton,7,2);
+        gridPane.add(tailNavigationLightOffButton,7,6);
 
         tailNavigationLightOnButton = new RadioButton("On");
         tailNavigationLightOnButton.setToggleGroup(tailNavigationLightToggleGroup);
         tailNavigationLightOnButton.setSelected(false);
-        gridPane.add(tailNavigationLightOnButton,8,2);
+        gridPane.add(tailNavigationLightOnButton,8,6);
 
         // exhaust_gas_temperature_sensor
         Label exhaustGasTemperatureSensorLabel = new Label("ExhaustGasTemperatureSensor : ");
@@ -687,13 +686,13 @@ public class PrimaryFlightDisplayGUI extends Application {
         // fuel_flow_sensor
 
         Label fuelFlowSensorLabel = new Label("FuelFlowSensor : ");
-        gridPane.add(fuelFlowSensorLabel,6,4);
+        gridPane.add(fuelFlowSensorLabel,6,7);
 
         ToggleGroup fuelFlowSensorToggleGroup = new ToggleGroup();
 
         fuelFlowText = new TextField(Integer.toString(PrimaryFlightDisplay.instance.fuelFlow));
 
-        gridPane.add(fuelFlowText,7,4);
+        gridPane.add(fuelFlowText,7,7);
         fuelFlowText.setPrefSize(50,20);
 
         Button tcasAlarm = new Button("Alarm");

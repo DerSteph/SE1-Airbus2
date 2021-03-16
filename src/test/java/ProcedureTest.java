@@ -17,41 +17,45 @@ public class ProcedureTest {
 
     // Ports
     private Object
-        airConditioningPort,              // ToDo: not in PFD
-        airFlowSensorPort,               // TODO alarm - method
-        antiCollisionLightPort,
-        apuPort,
-        batteryPort,
-        cameraPort,                     // TODO: no attributes in Primary Flight Display
-        cargoCompartmentLightPort,
-        costOptimizerPort,
-        deicingSystemPort,
-        enginePort,
-        engineOilTankPort,
-        fuelTankPort,
-        gearPort,
-        gpsPort,                        // TODO: no attributes in Primary Flight Display
-        hydraulicPumpPort,               // ToDo: shutdown - off
-        kitchenPort,                    // ToDo: not in PFD
-        landingLightPort,
-        leftAileronPort,
-        leftNavigationLightPort,
-        logoLightPort,
-        nitrogenBottlePort,
-        oxygenBottlePort,
-        pitotTubePort,
-        radar,                          // TODO: no attributes in Primary Flight Display
-        radarAltimeter,
-        rightAileronPort,
-        routeManagementPort,
-        rudderPort,
-        shockSensorPort,
-        slatPort,
-        spoilerPort,
-        stallingSensorPort,
-        tcasPort,
-        temperatureSensorPort,
-        weatherRadarPort;
+            airConditioningPort,              // ToDo: not in PFD
+            airFlowSensorPort,               // TODO alarm - method
+            antiCollisionLightPort,
+            apuPort,
+            batteryPort,
+            cameraPort,                     // TODO: no attributes in Primary Flight Display
+            cargoCompartmentLightPort,
+            costOptimizerPort,
+            deicingSystemPort,
+            enginePort,
+            engineOilTankPort,
+            exhaustGasTemperatureSensor, //todo
+            fuelFlowSensorPort, // todo
+            fuelTankPort,
+            gearPort,
+            gpsPort,                        // TODO: no attributes in Primary Flight Display
+            hydraulicPumpPort,               // ToDo: shutdown - off
+            kitchenPort,                    // ToDo: not in PFD
+            landingLightPort,
+            leftAileronPort,
+            leftNavigationLightPort,
+            logoLightPort,
+            nitrogenBottlePort,
+            oxygenBottlePort,
+            pitotTubePort,
+            radar,                          // TODO: no attributes in Primary Flight Display
+            radarAltimeter,
+            rightAileronPort,
+            rightNavigationLightPort,
+            routeManagementPort,
+            rudderPort,
+            shockSensorPort,
+            slatPort,
+            spoilerPort,
+            stallingSensorPort,
+            tailNavigationLightPort,
+            tcasPort,
+            temperatureSensorPort,
+            weatherRadarPort;
 
     @BeforeEach
     public void init() {
@@ -95,10 +99,12 @@ public class ProcedureTest {
         oxygenBottlePort = OxygenBottleFactory.build();
         pitotTubePort = PitotTubeFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
+        rightNavigationLightPort = RightNavigationLightFactory.build();
         routeManagementPort = RouteManagementFactory.build();
         shockSensorPort = ShockSensorFactory.build();
         spoilerPort = SpoilerFactory.build();
         stallingSensorPort = StallingSensorFactory.build();
+        tailNavigationLightPort = TailNavigationLightFactory.build();
         tcasPort = TCASFactory.build();
         temperatureSensorPort = TemperatureSensorFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
@@ -272,6 +278,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isRadarAltimeterOn = isOn;
             assertTrue(PrimaryFlightDisplay.instance.isRadarAltimeterOn);
 
+            // right navigation light (on)
+            onMethod = rightNavigationLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(rightNavigationLightPort);
+            PrimaryFlightDisplay.instance.isRightNavigationLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isRightNavigationLightOn);
+
             // route management (on)
             onMethod = routeManagementPort.getClass().getDeclaredMethod("on");
             isOn = (boolean) onMethod.invoke(routeManagementPort);
@@ -299,6 +311,12 @@ public class ProcedureTest {
             assertEquals(stalling, 21);
             */
 
+            // tail navigation light (on)
+            onMethod = tailNavigationLightPort.getClass().getDeclaredMethod("on");
+            isOn = (boolean) onMethod.invoke(tailNavigationLightPort);
+            PrimaryFlightDisplay.instance.isTailNavigationLightOn = isOn;
+            assertTrue(PrimaryFlightDisplay.instance.isTailNavigationLightOn);
+
             // tcas (on)
             onMethod = tcasPort.getClass().getDeclaredMethod("on");
             isOn = (boolean) onMethod.invoke(tcasPort);
@@ -306,7 +324,7 @@ public class ProcedureTest {
             assertTrue(PrimaryFlightDisplay.instance.isTCASOn);
 
             // tcas (connect)
-            Method connectMethod= tcasPort.getClass().getDeclaredMethod("connect", String.class);
+            Method connectMethod = tcasPort.getClass().getDeclaredMethod("connect", String.class);
             boolean isConnected = (boolean) connectMethod.invoke(tcasPort, "89,5 MHz");
             PrimaryFlightDisplay.instance.isTCASConnected = isConnected;
             assertTrue(PrimaryFlightDisplay.instance.isTCASConnected);
@@ -358,7 +376,7 @@ public class ProcedureTest {
             int rpm = (int) decreaseRPM.invoke(apuPort, 1000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
-            if (oldRPM >= 1000){
+            if (oldRPM >= 1000) {
                 assertEquals(PrimaryFlightDisplay.instance.rpmAPU, oldRPM - 1000);
             } else {
                 assertEquals(PrimaryFlightDisplay.instance.rpmAPU, 0);
@@ -1024,7 +1042,7 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
             if (oldRPM >= 1000) {
                 assertEquals(oldRPM - 1000, PrimaryFlightDisplay.instance.rpmEngine);
-            } else{
+            } else {
                 assertEquals(0, PrimaryFlightDisplay.instance.rpmEngine);
             }
 
@@ -1129,9 +1147,11 @@ public class ProcedureTest {
         leftNavigationLightPort = LeftNavigationLightFactory.build();
         logoLightPort = LogoLightFactory.build();
         radarAltimeter = RadarAltimeterFactory.build();
+        rightNavigationLightPort = RightNavigationLightFactory.build();
         routeManagementPort = RouteManagementFactory.build();
         slatPort = SlatFactory.build();
         spoilerPort = SpoilerFactory.build();
+        tailNavigationLightPort = TailNavigationLightFactory.build();
         tcasPort = TCASFactory.build();
         weatherRadarPort = WeatherRadarFactory.build();
 
@@ -1153,7 +1173,7 @@ public class ProcedureTest {
             int rpm = (int) decreaseRPM.invoke(apuPort, 2000);
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
-            if (oldRPM >= 2000){
+            if (oldRPM >= 2000) {
                 assertEquals(oldRPM - 2000, PrimaryFlightDisplay.instance.rpmAPU);
             } else {
                 assertEquals(0, PrimaryFlightDisplay.instance.rpmAPU);
@@ -1200,7 +1220,7 @@ public class ProcedureTest {
             rpm = (int) decreaseRPMMethod.invoke(enginePort, 1000);
             oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
-            if (oldRPM >= 1000){
+            if (oldRPM >= 1000) {
                 assertEquals(oldRPM - 1000, PrimaryFlightDisplay.instance.rpmEngine);
             } else {
                 assertEquals(0, PrimaryFlightDisplay.instance.rpmEngine);
@@ -1239,6 +1259,12 @@ public class ProcedureTest {
             PrimaryFlightDisplay.instance.isRadarAltimeterOn = isOn;
             assertFalse(PrimaryFlightDisplay.instance.isRadarAltimeterOn);
 
+            // right navigation light (off)
+            offMethod = rightNavigationLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(rightNavigationLightPort);
+            PrimaryFlightDisplay.instance.isRightNavigationLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isRightNavigationLightOn);
+
             // route management (off)
             offMethod = routeManagementPort.getClass().getDeclaredMethod("off");
             isOn = (boolean) offMethod.invoke(routeManagementPort);
@@ -1256,6 +1282,12 @@ public class ProcedureTest {
             degree = (int) neutralMethod.invoke(spoilerPort);
             PrimaryFlightDisplay.instance.degreeSpoiler = degree;
             assertEquals(PrimaryFlightDisplay.instance.degreeSpoiler, 0);
+
+            // tail navigation light (off)
+            offMethod = tailNavigationLightPort.getClass().getDeclaredMethod("off");
+            isOn = (boolean) offMethod.invoke(tailNavigationLightPort);
+            PrimaryFlightDisplay.instance.isTailNavigationLightOn = isOn;
+            assertFalse(PrimaryFlightDisplay.instance.isTailNavigationLightOn);
 
             // tcas (off)
             offMethod = tcasPort.getClass().getDeclaredMethod("off");
