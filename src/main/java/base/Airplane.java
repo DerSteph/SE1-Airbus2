@@ -27,6 +27,8 @@ import event.engine.EngineShutdown;
 import event.engine.EngineStart;
 import event.engine_oil_tank.EngineOilTankDecreaseLevel;
 import event.engine_oil_tank.EngineOilTankIncreaseLevel;
+import event.exhaust_gas_temperature_sensor.ExhaustGasTemperatureSensorMeasure;
+import event.fuel_flow_sensor.FuelFlowSensorMeasure;
 import event.fuel_tank.FuelTankRefill;
 import event.fuel_tank.FuelTankTakeOut;
 import event.gear.*;
@@ -181,6 +183,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new CargoCompartmentLightOff());
         // deicing system
         eventBus.post(new DeIcingSystemDeIce(100));
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(1000));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(100));
         // fuel tank
         eventBus.post(new FuelTankTakeOut(10));
         // nitrogen bottle
@@ -206,6 +212,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemDeIce(100));
         // engine
         eventBus.post(new EngineIncreaseRPM(2000));
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(900));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(90));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(100)));
         // gear
@@ -245,6 +255,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemDeIce(100));
         // engine oil tank
         eventBus.post(new EngineOilTankDecreaseLevel());
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(800));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(80));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(100)));
         // gear
@@ -277,6 +291,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemDeIce(100));
         // engine oil tank
         eventBus.post(new EngineOilTankDecreaseLevel());
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(700));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(70));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(100)));
         // left aileron
@@ -308,6 +326,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemDeIce(100));
         // engine oil tank
         eventBus.post(new EngineOilTankDecreaseLevel());
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(600));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(60));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(100)));
         // left aileron
@@ -339,6 +361,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new DeIcingSystemDeIce(100));
         // engine oil tank
         eventBus.post(new EngineOilTankDecreaseLevel());
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(500));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(50));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(100)));
         // nitrogen bottle
@@ -370,6 +396,10 @@ public class Airplane implements IAirplane {
         eventBus.post(new APUIncreaseRPM(2000));
         // engine
         eventBus.post(new EngineDecreaseRPM(1000));
+        // exhaust gas temperature sensor
+        eventBus.post(new ExhaustGasTemperatureSensorMeasure(400));
+        // fuel flow sensor
+        eventBus.post(new FuelFlowSensorMeasure(40));
         // fuel tank
         eventBus.post((new FuelTankTakeOut(10)));
         // gear
