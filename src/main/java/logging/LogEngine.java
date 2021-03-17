@@ -14,7 +14,7 @@ public enum LogEngine {
 
     public void init() {
         try {
-            printWriter = new PrintWriter(new File(Configuration.instance.logFile));
+            printWriter = new PrintWriter(Configuration.instance.logFile);
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }

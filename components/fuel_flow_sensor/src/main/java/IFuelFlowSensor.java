@@ -1,6 +1,6 @@
 public interface IFuelFlowSensor {
 
-    public String version();
-    public int measure();
+    String version();
+    int measure();
 
 }

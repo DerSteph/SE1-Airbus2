@@ -9,6 +9,9 @@ public class FuelFlowSensor {
 
     private int fuelFlow;
 
+    private FuelFlowSensor() { port = new Port(); }
+
+    public FuelFlowSensor getInstance() { return instance; }
 
     public String innerVersion() {
         return "FuelFlowSensorV1";

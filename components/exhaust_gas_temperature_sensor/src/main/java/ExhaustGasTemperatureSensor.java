@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class ExhaustGasTemperatureSensor{
+public class ExhaustGasTemperatureSensor {
     //static instance
     private static ExhaustGasTemperatureSensor instance = new ExhaustGasTemperatureSensor();
     //port
@@ -11,11 +11,17 @@ public class ExhaustGasTemperatureSensor{
     private boolean isAlarmMajor;
     private boolean isAlarmCritical;
 
+    //private constructor
+    private ExhaustGasTemperatureSensor() {
+        port = new Port();
+    }
+
+    //static method getInstance
+    public static ExhaustGasTemperatureSensor getInstance() { return instance; }
 
     public String innerVersion() {
         return "ExhaustGasTemperatureSensorV1";
     }
-
 
     public int innerMeasure() {
         this.temperature = new Random().nextInt(200) + 800;
@@ -62,7 +68,7 @@ public class ExhaustGasTemperatureSensor{
 
         @Override
         public boolean alarmCritical(int threshold) {
-            return innerAlarmCritical(threshold);
+            return innerAlarmMajor(threshold);
         }
     }
 }

@@ -1,11 +1,11 @@
 public interface IExhaustGasTemperatureSensor {
 
-    public String version();
+    String version();
 
-    public int measure();
+    int measure();
 
-    public boolean alarmMajor(int threshold);
+    boolean alarmMajor(int threshold);
 
-    public boolean alarmCritical(int threshold);
+    boolean alarmCritical(int threshold);
 
 }
