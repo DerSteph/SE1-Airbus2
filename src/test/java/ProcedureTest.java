@@ -114,7 +114,7 @@ public class ProcedureTest {
             Method measureMethod = airFlowSensorPort.getClass().getDeclaredMethod("measure", String.class);
             int airPressure = (int) measureMethod.invoke(airFlowSensorPort, "air");
             PrimaryFlightDisplay.instance.airPressure = airPressure;
-            assertEquals(PrimaryFlightDisplay.instance.airPressure, airPressure);       // TODO: airPressure is never signed in component
+            assertEquals(airPressure, PrimaryFlightDisplay.instance.airPressure);       // TODO: airPressure is never signed in component
 
             // anti collision light (on)
             Method onMethod = antiCollisionLightPort.getClass().getDeclaredMethod("on");
@@ -134,19 +134,19 @@ public class ProcedureTest {
             int oldRPM = PrimaryFlightDisplay.instance.rpmAPU;
             PrimaryFlightDisplay.instance.rpmAPU = rpm;
             assertTrue(PrimaryFlightDisplay.instance.rpmAPU > oldRPM);
-            assertEquals(PrimaryFlightDisplay.instance.rpmAPU, 1000);
+            assertEquals(1000, PrimaryFlightDisplay.instance.rpmAPU);
 
             // battery (charge)
             Method chargeMethod = batteryPort.getClass().getDeclaredMethod("charge");
             int percentage = (int) chargeMethod.invoke(batteryPort);
             PrimaryFlightDisplay.instance.percentageBattery = percentage;
-            assertEquals(PrimaryFlightDisplay.instance.percentageBattery, 100);
+            assertEquals(100, PrimaryFlightDisplay.instance.percentageBattery);
 
             // brake (100%)
             Method brakeMethod = gearPort.getClass().getDeclaredMethod("setBrake");
             int brakePercentage = (int) brakeMethod.invoke(gearPort);
             PrimaryFlightDisplay.instance.gearBrakePercentage = brakePercentage;
-            assertEquals(PrimaryFlightDisplay.instance.gearBrakePercentage, 100);
+            assertEquals(100, PrimaryFlightDisplay.instance.gearBrakePercentage);
 
             /*
             // camera (on)
@@ -183,11 +183,11 @@ public class ProcedureTest {
             // deicing system (refill & deice)
             Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
             refillMethod.invoke(deicingSystemPort);
-            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 1000);
+            assertEquals(1000, PrimaryFlightDisplay.instance.amountDeIcingSystem); // ToDo: actual 0
             Method deIceMethod = deicingSystemPort.getClass().getDeclaredMethod("deIce", int.class);
             int amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
             PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 900);
+            assertEquals(900, PrimaryFlightDisplay.instance.amountDeIcingSystem);
 
             // engine (start)
             startMethod = enginePort.getClass().getDeclaredMethod("start");
@@ -201,19 +201,19 @@ public class ProcedureTest {
             oldRPM = PrimaryFlightDisplay.instance.rpmEngine;
             PrimaryFlightDisplay.instance.rpmEngine = rpm;
             assertTrue(PrimaryFlightDisplay.instance.rpmEngine > oldRPM);
-            assertEquals(PrimaryFlightDisplay.instance.rpmEngine, 1000);
+            assertEquals(1000, PrimaryFlightDisplay.instance.rpmEngine);
 
             // engine oil tank (increase)
             Method increaseLevelMethod = engineOilTankPort.getClass().getDeclaredMethod("increaseLevel", int.class);
             int level = (int) increaseLevelMethod.invoke(engineOilTankPort, 10);
             PrimaryFlightDisplay.instance.levelEngineOilTank = level;
-            assertEquals(PrimaryFlightDisplay.instance.levelEngineOilTank, 10);
+            assertEquals(10, PrimaryFlightDisplay.instance.levelEngineOilTank);
 
             // fuel tank (refill)
             refillMethod = fuelTankPort.getClass().getDeclaredMethod("refill");
             amount = (int) refillMethod.invoke(fuelTankPort);
             PrimaryFlightDisplay.instance.amountOfFuel = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountOfFuel, 1000);
+            assertEquals(1000, PrimaryFlightDisplay.instance.amountOfFuel);
 
             // gear (down)
             Method gearDownMethod = gearPort.getClass().getDeclaredMethod("down");
@@ -258,13 +258,13 @@ public class ProcedureTest {
             refillMethod = nitrogenBottlePort.getClass().getDeclaredMethod("refill");
             amount = (int) refillMethod.invoke(nitrogenBottlePort);
             PrimaryFlightDisplay.instance.amountOfNitrogen = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountOfNitrogen, 100);
+            assertEquals(100, PrimaryFlightDisplay.instance.amountOfNitrogen);
 
             // oxygen bottle (refill)
             refillMethod = oxygenBottlePort.getClass().getDeclaredMethod("refill");
             amount = (int) refillMethod.invoke(oxygenBottlePort);
             PrimaryFlightDisplay.instance.oxygenBottleAmount = amount;
-            assertEquals(PrimaryFlightDisplay.instance.oxygenBottleAmount, 100);
+            assertEquals(100, PrimaryFlightDisplay.instance.oxygenBottleAmount);
 
             // pitot tube (clean)
             Method cleanMethod = pitotTubePort.getClass().getDeclaredMethod("clean");
@@ -302,7 +302,7 @@ public class ProcedureTest {
             Method neutralMethod = spoilerPort.getClass().getDeclaredMethod("neutral");
             int degree = (int) neutralMethod.invoke(spoilerPort);
             PrimaryFlightDisplay.instance.degreeSpoiler = degree;
-            assertEquals(PrimaryFlightDisplay.instance.degreeSpoiler, 0);
+            assertEquals(0, PrimaryFlightDisplay.instance.degreeSpoiler);
 
             /* TODO: no attribute in primary flight display
             // stalling sensor (measure)
@@ -334,8 +334,8 @@ public class ProcedureTest {
             int temperature = (int) measureMethod.invoke(temperatureSensorPort);
             PrimaryFlightDisplay.instance.temperatureBody = temperature;
             PrimaryFlightDisplay.instance.temperatureWing = temperature;
-            assertEquals(PrimaryFlightDisplay.instance.temperatureBody, 0);
-            assertEquals(PrimaryFlightDisplay.instance.temperatureWing, 0);
+            assertEquals(0, PrimaryFlightDisplay.instance.temperatureBody);
+            assertEquals(0, PrimaryFlightDisplay.instance.temperatureWing);
 
             // weather radar (on)
             onMethod = weatherRadarPort.getClass().getDeclaredMethod("on");
@@ -501,7 +501,7 @@ public class ProcedureTest {
             Method deIceMethod = deicingSystemPort.getClass().getDeclaredMethod("deIce", int.class);
             int amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
             PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
-            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 700);
+            assertEquals(PrimaryFlightDisplay.instance.amountDeIcingSystem, 900);
 
             // engine (increase RPM)
             Method increaseMethod = enginePort.getClass().getDeclaredMethod("increaseRPM", int.class);

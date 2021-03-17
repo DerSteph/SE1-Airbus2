@@ -10,7 +10,7 @@ repositories {
 }
 
 task build_jar(type: Jar) {
-    project.archivesBaseName = 'exhaust_gas_temperature_sensor.jar'
+    project.archivesBaseName = 'exhaust_gas_temperature_sensor'
 
     manifest {
         attributes["Main-Class"] = "ExhaustGasTemperatureSensor"
