@@ -15,10 +15,10 @@ public class FuelFlowSensorFactory {
 //            URL[] urls = {new File(Configuration.instance.pathToFuelFlowSensor).toURI().toURL()};
 //            URLClassLoader urlClassLoader = new URLClassLoader(urls, FuelFlowSensorFactory.class.getClassLoader());
 //            Class fuelFlowSensorClass = Class.forName("FuelFlowSensor", true, urlClassLoader);
-//            FlightRecorder.instance.insert("FuelFLowSensorFactory", "fuelFlowSensor: " + fuelFlowSensorClass.hashCode());
+//            FlightRecorder.instance.insert("FuelFlowSensorFactory", "fuelFlowSensor: " + fuelFlowSensorClass.hashCode());
 //
 //            Object fuelFlowSensorInstance = fuelFlowSensorClass.getMethod("getInstance").invoke(null);
-//            FlightRecorder.instance.insert("FuelFLowSensorFactory", "fuelFlowSensorInstance: " + fuelFlowSensorInstance.hashCode());
+//            FlightRecorder.instance.insert("FuelFlowSensorFactory", "fuelFlowSensorInstance: " + fuelFlowSensorInstance.hashCode());
 //
 //            fuelFlowSensorPort = fuelFlowSensorClass.getDeclaredField("port").get(fuelFlowSensorInstance);
 //            FlightRecorder.instance.insert("FuelFlowSensorFactory", "fuelFlowSensorPort: " + fuelFlowSensorPort.hashCode());
