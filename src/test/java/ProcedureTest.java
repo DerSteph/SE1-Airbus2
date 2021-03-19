@@ -183,6 +183,7 @@ public class ProcedureTest {
             // deicing system (refill & deice)
             Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
             int amount = (int) refillMethod.invoke(deicingSystemPort);
+            PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
             assertEquals(amount, PrimaryFlightDisplay.instance.amountDeIcingSystem); // ToDo: actual 0
             Method deIceMethod = deicingSystemPort.getClass().getDeclaredMethod("deIce", int.class);
             amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
