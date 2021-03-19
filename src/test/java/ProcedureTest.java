@@ -28,8 +28,8 @@ public class ProcedureTest {
             deicingSystemPort,
             enginePort,
             engineOilTankPort,
-            exhaustGasTemperatureSensor, //todo
-            fuelFlowSensorPort, // todo
+            exhaustGasTemperatureSensor,
+            fuelFlowSensorPort,
             fuelTankPort,
             gearPort,
             gpsPort,                        // TODO: no attributes in Primary Flight Display
@@ -182,10 +182,10 @@ public class ProcedureTest {
 
             // deicing system (refill & deice)
             Method refillMethod = deicingSystemPort.getClass().getDeclaredMethod("refill");
-            refillMethod.invoke(deicingSystemPort);
-            assertEquals(1000, PrimaryFlightDisplay.instance.amountDeIcingSystem); // ToDo: actual 0
+            int amount = (int) refillMethod.invoke(deicingSystemPort);
+            assertEquals(amount, PrimaryFlightDisplay.instance.amountDeIcingSystem); // ToDo: actual 0
             Method deIceMethod = deicingSystemPort.getClass().getDeclaredMethod("deIce", int.class);
-            int amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
+            amount = (int) deIceMethod.invoke(deicingSystemPort, 100);
             PrimaryFlightDisplay.instance.amountDeIcingSystem = amount;
             assertEquals(900, PrimaryFlightDisplay.instance.amountDeIcingSystem);
 

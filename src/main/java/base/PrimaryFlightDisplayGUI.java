@@ -557,35 +557,35 @@ public class PrimaryFlightDisplayGUI extends Application {
 
         // oxygen_bottle
         Label oxygenBottleLabel = new Label("OxygenBottle : ");
-        gridPane.add(oxygenBottleLabel, 12, 0);
+        gridPane.add(oxygenBottleLabel, 0, 16);
 
         ToggleGroup oxygenBottleToggleGroup = new ToggleGroup();
         oxygenBottleTakeOutButton = new RadioButton("Oxy TakeOut");
         oxygenBottleTakeOutButton.setToggleGroup(oxygenBottleToggleGroup);
         oxygenBottleTakeOutButton.setSelected(true);
-        gridPane.add(oxygenBottleTakeOutButton, 13, 0);
+        gridPane.add(oxygenBottleTakeOutButton, 1, 16);
 
         oxygenBottleRefillButton = new RadioButton("Oxy Refill");
         oxygenBottleRefillButton.setToggleGroup(weatherRadarToggleGroup);
         oxygenBottleRefillButton.setSelected(false);
-        gridPane.add(oxygenBottleRefillButton, 14, 0);
+        gridPane.add(oxygenBottleRefillButton, 2, 16);
 
         // ...
 
         // nitrogen_bottle
         Label nitrogenBottleLabel = new Label("NitrogenBottle : ");
-        gridPane.add(nitrogenBottleLabel, 15, 0);
+        gridPane.add(nitrogenBottleLabel, 3, 16);
 
         ToggleGroup nitrogenBottleToggleGroup = new ToggleGroup();
         nitrogenBottleTakeOutButton = new RadioButton("Nit Takeout");
         nitrogenBottleTakeOutButton.setToggleGroup(nitrogenBottleToggleGroup);
         nitrogenBottleTakeOutButton.setSelected(true);
-        gridPane.add(nitrogenBottleTakeOutButton, 16, 0);
+        gridPane.add(nitrogenBottleTakeOutButton, 4, 16);
 
         nitrogenBottleRefillButton = new RadioButton("Nit Refill");
         nitrogenBottleRefillButton.setToggleGroup(weatherRadarToggleGroup);
         nitrogenBottleRefillButton.setSelected(false);
-        gridPane.add(nitrogenBottleRefillButton, 17, 0);
+        gridPane.add(nitrogenBottleRefillButton, 5, 16);
         // ...
 
         // tcas
@@ -712,7 +712,7 @@ public class PrimaryFlightDisplayGUI extends Application {
         turbulentAirFlowSensorOnButton = new RadioButton("False");
         turbulentAirFlowSensorOnButton.setToggleGroup(turbulentAirFlowSensorToggleGroup);
         turbulentAirFlowSensorOnButton.setSelected(false);
-        gridPane.add(turbulentAirFlowSensorOnButton, 1, 4);
+        gridPane.add(turbulentAirFlowSensorOnButton, 2, 3);
 
         // --- insert section: end
 
