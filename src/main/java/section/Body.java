@@ -839,7 +839,7 @@ public class Body extends Subscriber {
                 boolean isGearDown = (boolean) offMethod.invoke(gearList.get(i));
                 LogEngine.instance.write("isGearDown = " + isGearDown);
 
-                PrimaryFlightDisplay.instance.isAPUStarted = isGearDown;
+                PrimaryFlightDisplay.instance.isGearDown = isGearDown;
                 FlightRecorder.instance.insert("Body", "Gear (isGearDown): " + isGearDown);
             }
         } catch (Exception e) {
@@ -1168,7 +1168,7 @@ public class Body extends Subscriber {
                 LogEngine.instance.write("isOn = " + isOn);
 
                 PrimaryFlightDisplay.instance.isCostOptimizerOn = isOn;
-                FlightRecorder.instance.insert("Body", "LandingLight (isOn): " + isOn);
+                FlightRecorder.instance.insert("Body", "CostOptimizer (isOn): " + isOn);
 
                 LogEngine.instance.write("+");
             }
@@ -1817,7 +1817,7 @@ public class Body extends Subscriber {
                 LogEngine.instance.write("isConnected = " + isConnected);
 
                 PrimaryFlightDisplay.instance.isTCASConnected = isConnected;
-                FlightRecorder.instance.insert("Body", "DroopNose (fullDown): " + isConnected);
+                FlightRecorder.instance.insert("Body", "TCAS (isConnected): " + isConnected);
 
                 LogEngine.instance.write("+");
             }

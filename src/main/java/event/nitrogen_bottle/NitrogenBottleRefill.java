@@ -10,6 +10,6 @@ public class NitrogenBottleRefill {
     }
     @Override
     public String toString() {
-        return "Event: OxygenBottle - Refill";
+        return "Event: NitrogenBottle - Refill";
     }
 }

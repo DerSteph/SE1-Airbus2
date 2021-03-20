@@ -129,10 +129,10 @@ public class Airplane implements IAirplane {
         // engine
         eventBus.post(new EngineStart());
         eventBus.post(new EngineIncreaseRPM(1000));
-        // engine oil tank
-        eventBus.post(new EngineOilTankIncreaseLevel());
-        // fuel tank
-        eventBus.post(new FuelTankRefill());
+//        // engine oil tank
+//        eventBus.post(new EngineOilTankIncreaseLevel());
+//        // fuel tank
+//        eventBus.post(new FuelTankRefill());
         // gear
         eventBus.post(new GearDown());
         // hydraulic pump
@@ -145,17 +145,17 @@ public class Airplane implements IAirplane {
         eventBus.post(new NitrogenBottleRefill());
         // oxygen bottle
         eventBus.post(new OxygenBottleRefill());
-        // pilot tube
-        eventBus.post(new PitotTubeClean());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pitot tube
+//        eventBus.post(new PitotTubeClean());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // right navigation light
         eventBus.post(new RightNavigationLightOn());
         // route management
         eventBus.post(new RouteManagementOn());
-        // shock sensor
-        eventBus.post(new ShockSensorBodyCalibrate(5));
-        eventBus.post(new ShockSensorWingCalibrate("5"));
+//        // shock sensor
+//        eventBus.post(new ShockSensorBodyCalibrate(5));
+//        eventBus.post(new ShockSensorWingCalibrate("5"));
         // spoiler
         eventBus.post(new SpoilerNeutral());
         // tail navigation light
@@ -187,14 +187,14 @@ public class Airplane implements IAirplane {
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(1000));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(100));
-        // fuel tank
-        eventBus.post(new FuelTankTakeOut(10));
+//        // fuel tank
+//        eventBus.post(new FuelTankTakeOut(10));
         // nitrogen bottle
         eventBus.post(new NitrogenBottleTakeOut(1));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(1));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
         // tcas
         eventBus.post(new TCASDetermineAltitude("ground"));
         // temperature sensor
@@ -216,8 +216,8 @@ public class Airplane implements IAirplane {
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(900));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(90));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(100)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(100)));
         // gear
         eventBus.post(new GearUp());
         // logo light
@@ -228,13 +228,13 @@ public class Airplane implements IAirplane {
         eventBus.post(new OxygenBottleTakeOut(10));
         // pitot tube
         eventBus.post(new PitotTubeMeasureVelocity());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // rudder
         eventBus.post(new RudderNeutral());
-        // shock sensor
-        eventBus.post(new ShockSensorBodyMeasure());
-        eventBus.post(new ShockSensorWingMeasure());
+//        // shock sensor
+//        eventBus.post(new ShockSensorBodyMeasure());
+//        eventBus.post(new ShockSensorWingMeasure());
         // slat
         eventBus.post(new SlatFullDown());
         // tcas
@@ -253,24 +253,24 @@ public class Airplane implements IAirplane {
         eventBus.post(new AirFlowSensorWingMeasure("air"));
         // deicing system
         eventBus.post(new DeIcingSystemDeIce(100));
-        // engine oil tank
-        eventBus.post(new EngineOilTankDecreaseLevel());
+//        // engine oil tank
+//        eventBus.post(new EngineOilTankDecreaseLevel());
         // exhaust gas temperature sensor
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(800));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(80));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(100)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(100)));
         // gear
         eventBus.post(new GearUp());
         // nitrogen bottle
         eventBus.post(new NitrogenBottleTakeOut(10));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(10));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // rudder
         eventBus.post(new RudderNeutral());
         // tcas
@@ -289,24 +289,24 @@ public class Airplane implements IAirplane {
         eventBus.post(new AirFlowSensorWingMeasure("air"));
         // deicing system
         eventBus.post(new DeIcingSystemDeIce(100));
-        // engine oil tank
-        eventBus.post(new EngineOilTankDecreaseLevel());
+//        // engine oil tank
+//        eventBus.post(new EngineOilTankDecreaseLevel());
         // exhaust gas temperature sensor
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(700));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(70));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(100)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(100)));
         // left aileron
         eventBus.post(new LeftAileronFullDown());
         // nitrogen bottle
         eventBus.post(new NitrogenBottleTakeOut(10));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(10));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // right aileron
         eventBus.post(new RightAileronFullUp());
         // rudder
@@ -324,24 +324,24 @@ public class Airplane implements IAirplane {
         eventBus.post(new AirFlowSensorWingMeasure("air"));
         // deicing system
         eventBus.post(new DeIcingSystemDeIce(100));
-        // engine oil tank
-        eventBus.post(new EngineOilTankDecreaseLevel());
+//        // engine oil tank
+//        eventBus.post(new EngineOilTankDecreaseLevel());
         // exhaust gas temperature sensor
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(600));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(60));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(100)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(100)));
         // left aileron
         eventBus.post(new LeftAileronFullUp());
         // nitrogen bottle
         eventBus.post(new NitrogenBottleTakeOut(10));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(10));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // right aileron
         eventBus.post(new RightAileronFullDown());
         // rudder
@@ -359,22 +359,22 @@ public class Airplane implements IAirplane {
         eventBus.post(new AirFlowSensorWingMeasure("air"));
         // deicing system
         eventBus.post(new DeIcingSystemDeIce(100));
-        // engine oil tank
-        eventBus.post(new EngineOilTankDecreaseLevel());
+//        // engine oil tank
+//        eventBus.post(new EngineOilTankDecreaseLevel());
         // exhaust gas temperature sensor
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(500));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(50));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(100)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(100)));
         // nitrogen bottle
         eventBus.post(new NitrogenBottleTakeOut(10));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(10));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
-        // radar altimeter
-        eventBus.post(new RadarAltimeterOn());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
+//        // radar altimeter
+//        eventBus.post(new RadarAltimeterOn());
         // rudder
         eventBus.post(new RudderNeutral());
         // tcas
@@ -400,8 +400,8 @@ public class Airplane implements IAirplane {
         eventBus.post(new ExhaustGasTemperatureSensorMeasure(400));
         // fuel flow sensor
         eventBus.post(new FuelFlowSensorMeasure(40));
-        // fuel tank
-        eventBus.post((new FuelTankTakeOut(10)));
+//        // fuel tank
+//        eventBus.post((new FuelTankTakeOut(10)));
         // gear
         eventBus.post(new GearDown());
         eventBus.post(new GearSetBrakePercentage(70));
@@ -414,8 +414,8 @@ public class Airplane implements IAirplane {
         eventBus.post(new NitrogenBottleTakeOut(1));
         // oxygen bottle
         eventBus.post(new OxygenBottleTakeOut(1));
-        // pitot tube
-        eventBus.post(new PitotTubeMeasureVelocity());
+//        // pitot tube
+//        eventBus.post(new PitotTubeMeasureVelocity());
         // slat
         eventBus.post(new SlatFullDown());
         // spoiler
