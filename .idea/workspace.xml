@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cb4da57-0f7c-4083-9b88-5e7e6614cb4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ProcedureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProcedureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615900162682</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="exhaust gas temperature sensor &amp; fuel flow sensor in procedure test">
+      <created>1615900603879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615900603879</updated>
+    </task>
+    <task id="LOCAL-00006" summary="exhaust gas temperature sensor &amp; fuel flow sensor in airplane methods">
+      <created>1615900826922</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615900826922</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +241,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tasty Tests" />
     <MESSAGE value="Mehr Tests geschrieben." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mehr Tests geschrieben." />
+    <MESSAGE value="exhaust gas temperature sensor &amp; fuel flow sensor in procedure test" />
+    <MESSAGE value="exhaust gas temperature sensor &amp; fuel flow sensor in airplane methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="exhaust gas temperature sensor &amp; fuel flow sensor in airplane methods" />
   </component>
 </project>
